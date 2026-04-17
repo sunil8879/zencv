@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#000000">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 
     <style>
         :root {
@@ -315,6 +317,16 @@
 
 .brand-logo:hover {
     transform: scale(1.1) rotate(2deg);
+}
+
+
+body { font-family: 'Montserrat', 'Noto Color Emoji', sans-serif; }
+
+img.emoji {
+    height: 1.2em;
+    width: 1.2em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
 }
     </style>
 </head>
@@ -1340,6 +1352,14 @@ installBtn.addEventListener('click', () => {
     deferredPrompt = null;
   });
 });
+
+
+
+<script>
+    window.onload = function() {
+        twemoji.parse(document.body);
+    }
+</script>
     </script>
 </body>
 </html>
