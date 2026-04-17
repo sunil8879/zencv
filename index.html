@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Template Generator | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --aqua: #7FFFD4;
+            --white: #ffffff;
+            --black: #000000;
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--white);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(160,100%,90%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(160,100%,90%,1) 0, transparent 50%);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden; /* Allow vertical scroll if needed, hide horizontal */
+        }
+
+        /* The Main Container Card */
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 50px 60px;
+            border-radius: 30px;
+            border: 1px solid var(--aqua);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 50px var(--shadow), 
+                        inset 0 0 20px rgba(127, 255, 212, 0.2);
+            max-width: 500px;
+            width: 90%;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--black);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-decoration: underline;
+            text-decoration-color: var(--black);
+            text-underline-offset: 10px;
+            text-decoration-thickness: 4px;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* Uniform Button Styling */
+        .cv-btn {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--black);
+            background-color: var(--aqua);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 15px rgba(127, 255, 212, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .cv-btn:hover {
+            transform: translateY(-5px);
+            background-color: var(--white);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            outline: 2px solid var(--aqua);
+        }
+
+        .btn-fancy { border-left: 8px solid var(--black); }
+        .btn-ats { border-left: 8px solid var(--white); }
+        
+        .btn-guide {
+            background: var(--white) !important;
+            border: 2px solid var(--black) !important;
+            margin-top: 10px;
+        }
+
+        /* Floating circles */
+        .circle {
+            position: absolute;
+            background: var(--aqua);
+            border-radius: 50%;
+            z-index: 1;
+            filter: blur(60px);
+            opacity: 0.5;
+            animation: float 10s infinite alternate;
+        }
+
+        @keyframes float {
+            from { transform: translate(0, 0); }
+            to { transform: translate(50px, 100px); }
+        }
+
+        /* --- GUIDE OVERLAY (MOVED OUTSIDE CONTAINER) --- */
+        .guide-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 99999;
+            transform: translateY(100%);
+            transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+            overflow-y: auto;
+            padding: 60px 20px;
+            box-sizing: border-box;
+        }
+
+        .guide-overlay.active { transform: translateY(0); }
+
+        .guide-content { max-width: 850px; margin: 0 auto; color: var(--black); }
+
+        .guide-title { 
+            font-size: 2rem; 
+            font-weight: 900; 
+            border-bottom: 5px solid var(--aqua); 
+            display: inline-block; 
+            margin-bottom: 30px; 
+            text-transform: uppercase;
+        }
+
+        .close-btn {
+            position: fixed; top: 20px; right: 30px; font-size: 50px; 
+            border: none; background: none; cursor: pointer; font-weight: bold;
+            z-index: 100001;
+        }
+
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 40px; }
+        .info-card { padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px var(--shadow); }
+        .ats-box { background: var(--aqua); }
+        .non-ats-box { background: #f9f9f9; border: 2px solid var(--aqua); }
+
+        .steps-container { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+        .step-card { 
+            background: white; padding: 20px; border-radius: 12px; 
+            box-shadow: 5px 5px 20px var(--shadow); display: flex; align-items: center; 
+        }
+        .step-card span { 
+            background: var(--black); color: var(--aqua); width: 35px; height: 35px; 
+            border-radius: 50%; display: flex; justify-content: center; 
+            align-items: center; margin-right: 20px; font-weight: 900; flex-shrink: 0;
+        }
+
+        .comparison-box { display: flex; gap: 20px; margin-top: 40px; }
+        .comp-item { flex: 1; padding: 25px; border-radius: 20px; text-align: center; }
+        .bad { border: 2px dashed #ff4757; background: #fff1f2; }
+        .good { border: 2px solid #2ed573; background: #f0fff4; }
+
+        @media (max-width: 768px) {
+            .info-grid, .comparison-box { grid-template-columns: 1fr; flex-direction: column; }
+            h1 { font-size: 1.8rem; }
+        }
+
+
+
+
+/* --- GLOBAL COMPARISON STYLES --- */
+.global-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow);
+}
+.global-table th {
+    background: var(--black);
+    color: var(--aqua);
+    padding: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.global-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+.global-table tr:nth-child(even) { background: #fcfcfc; }
+.global-table tr:hover { background: #f0fffb; }
+
+.region-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-left: 10px solid var(--black);
+    box-shadow: 0 10px 25px var(--shadow);
+}
+.region-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.region-header h3 { margin: 0; font-weight: 900; text-transform: uppercase; }
+.flag-icon { font-size: 1.5rem; }
+
+.weight-pill {
+    display: inline-block;
+    padding: 4px 10px;
+    background: var(--black);
+    color: var(--aqua);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+
+/* --- SOPHISTICATED DISCLOSURE STYLING --- */
+.disclosure-card {
+    margin-top: 40px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid var(--aqua);
+    text-align: left;
+    box-shadow: 0 10px 30px var(--shadow), 
+                inset 0 0 15px rgba(127, 255, 212, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.disclosure-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--black);
+}
+
+.disclosure-title {
+    color: var(--black);
+    font-weight: 900;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(127, 255, 212, 0.6);
+}
+
+.disclosure-text {
+    font-size: 0.78rem;
+    color: #1a1a1a;
+    line-height: 1.6;
+    font-weight: 600;
+    text-align: justify;
+    filter: drop-shadow(0 2px 2px rgba(255,255,255,0.5));
+}
+
+/* Add a subtle pulse to the border to increase the 'Wow' factor */
+@keyframes aquaPulse {
+    0% { border-color: var(--aqua); box-shadow: 0 10px 30px var(--shadow); }
+    50% { border-color: var(--black); box-shadow: 0 10px 40px rgba(127, 255, 212, 0.6); }
+    100% { border-color: var(--aqua); box-shadow: 0 10px 30px var(--shadow); }
+}
+
+.disclosure-card {
+    animation: aquaPulse 4s infinite ease-in-out;
+}
+
+
+
+
+
+/* --- ZenCV LOGO STYLING --- */
+.brand-logo {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin: 0 auto 10px auto;
+    display: block;
+    filter: drop-shadow(0px 5px 15px rgba(127, 255, 212, 0.8)); /* Aqua glow */
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.brand-logo:hover {
+    transform: scale(1.1) rotate(2deg);
+}
+    </style>
+</head>
+<body>
+
+    <!-- Decoration Background -->
+    <div class="circle" style="width: 300px; height: 300px; top: -100px; left: -100px;"></div>
+    <div class="circle" style="width: 400px; height: 400px; bottom: -150px; right: -150px; background: #a2fff0;"></div>
+
+    <!-- Main Landing UI -->
+    <div class="container">
+        <!-- INSERT LOGO START -->
+        <img src="ZenCV1.png" alt="ZenCV Logo" class="brand-logo">
+        <!-- INSERT LOGO END -->
+
+
+
+<h1 style="text-decoration: none;">ZenCV <br> <span style="font-size: 0.5em; display: block; font-weight: 400;">Stress Free CV</span></h1>
+
+        <div class="button-group">
+            <a href="NON_ATS.html" class="cv-btn btn-fancy">INDIA - DESIGN MODE</a>
+            <a href="ATS.html" class="cv-btn btn-ats">INDIA - ATS MODE</a>
+   <a href="EUROPASS_100.html" class="cv-btn btn-ats">EURO PASS - STRUCTURED MODE</a>
+            <a href="designer.html" class="cv-btn">EURO PASS - DESIGN MODE</a>
+            <a href="gulf_latest.html" class="cv-btn">GULF CV</a>
+            <a href="usa.html" class="cv-btn">USA</a>
+  <a href="aus_nz.html" class="cv-btn">AUS/NZ</a>
+  <a href="consultants.html" class="cv-btn">GLOBAL IMMIGRATION CHECK</a>
+  <a href="resource.html" class="cv-btn">GLOBAL RESUME HANDBOOK</a>
+            <button class="cv-btn btn-guide" onclick="toggleGuide()">💡 MUST KNOW GUIDE</button>
+        </div>
+
+
+
+
+<div class="disclosure-card">
+        <div class="disclosure-title">Strategic Scope & Audience Disclosure</div>
+        <div class="disclosure-text">
+            This bespoke career architecture suite is engineered exclusively for the Indian professional demographic. The system serves as a specialized bridge for first-time international aspirants seeking global relocation and for domestic candidates aiming to solidify their presence within the Indian market. Every logic engine and repository within this framework is calibrated to translate Indian professional excellence into regional recruitment standards with absolute surgical precision.
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+    <!-- MUST KNOW GUIDE OVERLAY (Outside container for proper layout) -->
+    <div id="guideOverlay" class="guide-overlay">
+        <button class="close-btn" onclick="toggleGuide()">×</button>
+        <div class="guide-content">
+            <h2 class="guide-title">The Definitive Resume Guide</h2>
+
+            <div class="info-grid">
+                <div class="info-card ats-box">
+                    <h3>ATS RESUME (Used Where)</h3>
+                    <ul style="line-height: 1.8;">
+                        <li><b>MNCs:</b> Tata, Birla, Infosys, Wipro, Deloitte</li>
+                        <li><b>Portals:</b> LinkedIn, Naukri, Indeed</li>
+                        <li><b>Large Tech:</b> Zomato, Flipkart</li>
+                        <li><b>Sectors:</b> IT, Banking, Insurance</li>
+                    </ul>
+                </div>
+                <div class="info-card non-ats-box">
+                    <h3>NON-ATS RESUME (Used Where)</h3>
+                    <ul style="line-height: 1.8;">
+                        <li><b>SMEs:</b> Small firms & CA Offices</li>
+                        <li><b>Creative:</b> Web/Graphic Design, UI/UX</li>
+                        <li><b>Writing:</b> Content Writers, Bloggers</li>
+                        <li><b>Direct:</b> Walk-in Interviews</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+<!-- ADD THIS INSIDE THE GUIDE CONTENT -->
+<h2 class="guide-title" style="margin-top:40px;">Insider Global Secrets</h2>
+<div class="info-grid">
+    <!-- ATS COST -->
+    <div class="info-card" style="background: #000; color: var(--aqua);">
+        <h3>ATS Cost & Scoring</h3>
+        <p><b>Price:</b> Companies pay $5k-$50k/yr for ATS to filter you out.</p>
+        <p><b>Pass Score:</b> Aim for <b>75% or higher</b> to turn the recruiter's dashboard "Green."</p>
+    </div>
+
+    <!-- USA SECRETS -->
+    <div class="info-card" style="border: 2px solid var(--black);">
+        <h3>USA Standards</h3>
+        <p><b>Strict:</b> No Photos, No Age, No Gender. Including these leads to <b>instant rejection</b> due to anti-discrimination laws.</p>
+    </div>
+
+    <!-- GULF SECRETS -->
+    <div class="info-card" style="border: 2px solid var(--black);">
+        <h3>GULF (UAE/Saudi)</h3>
+        <p><b>Must Include:</b> Photo, Nationality, and Visa Status. Mentioning "Currently in UAE" increases interview chances by 70%.</p>
+    </div>
+
+    <!-- EURO PASS -->
+    <div class="info-card" style="background: #e0edff;">
+        <h3>EURO PASS</h3>
+        <p><b>EU Standard:</b> Required for government/academic roles in Europe. Uses the A1-C2 language scale.</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+            <h3>Industry Standard Softwares</h3>
+            <p><b>Global:</b> SAP SuccessFactors, Workday, Oracle Taleo</p>
+            <p><b>Indians:</b> Darwin Box, Zoho Recruit, Fresh Team, Keka HR</p>
+
+            <h2 class="guide-title" style="margin-top:40px;">How ATS Works (The 7 Steps)</h2>
+            <div class="steps-container">
+                <div class="step-card"><span>1</span> <div><strong>Upload:</strong> Portals like LinkedIn/Naukri (PDF/DOCX).</div></div>
+                <div class="step-card"><span>2</span> <div><strong>Parsing:</strong> Software converts resume to data. <i>Bad format = Rejection 💀</i></div></div>
+                <div class="step-card"><span>3</span> <div><strong>Keyword Matching:</strong> Exact words from JD matter (e.g. "Tally").</div></div>
+                <div class="step-card"><span>4</span> <div><strong>Scoring:</strong> Rank based on match (85%+ is ideal).</div></div>
+                <div class="step-card"><span>5</span> <div><strong>Filtering:</strong> Automatically removes low-score resumes.</div></div>
+                <div class="step-card"><span>6</span> <div><strong>Recruiter View:</strong> HR only sees the top-ranked profiles.</div></div>
+                <div class="step-card"><span>7</span> <div><strong>Human Review:</strong> HR finally reads the actual design.</div></div>
+            </div>
+
+
+
+
+
+
+
+<!-- START OF 100 ATS KILLERS SECTION -->
+<h2 class="guide-title" style="margin-top:60px;">100 ATS Killers: Why Resumes Get Rejected</h2>
+<p style="margin-bottom:20px; color:#555;">These mistakes confuse the algorithm or lead to a 0% match score.</p>
+
+<div class="region-card" style="border-color: #ff4757;">
+    <h3 style="color: #ff4757; margin-bottom: 15px;">🧱 Formatting & Technical Errors</h3>
+    <table class="global-table" style="font-size: 0.75rem;">
+        <tr><td>1. Tables for layout</td><td>2. Text in boxes</td><td>3. Reading order columns</td><td>4. Images for text</td></tr>
+        <tr><td>5. Icons for info</td><td>6. Data in Headers</td><td>7. Data in Footers</td><td>8. Font overload</td></tr>
+        <tr><td>9. Script/Cursive fonts</td><td>10. Color overload</td><td>11. Background images</td><td>12. Watermarks</td></tr>
+        <tr><td>13. PDF as image</td><td>14. Scanned CVs</td><td>15. Complex layouts</td><td>16. Graphic overload</td></tr>
+        <tr><td>17. Misalignment</td><td>18. Bad spacing</td><td>19. Bold/Italic abuse</td><td>20. Infographic styles</td></tr>
+        <tr><td>41. .jpg format</td><td>42. .png format</td><td>43. Passworded PDF</td><td>44. Corrupted files</td></tr>
+        <tr><td>45. Large file size</td><td>46. Bad encoding</td><td>47. Non-searchable PDF</td><td>48. Scanned uploads</td></tr>
+        <tr><td>49. Broken format</td><td>50. Unsupported type</td><td>94. SmartArt usage</td><td>95. Embedded charts</td></tr>
+    </table>
+</div>
+
+<div class="region-card" style="border-color: var(--black);">
+    <h3 style="margin-bottom: 15px;">🔍 Content & Keyword Mistakes</h3>
+    <table class="global-table" style="font-size: 0.75rem;">
+        <tr><td>21. Missing JD keywords</td><td>22. Keyword stuffing</td><td>23. Title mismatch</td><td>24. Generic skills</td></tr>
+        <tr><td>25. No role keywords</td><td>26. No tech skills</td><td>27. No industry terms</td><td>28. Vague words</td></tr>
+        <tr><td>29. No achievements</td><td>30. No action verbs</td><td>31. Using synonyms</td><td>32. No customization</td></tr>
+        <tr><td>33. No summary align</td><td>34. Non-ATS headings</td><td>35. Paragraph skills</td><td>36. Bad density</td></tr>
+        <tr><td>37. Irrelevant exp.</td><td>38. Outdated skills</td><td>39. No cert keywords</td><td>40. No software names</td></tr>
+        <tr><td>51. Too long (5+ pgs)</td><td>52. Too short</td><td>53. No summary</td><td>54. Generic objective</td></tr>
+        <tr><td>55. No wins section</td><td>56. Only duties</td><td>57. No impact results</td><td>58. No metrics (%, $)</td></tr>
+        <tr><td>59. Missing dates</td><td>60. Bad date format</td><td>61. Unexplained gaps</td><td>62. Exaggerations</td></tr>
+        <tr><td>63. Hobbies overload</td><td>64. Personal overload</td><td>65. Contact hidden</td><td>66. Unprofessional Mail</td></tr>
+        <tr><td>67. No LinkedIn</td><td>68. No Portfolio</td><td>69. No GitHub</td><td>70. No Cert proof</td></tr>
+    </table>
+</div>
+
+<div class="region-card" style="border-color: var(--aqua);">
+    <h3 style="margin-bottom: 15px;">⚠️ Language, Strategy & Red Flags</h3>
+    <table class="global-table" style="font-size: 0.75rem;">
+        <tr><td>71. Spelling errors</td><td>72. Grammar errors</td><td>73. Passive voice</td><td>74. Long sentences</td></tr>
+        <tr><td>75. Ambiguous words</td><td>76. Repetitive phrases</td><td>77. Weak verbs</td><td>78. Role confusion</td></tr>
+        <tr><td>79. Casual tone</td><td>80. Unprofessional</td><td>81. Spammed CVs</td><td>82. No job target</td></tr>
+        <tr><td>83. Ignoring ATS</td><td>84. Design > Info</td><td>85. Bad JD order</td><td>86. Non-HR structure</td></tr>
+        <tr><td>87. No skill priority</td><td>88. No filtering</td><td>89. Copy-paste CV</td><td>90. No proof of wins</td></tr>
+        <tr><td>91. Hidden text</td><td>92. White text stuff</td><td>93. Canva-Only CV</td><td>96. Bad Headings</td></tr>
+        <tr><td>97. Emojis in CV</td><td>98. Info in Images</td><td>99. Language mix</td><td>100. Zero optimization</td></tr>
+    </table>
+</div>
+<!-- END OF 100 ATS KILLERS SECTION -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- START OF ATS COST ANALYSIS SECTION -->
+<h2 class="guide-title" style="margin-top:40px;">ATS Market in India: The Cost of Filtering</h2>
+<p style="margin-bottom: 20px; font-style: italic; color: #555;">Indian companies spend lakhs annually to ensure they only see the top 10% of resumes.</p>
+
+<div class="info-grid">
+    <!-- Zoho -->
+    <div class="info-card" style="border-left: 5px solid var(--black);">
+        <h4 style="margin-top:0;">1. Zoho Recruit</h4>
+        <p><b>Target:</b> SMEs & Startups</p>
+        <p><b>Avg. Cost:</b> ₹1,500 – ₹4,500 / month</p>
+        <p><b>Annual Spend:</b> Up to ₹50,000</p>
+    </div>
+
+    <!-- Keka -->
+    <div class="info-card" style="border-left: 5px solid var(--black);">
+        <h4 style="margin-top:0;">2. Keka HR</h4>
+        <p><b>Target:</b> Tech Startups (Bangalore/Gurgaon)</p>
+        <p><b>Avg. Cost:</b> ₹10,000 / month platform fee</p>
+        <p><b>Annual Spend:</b> ₹1.5 Lakhs – ₹3 Lakhs</p>
+    </div>
+
+    <!-- Freshteam -->
+    <div class="info-card" style="border-left: 5px solid var(--black);">
+        <h4 style="margin-top:0;">3. Freshteam</h4>
+        <p><b>Target:</b> Fast-growing Digital Brands</p>
+        <p><b>Avg. Cost:</b> ₹4,000 – ₹10,000 / month</p>
+        <p><b>Annual Spend:</b> ₹1 Lakh – ₹2.5 Lakhs</p>
+    </div>
+
+    <!-- Naukri RMS -->
+    <div class="info-card" style="border-left: 5px solid var(--black);">
+        <h4 style="margin-top:0;">4. Naukri RMS</h4>
+        <p><b>Target:</b> Bulk Hiring Agencies</p>
+        <p><b>Avg. Cost:</b> Linked to Resdex Subscription</p>
+        <p><b>Annual Spend:</b> ₹1 Lakh – ₹3 Lakhs</p>
+    </div>
+
+    <!-- Darwinbox -->
+    <div class="info-card" style="background: var(--black); color: var(--aqua); grid-column: span 2;">
+        <h4 style="margin-top:0; color: var(--aqua);">5. Darwinbox (The Enterprise Giant)</h4>
+        <p><b>Target:</b> Top MNCs (Adani, Mahindra, Kotak, Reliance)</p>
+        <p><b>Annual Spend:</b> <b>₹10 Lakhs – ₹50 Lakhs+ per year</b></p>
+        <p style="font-size: 0.9rem; border-top: 1px solid #444; padding-top: 10px; margin-top: 10px;">
+            <i>When a company spends ₹50 Lakhs on software, they trust the algorithm more than the human eye. <b>Don't take chances with your layout.</b></i>
+        </p>
+    </div>
+</div>
+<!-- END OF ATS COST ANALYSIS SECTION -->
+
+
+
+
+
+
+<!-- START OF CHEAT SHEET SECTION -->
+<h2 class="guide-title" style="margin-top:40px;">Pro Cheat Sheet: Beating the System</h2>
+
+<div class="info-grid">
+    <!-- Psychology -->
+    <div class="info-card" style="border: 2px solid var(--black);">
+        <h4 style="margin-top:0;">👁️ The 6-Second Rule</h4>
+        <p>Recruiters scan in an <b>'F-Pattern'</b>. They focus on the top-left corner. Place your Job Title and top 3 achievements there to grab attention instantly.</p>
+    </div>
+
+    <!-- Keyword Secret -->
+    <div class="info-card" style="border: 2px solid var(--black);">
+        <h4 style="margin-top:0;">🔑 The "3-Time" Rule</h4>
+        <p>To rank #1, mention your primary skill <b>3 times</b>: In the Summary, the Skills list, and inside a Work Bullet. This proves "Authentic Expertise" to the ATS.</p>
+    </div>
+
+    <!-- Myths -->
+    <div class="info-card" style="grid-column: span 2; background: #fffbf0; border: 1px solid #ffeaa7;">
+        <h4 style="margin-top:0; color: #d6a017;">⚠️ Myth Busters</h4>
+        <div style="display: flex; gap: 20px; text-align: left; font-size: 0.9rem;">
+            <div style="flex:1;">
+                <b>Myth:</b> "Keep it to 1 page."<br>
+                <b>Truth:</b> 2 pages are fine if you have 5+ years of experience. Data depth > Page count.
+            </div>
+            <div style="flex:1;">
+                <b>Myth:</b> "Use Skill-Bars/Dots."<br>
+                <b>Truth:</b> ATS cannot read graphics. Use words like <i>'Expert'</i> or <i>'Advanced'</i> instead.
+            </div>
+            <div style="flex:1;">
+                <b>Myth:</b> "PDF is the king."<br>
+                <b>Truth:</b> If an application portal looks 10+ years old, use <b>.DOCX</b>. Some old systems fail to read PDF text.
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END OF CHEAT SHEET SECTION -->
+
+
+
+
+
+<!-- START OF GLOBAL CV STANDARDS SECTION -->
+<h2 class="guide-title" style="margin-top:60px;">Global CV Standards & Requirements</h2>
+<p style="margin-bottom:30px; color:#555;">Different countries have vastly different legal and cultural expectations. One mistake can lead to an automatic rejection.</p>
+
+<!-- 1. INDIA -->
+<div class="region-card" style="border-color: #FF9933;">
+    <div class="region-header">
+        <h3>🇮🇳 India CV (Flexible + Info Heavy)</h3>
+    </div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; font-size:0.9rem;">
+        <div>
+            <p><b>Length:</b> 2–3 pages common (Freshers: 1–2).</p>
+            <p><b>Personal:</b> Name, phone, email, address, DOB, Marital Status (Optional).</p>
+            <p><b>Priority:</b> Education often placed above experience for freshers.</p>
+        </div>
+        <div>
+            <p><b>Formatting:</b> Simple or slightly decorative. ATS awareness is growing.</p>
+            <p><b>Extra:</b> Hobbies, Languages, Strengths are very common.</p>
+            <p style="color: #d63031;"><b>Mistake:</b> Too much unnecessary personal info.</p>
+        </div>
+    </div>
+</div>
+
+<!-- 2. EUROPASS -->
+<div class="region-card" style="border-color: #003399;">
+    <div class="region-header">
+        <h3>🌍 Europass CV (Structured + Standardized)</h3>
+    </div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; font-size:0.9rem;">
+        <div>
+            <p><b>Length:</b> 2–4 pages (No strict limit).</p>
+            <p><b>Personal:</b> Full address, Nationality, DOB, Gender, Photo (ALLOWED).</p>
+            <p><b>Format:</b> Fixed, predefined sections. Cannot change structure.</p>
+        </div>
+        <div>
+            <p><b>Skills:</b> VERY detailed (Language levels A1-C2, Digital skills).</p>
+            <p><b>Tone:</b> Formal + descriptive; not achievement-heavy.</p>
+            <p style="color: #d63031;"><b>Mistake:</b> Using Europass outside Europe (weak impact).</p>
+        </div>
+    </div>
+</div>
+
+<!-- 3. GULF -->
+<div class="region-card" style="border-color: #00843D;">
+    <div class="region-header">
+        <h3>🌍 Gulf CV (Personal Info Heavy)</h3>
+    </div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; font-size:0.9rem;">
+        <div>
+            <p><b>Length:</b> 2–4 pages normal.</p>
+            <p><b>Personal:</b> Photo, Nationality, Visa status, Passport details (CRITICAL).</p>
+            <p><b>Experience:</b> Detailed responsibilities + moderate achievements.</p>
+        </div>
+        <div>
+            <p><b>ATS:</b> Manual screening is more common than ATS in this region.</p>
+            <p><b>Extra:</b> Languages are vital due to expat workforce.</p>
+            <p style="color: #d63031;"><b>Mistake:</b> Missing visa or nationality details.</p>
+        </div>
+    </div>
+</div>
+
+<!-- 4. USA -->
+<div class="region-card" style="border-color: #B22234;">
+    <div class="region-header">
+        <h3>🇺🇸 USA Resume (ATS-Driven + Results)</h3>
+    </div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; font-size:0.9rem;">
+        <div>
+            <p><b>Length:</b> STRICT 1 page (Freshers), Max 2 pages.</p>
+            <p><b>Personal:</b> Name, Phone, Email ONLY. No Photo, DOB, or Gender.</p>
+            <p><b>Experience:</b> Achievements > Responsibilities. Must include numbers.</p>
+        </div>
+        <div>
+            <p><b>ATS:</b> Extremely important. Plain formatting, no graphics/tables.</p>
+            <p><b>Tone:</b> Direct and action-oriented.</p>
+            <p style="color: #d63031;"><b>Mistake:</b> Adding personal details = Instant Rejection.</p>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- 5. UK -->
+<div class="region-card" style="border-color: #00247D;">
+    <div class="region-header">
+        <h3>🇬🇧 UK CV (Balanced + Professional)</h3>
+    </div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; font-size:0.9rem;">
+        <div>
+            <p><b>Length:</b> 2 pages standard (sometimes 3).</p>
+            <p><b>Personal:</b> Name, Contact, Location. No Photo or DOB.</p>
+            <p><b>Profile:</b> A personal profile intro at the top is very common.</p>
+        </div>
+        <div>
+            <p><b>Formatting:</b> Clean, structured, and professional.</p>
+            <p><b>Experience:</b> Balanced mix of daily responsibilities and achievements.</p>
+            <p style="color: #d63031;"><b>Mistake:</b> Too informal or using flashy "designer" layouts.</p>
+        </div>
+    </div>
+</div>
+
+<!-- 6. CANADA -->
+<div class="region-card" style="border-color: #FF0000;">
+    <div class="region-header">
+        <h3>🇨🇦 Canada Resume (USA-Like + Flexible)</h3>
+    </div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; font-size:0.9rem;">
+        <div>
+            <p><b>Length:</b> 1–2 pages strict.</p>
+            <p><b>Personal:</b> Contact ONLY. No Photo, DOB, or Marital Status.</p>
+            <p><b>ATS:</b> Extremely high importance for keyword optimization.</p>
+        </div>
+        <div>
+            <p><b>Experience:</b> Achievement-driven using the "Action-Result" formula.</p>
+            <p><b>Tone:</b> Practical and professional focus.</p>
+            <p style="color: #d63031;"><b>Mistake:</b> Adding unnecessary personal biological details.</p>
+        </div>
+    </div>
+</div>
+
+<!-- 7. AUSTRALIA -->
+<div class="region-card" style="border-color: #00008B;">
+    <div class="region-header">
+        <h3>🇦🇺 Australia CV (Detailed + Practical)</h3>
+    </div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; font-size:0.9rem;">
+        <div>
+            <p><b>Length:</b> 2–4 pages are acceptable and preferred.</p>
+            <p><b>Personal:</b> Basic contact; location is typically included.</p>
+            <p><b>Experience:</b> Detailed breakdown of both responsibilities and wins.</p>
+        </div>
+        <div>
+            <p><b>Formatting:</b> Clean, but allows for more descriptive narrative text.</p>
+            <p><b>References:</b> Usually expected to be listed directly on the CV.</p>
+            <p style="color: #d63031;"><b>Mistake:</b> Making the CV too short (under-selling your skills).</p>
+        </div>
+    </div>
+</div>
+
+<!-- 8. NEW ZEALAND -->
+<div class="region-card" style="border-color: #000000;">
+    <div class="region-header">
+        <h3>🇳🇿 New Zealand CV (Simple + Honest)</h3>
+    </div>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; font-size:0.9rem;">
+        <div>
+            <p><b>Length:</b> 2–3 pages.</p>
+            <p><b>Personal:</b> Basic contact information + current location.</p>
+            <p><b>Experience:</b> Balanced (less aggressive/metrics-heavy than USA).</p>
+        </div>
+        <div>
+            <p><b>Tone:</b> Simple, humble, and honest. Avoid excessive buzzwords.</p>
+            <p><b>Design:</b> Functional, minimal, and very easy to scan.</p>
+            <p style="color: #d63031;"><b>Mistake:</b> Over-marketing yourself or using corporate exaggeration.</p>
+        </div>
+    </div>
+</div>
+
+<!-- GLOBAL ATS WEIGHTAGE TABLE -->
+<h2 class="guide-title" style="margin-top:60px;">Global ATS Scoring Weightage</h2>
+<p style="margin-bottom:20px; font-style:italic;">How the algorithm ranks you based on regional priorities.</p>
+
+<table class="global-table">
+    <thead>
+        <tr>
+            <th>Region</th>
+            <th>Keyword Match</th>
+            <th>Exp. Relevance</th>
+            <th>Education/Skills</th>
+            <th>Completeness</th>
+            <th>Penalty Logic</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>🇮🇳 India</b></td>
+            <td>40% (JD vs CV)</td>
+            <td>25% (Years weight)</td>
+            <td>20% (CA/MBA focus)</td>
+            <td>5% (Social Link)</td>
+            <td>No strict legal penalty</td>
+        </tr>
+        <tr>
+            <td><b>🇺🇸 USA</b></td>
+            <td>50% (Exact match)</td>
+            <td>20% (Metrics)</td>
+            <td>15% (Standardized)</td>
+            <td>5% (Density)</td>
+            <td>-20% for Personal Info</td>
+        </tr>
+        <tr>
+            <td><b>🌍 Gulf</b></td>
+            <td>35% (Job Skills)</td>
+            <td>20% (Practicality)</td>
+            <td>10% (Technical)</td>
+            <td>25% (Visa/Passport)</td>
+            <td>Rejection for missing Visa</td>
+        </tr>
+        <tr>
+            <td><b>🇪🇺 Europass</b></td>
+            <td>25% (Keywords)</td>
+            <td>15% (Description)</td>
+            <td>10% (Degrees)</td>
+            <td>30% (Structure)</td>
+            <td>Points lost for non-standard layout</td>
+        </tr>
+        <tr>
+            <td><b>🇬🇧 UK</b></td>
+            <td>40% (Keywords)</td>
+            <td>25% (Balanced)</td>
+            <td>15% (Education)</td>
+            <td>10% (Summary)</td>
+            <td>Strict on DOB/Photo</td>
+        </tr>
+        <tr>
+            <td><b>🇨🇦 Canada</b></td>
+            <td>45% (Keywords)</td>
+            <td>20% (Results)</td>
+            <td>15% (Skills)</td>
+            <td>10% (Format)</td>
+            <td>-20% for Personal Info</td>
+        </tr>
+        <tr>
+            <td><b>🇦🇺 Australia</b></td>
+            <td>35% (Keywords)</td>
+            <td>25% (Detail)</td>
+            <td>15% (Skills)</td>
+            <td>15% (References)</td>
+            <td>Neutral</td>
+        </tr>
+        <tr>
+            <td><b>🇳🇿 New Zealand</b></td>
+            <td>35% (Keywords)</td>
+            <td>25% (Realism)</td>
+            <td>15% (Skills)</td>
+            <td>15% (Statement)</td>
+            <td>Honesty is key</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<!-- START OF CREATIVE CV USAGE SECTION -->
+<h2 class="guide-title" style="margin-top:60px;">🧑‍🎨 Creative & Designer CVs: Usage Guide</h2>
+<p style="margin-bottom:30px; color:#555;">Creative CVs focus on aesthetics and layout. Use them when your visual presentation is a part of the job requirement.</p>
+
+<div class="info-grid">
+    <!-- INDIA USAGE -->
+    <div class="region-card" style="border-color: var(--aqua); flex: 1;">
+        <div class="region-header">
+            <h3>🇮🇳 Accepted in India</h3>
+        </div>
+        <div style="font-size:0.9rem; line-height: 1.6;">
+            <p><b>Industries:</b> Advertising Agencies, Design Studios, Tech Startups, Media Houses,Digital marketing agencies.</p>
+            <p><b>Roles:</b> Graphic/UI/UX Designers, Motion Artists, Branding Specialists, Content Creators, Video Editors,Frontend Developer (with portfolio focus),Creative Developer,
+Webflow / No-code Designer,Digital Marketing Designer,Social Media Creative Strategist, Art Director</p>
+            <p><b>Hiring Type:</b> Best for portfolio-based hiring and direct agency applications.</p>
+        </div>
+    </div>
+
+    <!-- ABROAD USAGE -->
+    <div class="region-card" style="border-color: var(--black); flex: 1;">
+        <div class="region-header">
+            <h3>🌍 Accepted Abroad</h3>
+        </div>
+        <div style="font-size:0.9rem; line-height: 1.6;">
+            <p><b>USA:</b> Usually sent <i>alongside</i> a portfolio link. Keep design clean to avoid ATS errors.</p>
+            <p><b>UK & Europe:</b> Minimalist "Design" CVs are preferred over flashy ones. Focus on typography.</p>
+            <p><b>Startup Ecosystem:</b> Highly valued in fast-paced tech hubs (Berlin, San Francisco, London).</p>
+        </div>
+    </div>
+</div>
+
+<!-- RED ZONE: WHERE NOT TO USE -->
+<div class="info-card" style="background: #fff1f2; border: 2px dashed #ff4757; margin-top: 20px;">
+    <h3 style="color: #ff4757; margin-top: 0;">⚠️ Where NOT to use Creative CVs</h3>
+    <p style="font-size: 0.9rem; color: #333;">Using a designer CV in these fields often leads to <b>instant rejection</b> because their systems cannot parse the graphics:</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 0.85rem; font-weight: 700;">
+        <div>❌ Banking & Finance</div>
+        <div>❌ Healthcare & Medical</div>
+        <div>❌ Government/UPSC/SSC</div>
+        <div>❌ Legal & Compliance</div>
+        <div>❌ Core Engineering</div>
+        <div>❌ Corporate HR & Admin</div>
+    </div>
+    <p style="margin-top: 15px; font-size: 0.85rem; border-top: 1px solid rgba(255, 71, 87, 0.2); padding-top: 10px;">
+        <i>For these fields, always stick to the <b>"ATS Mode"</b> or <b>"Structured Mode"</b> found on the home screen.</i>
+    </p>
+</div>
+<!-- END OF CREATIVE CV USAGE SECTION -->
+
+
+
+
+
+<!-- START OF POWER WORDS SECTION -->
+<h2 class="guide-title" style="margin-top:60px;">⚡ Power Words: Resume Vocabulary Upgrade</h2>
+<p style="margin-bottom:20px; color:#555;">Stop using weak verbs. Use these high-impact alternatives to improve your score.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+    <table class="global-table" style="font-size: 0.8rem;">
+        <thead><tr><th>Weak Word</th><th>🚀 Power Word</th></tr></thead>
+        <tr><td>Did</td><td><b>Achieved</b></td></tr>
+        <tr><td>Made</td><td><b>Created</b></td></tr>
+        <tr><td>Helped</td><td><b>Assisted</b></td></tr>
+        <tr><td>Worked</td><td><b>Executed</b></td></tr>
+        <tr><td>Good</td><td><b>Excellent</b></td></tr>
+        <tr><td>Bad</td><td><b>Ineffective</b></td></tr>
+        <tr><td>Big</td><td><b>Significant</b></td></tr>
+        <tr><td>Small</td><td><b>Compact</b></td></tr>
+        <tr><td>Talked</td><td><b>Communicated</b></td></tr>
+        <tr><td>Got</td><td><b>Acquired</b></td></tr>
+        <tr><td>Used</td><td><b>Utilized</b></td></tr>
+        <tr><td>Showed</td><td><b>Demonstrated</b></td></tr>
+        <tr><td>Fixed</td><td><b>Resolved</b></td></tr>
+        <tr><td>Started</td><td><b>Initiated</b></td></tr>
+        <tr><td>Ended</td><td><b>Completed</b></td></tr>
+        <tr><td>Kept</td><td><b>Maintained</b></td></tr>
+        <tr><td>Changed</td><td><b>Transformed</b></td></tr>
+        <tr><td>Built</td><td><b>Developed</b></td></tr>
+        <tr><td>Planned</td><td><b>Strategized</b></td></tr>
+        <tr><td>Told</td><td><b>Informed</b></td></tr>
+        <tr><td>Think</td><td><b>Analyzed</b></td></tr>
+        <tr><td>Looked</td><td><b>Evaluated</b></td></tr>
+        <tr><td>Try</td><td><b>Attempted</b></td></tr>
+        <tr><td>Do</td><td><b>Executed</b></td></tr>
+        <tr><td>Make better</td><td><b>Improved</b></td></tr>
+        <tr><td>Make</td><td><b>Produced</b></td></tr>
+        <tr><td>Say</td><td><b>Articulated</b></td></tr>
+        <tr><td>Find</td><td><b>Discovered</b></td></tr>
+        <tr><td>Know</td><td><b>Understood</b></td></tr>
+        <tr><td>Ask</td><td><b>Requested</b></td></tr>
+        <tr><td>Give</td><td><b>Delivered</b></td></tr>
+        <tr><td>Take</td><td><b>Acquired</b></td></tr>
+        <tr><td>Get better</td><td><b>Enhanced</b></td></tr>
+        <tr><td>Help</td><td><b>Supported</b></td></tr>
+        <tr><td>Fix problem</td><td><b>Troubleshot</b></td></tr>
+        <tr><td>Deal with</td><td><b>Managed</b></td></tr>
+        <tr><td>Work on</td><td><b>Handled</b></td></tr>
+        <tr><td>Put</td><td><b>Implemented</b></td></tr>
+        <tr><td>Join</td><td><b>Collaborated</b></td></tr>
+        <tr><td>Lead</td><td><b>Directed</b></td></tr>
+        <tr><td>Work hard</td><td><b>Diligently executed</b></td></tr>
+        <tr><td>Finish</td><td><b>Finalized</b></td></tr>
+        <tr><td>Start</td><td><b>Launched</b></td></tr>
+        <tr><td>Move</td><td><b>Transitioned</b></td></tr>
+        <tr><td>Remove</td><td><b>Eliminated</b></td></tr>
+        <tr><td>Save</td><td><b>Optimized</b></td></tr>
+        <tr><td>Increase</td><td><b>Boosted</b></td></tr>
+        <tr><td>Decrease</td><td><b>Reduced</b></td></tr>
+        <tr><td>Check</td><td><b>Verified</b></td></tr>
+        <tr><td>Watch</td><td><b>Monitored</b></td></tr>
+    </table>
+
+    <table class="global-table" style="font-size: 0.8rem;">
+        <thead><tr><th>Weak Word</th><th>🚀 Power Word</th></tr></thead>
+        <tr><td>Study</td><td><b>Researched</b></td></tr>
+        <tr><td>Learn</td><td><b>Mastered</b></td></tr>
+        <tr><td>Use again</td><td><b>Reutilized</b></td></tr>
+        <tr><td>Break</td><td><b>Disrupted</b></td></tr>
+        <tr><td>Repair</td><td><b>Restored</b></td></tr>
+        <tr><td>Put together</td><td><b>Assembled</b></td></tr>
+        <tr><td>Mix</td><td><b>Integrated</b></td></tr>
+        <tr><td>Sort</td><td><b>Organized</b></td></tr>
+        <tr><td>Plan ahead</td><td><b>Forecasted</b></td></tr>
+        <tr><td>Help team</td><td><b>Collaborated</b></td></tr>
+        <tr><td>Work together</td><td><b>Coordinated</b></td></tr>
+        <tr><td>Think deeply</td><td><b>Analyzed critically</b></td></tr>
+        <tr><td>Simple</td><td><b>Streamlined</b></td></tr>
+        <tr><td>Hard</td><td><b>Challenging</b></td></tr>
+        <tr><td>Easy</td><td><b>Efficient</b></td></tr>
+        <tr><td>Talk to</td><td><b>Liaised with</b></td></tr>
+        <tr><td>Give support</td><td><b>Facilitated</b></td></tr>
+        <tr><td>Make system</td><td><b>Engineered</b></td></tr>
+        <tr><td>Show result</td><td><b>Presented</b></td></tr>
+        <tr><td>Make plan</td><td><b>Designed</b></td></tr>
+        <tr><td>Find solution</td><td><b>Solved</b></td></tr>
+        <tr><td>Handle issue</td><td><b>Addressed</b></td></tr>
+        <tr><td>Make faster</td><td><b>Accelerated</b></td></tr>
+        <tr><td>Make strong</td><td><b>Strengthened</b></td></tr>
+        <tr><td>Make weak</td><td><b>Refined</b></td></tr>
+        <tr><td>Look at</td><td><b>Inspected</b></td></tr>
+        <tr><td>Work faster</td><td><b>Optimized workflow</b></td></tr>
+        <tr><td>Deal problem</td><td><b>Mitigated</b></td></tr>
+        <tr><td>Work properly</td><td><b>Functioned efficiently</b></td></tr>
+        <tr><td>Finish task</td><td><b>Delivered outcomes</b></td></tr>
+        <tr><td>Do job</td><td><b>Performed</b></td></tr>
+        <tr><td>Work in team</td><td><b>Collaborated effectively</b></td></tr>
+        <tr><td>Help improve</td><td><b>Enhanced performance</b></td></tr>
+        <tr><td>Make report</td><td><b>Documented</b></td></tr>
+        <tr><td>Say clearly</td><td><b>Communicated effectively</b></td></tr>
+        <tr><td>Give result</td><td><b>Reported</b></td></tr>
+        <tr><td>Fix system</td><td><b>Stabilized</b></td></tr>
+        <tr><td>Add</td><td><b>Incorporated</b></td></tr>
+        <tr><td>Remove errors</td><td><b>Debugged</b></td></tr>
+        <tr><td>Make growth</td><td><b>Scaled</b></td></tr>
+        <tr><td>Work smooth</td><td><b>Streamlined operations</b></td></tr>
+        <tr><td>Do analysis</td><td><b>Evaluated data</b></td></tr>
+        <tr><td>Think smart</td><td><b>Strategized intelligently</b></td></tr>
+        <tr><td>Handle pressure</td><td><b>Managed workload</b></td></tr>
+        <tr><td>Make decision</td><td><b>Decided strategically</b></td></tr>
+        <tr><td>Improve process</td><td><b>Process optimized</b></td></tr>
+        <tr><td>Handle customers</td><td><b>Managed relations</b></td></tr>
+        <tr><td>Work daily</td><td><b>Consistently performed</b></td></tr>
+        <tr><td>Make output</td><td><b>Generated results</b></td></tr>
+        <tr><td>Achieve goal</td><td><b>Accomplished objectives</b></td></tr>
+    </table>
+</div>
+<!-- END OF POWER WORDS SECTION -->
+
+
+
+
+<!-- START OF ADVANCED INSIGHTS SECTION -->
+<h2 class="guide-title" style="margin-top:60px;">🚀 Advanced Strategy: Think Like a Recruiter</h2>
+<p style="margin-bottom:30px; color:#555;">Moving beyond keywords—these tactics trigger a "Yes" from human recruiters.</p>
+
+<div class="info-grid">
+    <!-- GOOGLE XYZ FORMULA -->
+    <div class="info-card" style="background: var(--black); color: white; grid-column: span 2;">
+        <h3 style="color: var(--aqua);">📐 The Google "XYZ" Formula</h3>
+        <p>Google recruiters suggest every bullet point should follow this logic to prove your value:</p>
+        <div style="background: rgba(127, 255, 212, 0.1); padding: 20px; border-radius: 12px; border: 1px solid var(--aqua); margin: 15px 0;">
+            <p style="font-size: 1.1rem; font-weight: 700;">"Accomplished <span style="color:var(--aqua)">[X]</span> as measured by <span style="color:var(--aqua)">[Y]</span>, by doing <span style="color:var(--aqua)">[Z]</span>."</p>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.85rem;">
+            <div style="color: #bbb;"><b>Weak:</b> "Increased sales for the company."</div>
+            <div style="color: var(--aqua);"><b>Google Standard:</b> "Increased revenue by 15% ($2M) over 6 months by implementing a new CRM automated lead-tracking system."</div>
+        </div>
+    </div>
+
+    <!-- HEATMAPS -->
+    <div class="region-card" style="border-color: var(--aqua);">
+        <div class="region-header"><h3>👁️ Eyetracking: The F-Pattern</h3></div>
+        <p style="font-size: 0.9rem;">Studies show recruiters scan in an <b>'F' shape</b>. They read the top line, the second line, then scroll down the left side.</p>
+        <ul style="font-size: 0.85rem; padding-left: 20px;">
+            <li>Place your <b>Current Title</b> at the very top.</li>
+            <li>Use <b>Bold Text</b> for company names on the left.</li>
+            <li>Keep bullet points <b>short</b> (re-scanning stops at 5 words).</li>
+        </ul>
+    </div>
+
+    <!-- LINKEDIN ALIGNMENT -->
+    <div class="region-card" style="border-color: var(--black);">
+        <div class="region-header"><h3>🔗 The "Digital Shadow"</h3></div>
+        <p style="font-size: 0.9rem;"><b>87% of recruiters</b> check LinkedIn before calling you. If your CV says you left a job in Jan, but LinkedIn says March, you lose trust.</p>
+        <div class="weight-pill">Pro Tip</div>
+        <p style="font-size: 0.85rem;">Customize your LinkedIn URL (e.g., linkedin.com/in/yourname) and put it in your CV header. It increases profile clicks by 40%.</p>
+    </div>
+</div>
+
+<!-- AI CHECKLIST CARD -->
+<div class="info-card" style="background: #e0fffb; border: none; margin-top: 20px;">
+    <h3 style="margin-top:0;">🤖 30-Second AI Audit (Before you send)</h3>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center; font-size: 0.8rem; font-weight: 700;">
+        <div style="background:white; padding:10px; border-radius:10px; box-shadow: 2px 2px 10px var(--shadow);">
+            CTRL + A Test<br><span style="font-weight:400; font-size:0.7rem;">Select all text. If text inside a box doesn't highlight, ATS can't read it.</span>
+        </div>
+        <div style="background:white; padding:10px; border-radius:10px; box-shadow: 2px 2px 10px var(--shadow);">
+            The "Properties" Check<br><span style="font-weight:400; font-size:0.7rem;">Right-click file > Properties. Ensure the "Title" isn't "Template" or another company's name.</span>
+        </div>
+        <div style="background:white; padding:10px; border-radius:10px; box-shadow: 2px 2px 10px var(--shadow);">
+            The Synonym Swap<br><span style="font-weight:400; font-size:0.7rem;">Match the JD word-for-word. If they say "Customer Success," don't write "Client Support."</span>
+        </div>
+    </div>
+</div>
+
+<!-- THE FUTURE OF CVS SECTION -->
+<h2 class="guide-title" style="margin-top:60px; text-align:center;">
+    🔮 The Future: Interactive & Video CVs
+</h2>
+
+<div class="info-grid" style="display:flex; justify-content:center; align-items:center;">
+    <div class="info-card" style="
+        border: 2px solid var(--black);
+        line-height: 1.6;
+        max-width: 600px;
+        text-align: center;
+        margin: 0 auto;
+    ">
+        <p style="font-size: 0.9rem;">
+            The "Static PDF" is dying. In 2025, <b>QR Codes</b> linking to your video introduction or live portfolio are becoming the standard for non-ATS roles.
+        </p>
+        <p style="font-size: 0.85rem; font-style: italic;">
+            "Recruiters want to see your personality before they hear your voice."
+        </p>
+    </div>
+</div>
+<!-- END OF ADVANCED INSIGHTS SECTION -->
+
+
+
+
+
+<!-- START OF THE MASTER STRATEGY SECTION -->
+<h2 class="guide-title" style="margin-top:60px;">🔮 2026 Strategy: The "AI-First" Era</h2>
+<p style="margin-bottom:30px; color:#555;">The game has changed. Large companies now use AI to predict if you will stay with the company for more than 12 months before you even interview.</p>
+
+<div class="info-grid">
+    <!-- THE AI X-RAY -->
+    <div class="info-card" style="background: var(--aqua); color: var(--black); border: none;">
+        <h3 style="margin-top:0;">📡 The AI "X-Ray" Vision</h3>
+        <p style="font-size: 0.85rem; line-height: 1.5;">Modern ATS systems don't just read words; they <b>"Vectorize"</b> your profile. They compare your career path to the company’s top performers.</p>
+        <div class="weight-pill" style="background: var(--black); color: var(--aqua);">Action</div>
+        <p style="font-size: 0.8rem;">Show "Upward Mobility." Even if your job title stayed the same, use words like <i>"Promoted to," "Lead,"</i> or <i>"Expanded scope"</i> to show growth.</p>
+    </div>
+
+    <!-- THE WHITE TEXT TRAP -->
+    <div class="info-card" style="border: 2px solid #ff4757; background: #fff1f2;">
+        <h3 style="color: #ff4757; margin-top:0;">🚫 The "White Text" Trap</h3>
+        <p style="font-size: 0.85rem;"><b>The Myth:</b> Pasting the JD in white text at the bottom to "fool" the ATS.<br>
+        <b>The Reality:</b> Modern AI (like Workday or Greenhouse) highlights hidden text in bright red for the recruiter. <b>Result: Instant Blacklist.</b></p>
+        <p style="font-size: 0.8rem; font-weight: 700; color: #ff4757;">Never use invisible text or hidden keywords.</p>
+    </div>
+</div>
+
+<!-- 2026 HIRING TRENDS -->
+<div class="region-card" style="border-color: var(--black); margin-top: 30px;">
+    <div class="region-header"><h3>🌍 2026 Global Trends: Skills > Degrees</h3></div>
+    <p style="font-size: 0.9rem;">Global giants like <b>Google, IBM, and TATA</b> are moving toward "Skills-Based Hiring."</p>
+    
+    <div style="display: flex; gap: 20px; margin-top: 15px;">
+        <div style="flex: 1; background: #f0fffb; padding: 15px; border-radius: 12px; font-size: 0.8rem;">
+            <b style="color: var(--black);">The "T-Shaped" Professional</b><br>
+            Show deep expertise in ONE area (the vertical bar) and broad knowledge in 3-4 others (the horizontal bar).
+        </div>
+        <div style="flex: 1; background: #f0fffb; padding: 15px; border-radius: 12px; font-size: 0.8rem;">
+            <b style="color: var(--black);">Evidence of AI Literacy</b><br>
+            Whatever your job is, mention how you use AI tools (ChatGPT, Midjourney, Github Copilot) to work 2x faster.
+        </div>
+    </div>
+</div>
+
+<!-- THE INTERVIEWER'S SCRIPT -->
+<div class="info-card" style="background: var(--black); color: white; margin-top: 20px;">
+    <h3 style="color: var(--aqua); margin-top:0;">🎙️ The "Interview Script" Secret</h3>
+    <p style="font-size: 0.85rem;">Your CV is not just for the ATS. It is the <b>Script</b> for your interview. A human recruiter will use your bullet points to ask questions.</p>
+    
+    <div style="background: rgba(127, 255, 212, 0.1); padding: 15px; border-radius: 10px; border-left: 4px solid var(--aqua); margin-top: 10px;">
+        <p style="font-size: 0.8rem; margin:0;"><b>Pro Move:</b> Leave a "Hook."<br>
+        Instead of writing: <i>"Managed a complex project."</i><br>
+        Write: <i>"Resolved a critical project delay that saved the company ₹5 Lakhs in 48 hours."</i><br>
+        <b>Why?</b> The recruiter will 100% ask: <i>"Tell me more about those 48 hours!"</i> You are now controlling the interview.</p>
+    </div>
+</div>
+
+<!-- FINAL AUDIT SCORE CHART -->
+<div style="margin-top: 60px; text-align: center;">
+    <h2 class="guide-title">How to Score Your Own CV</h2>
+    <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;">
+        <div style="background: #eee; padding: 20px; border-radius: 15px; width: 100px;">
+            <div style="font-size: 1.5rem; font-weight: 900;">0-40</div>
+            <div style="font-size: 0.7rem; color: #ff4757;">REJECTED</div>
+        </div>
+        <div style="background: #eee; padding: 20px; border-radius: 15px; width: 100px;">
+            <div style="font-size: 1.5rem; font-weight: 900;">41-70</div>
+            <div style="font-size: 0.7rem; color: #e67e22;">RISKY</div>
+        </div>
+        <div style="background: var(--aqua); padding: 20px; border-radius: 15px; width: 100px; box-shadow: 0 10px 20px rgba(127,255,212,0.4);">
+            <div style="font-size: 1.5rem; font-weight: 900;">71-90</div>
+            <div style="font-size: 0.7rem; color: var(--black);">WINNER</div>
+        </div>
+        <div style="background: var(--black); color: var(--aqua); padding: 20px; border-radius: 15px; width: 100px;">
+            <div style="font-size: 1.5rem; font-weight: 900;">91+</div>
+            <div style="font-size: 0.7rem;">ELITE</div>
+        </div>
+    </div>
+    <p style="font-size: 0.8rem; color: #777; margin-top: 15px;">*Elite scores are achieved by perfect keyword matching and quantifiable achievements.</p>
+</div>
+<!-- END OF THE MASTER STRATEGY SECTION -->
+
+
+
+
+<!-- START OF THE FINAL EDGE SECTION -->
+<h2 class="guide-title" style="margin-top:60px;">🧠 The Final Edge: Subconscious Triggers</h2>
+<p style="margin-bottom:30px; color:#555;">Recruiters are human. These small tweaks influence their mood and perception of you before they even read your name.</p>
+
+<div class="info-grid">
+    <!-- FONT PSYCHOLOGY -->
+    <div class="region-card" style="border-color: var(--black);">
+        <div class="region-header"><h3>🔤 Font Psychology</h3></div>
+        <p style="font-size: 0.85rem;">The "shape" of your letters sends a message to the brain:</p>
+        <table style="width:100%; font-size: 0.75rem; border-collapse: collapse; margin-top: 10px;">
+            <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 5px;"><b>Sans-Serif</b> (Inter/Lato)</td>
+                <td>Modern, Tech-savvy, Approachable.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 5px;"><b>Serif</b> (Times/Playfair)</td>
+                <td>Authority, Traditional, High-End.</td>
+            </tr>
+            <tr>
+                <td style="padding: 5px;"><b>Monospace</b> (Roboto Mono)</td>
+                <td>Precision, Engineering, Detail-oriented.</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- FILE NAMING SECRETS -->
+    <div class="region-card" style="border-color: var(--aqua);">
+        <div class="region-header"><h3>📂 File Naming: Don't be Generic</h3></div>
+        <p style="font-size: 0.85rem;">When a recruiter downloads 50 resumes, they all look the same in the "Downloads" folder.</p>
+        <div style="font-size: 0.8rem; margin-top: 10px;">
+            <div style="color: #ff4757;">❌ <b>Bad:</b> My_Resume_Final.pdf</div>
+            <div style="color: #2ed573;">✅ <b>Pro:</b> [Full Name] | [Job Title] | [Company Name].pdf</div>
+            <p style="font-style: italic; margin-top: 5px; font-size: 0.7rem;">(Example: Rahul_Sharma_Senior_Accountant_TATA.pdf)</p>
+        </div>
+    </div>
+</div>
+
+<!-- THE JD DECODER -->
+<div class="info-card" style="background: var(--black); color: white; margin-top: 20px;">
+    <h3 style="color: var(--aqua); margin-top:0;">🕵️ The "JD Decoder": Read Between the Lines</h3>
+    <p style="font-size: 0.85rem; margin-bottom: 15px;">Job Descriptions (JD) often use "Code Words." If you spot these, change your keywords immediately:</p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.8rem;">
+        <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px;">
+            <b style="color: var(--aqua);">If the JD says:</b> "Fast-paced environment"<br>
+            <b style="color: #bbb;">It means:</b> They are understaffed.<br>
+            <b style="color: var(--aqua);">CV Fix:</b> Emphasize <i>Efficiency</i> and <i>Time Management</i>.
+        </div>
+        <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px;">
+            <b style="color: var(--aqua);">If the JD says:</b> "Self-starter / Wear many hats"<br>
+            <b style="color: #bbb;">It means:</b> No training provided.<br>
+            <b style="color: var(--aqua);">CV Fix:</b> Emphasize <i>Independent Projects</i> and <i>Self-Learning</i>.
+        </div>
+        <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px;">
+            <b style="color: var(--aqua);">If the JD says:</b> "Strong Attention to Detail"<br>
+            <b style="color: #bbb;">It means:</b> One typo = Rejection.<br>
+            <b style="color: var(--aqua);">CV Fix:</b> Use <i>Error-free</i> formatting and <i>Quality Control</i> keywords.
+        </div>
+        <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px;">
+            <b style="color: var(--aqua);">If the JD says:</b> "Proven track record"<br>
+            <b style="color: #bbb;">It means:</b> No Freshers.<br>
+            <b style="color: var(--aqua);">CV Fix:</b> Use <i>Numbers</i> and <i>Case Studies</i> to prove impact.
+        </div>
+    </div>
+</div>
+
+<!-- THE FINAL MOTIVATION -->
+<div style="text-align: center; margin-top: 50px; padding: 40px; border-top: 1px solid #eee;">
+    <h2 style="font-weight: 900; font-size: 1.5rem; text-transform: uppercase;">Ready to Get Hired?</h2>
+    <p style="color: #666;">Choose a mode and start building your future.</p>
+</div>
+<!-- END OF THE FINAL EDGE SECTION -->
+
+
+
+
+
+<div class="info-card" style="background: #e0f7fa; border: none; margin-top: 40px;">
+    <h3>🧠 Final Master Insight</h3>
+    <p>The real difference is <b>PRIORITY</b>, not just structure:</p>
+    <ul>
+        <li><b>USA & Canada:</b> Keywords + Metrics + ATS Compliance.</li>
+        <li><b>Australia & NZ:</b> Detailed + Practical + Straightforward.</li>
+        <li><b>UK & Europe:</b> Balanced + Formal + Standardized.</li>
+        <li><b>India:</b> Information Heavy + Education focused.</li>
+        <li><b>Gulf:</b> Personal Identity + Visa Readiness.</li>
+    </ul>
+</div>
+<!-- END OF GLOBAL CV STANDARDS SECTION -->
+
+
+
+
+
+
+
+            <div class="comparison-box">
+                <div class="comp-item bad">
+                    <h4 style="color: #ff4757;">❌ DESIGN HEAVY (BAD)</h4>
+                    <p>Two columns, Icons, Tables. <br>Result: <b>Data NULL / Rejected</b></p>
+                </div>
+                <div class="comp-item good">
+                    <h4 style="color: #2ed573;">✅ ATS FRIENDLY (GOOD)</h4>
+                    <p>Simple text, Standard headings. <br>Result: <b>Shortlisted!</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleGuide() {
+            const overlay = document.getElementById('guideOverlay');
+            overlay.classList.toggle('active');
+            // Prevent background scrolling when guide is open
+            if(overlay.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
+</body>
+</html>

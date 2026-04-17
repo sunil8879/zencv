@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLOBAL RESUME HANDBOOK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+        --aqua: #7FFFD4;
+        --white: #ffffff;
+        --black: #000000;
+        --glass: rgba(255, 255, 255, 0.8);
+        /* Multi-layered shadows for depth */
+        --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(127, 255, 212, 0.3);
+        --btn-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        --text-glow: 2px 2px 4px rgba(127, 255, 212, 0.8);
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: var(--white);
+        /* Subtle Aqua Gradient for depth without using black */
+        background-image: 
+            radial-gradient(at 0% 0%, hsla(160,100%,95%,1) 0, transparent 50%), 
+            radial-gradient(at 100% 100%, hsla(160,100%,95%,1) 0, transparent 50%);
+        font-family: 'Britannic Bold', 'Impact', sans-serif;
+        overflow-x: hidden;
+    }
+
+    /* Main Rectangular Container */
+    .container {
+        text-align: center;
+        background: var(--glass);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        padding: 60px;
+        border-radius: 20px; /* Rectangular style */
+        border: 2px solid var(--aqua);
+        box-shadow: var(--card-shadow);
+        max-width: 550px;
+        width: 90%;
+        z-index: 10;
+        position: relative;
+    }
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 900;
+        color: var(--black);
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        /* Text Shadow for "Wow" effect */
+        text-shadow: 3px 3px 0px var(--aqua), 5px 5px 10px rgba(0,0,0,0.1);
+        filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
+    }
+
+    .button-group {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        width: 100%;
+    }
+
+    /* Rectangular Glass Buttons */
+    .cv-btn {
+        width: 100%;
+        padding: 18px;
+        font-size: 1.2rem;
+        font-weight: 900;
+        color: var(--black);
+        background: var(--white);
+        border: 2px solid var(--black);
+        border-radius: 10px; /* Rectangular */
+        cursor: pointer;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all 0.4s ease;
+        box-shadow: 6px 6px 0px var(--aqua); /* Pop-art shadow style */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .cv-btn:hover {
+        transform: translate(-3px, -3px);
+        background-color: var(--aqua);
+        box-shadow: 10px 10px 0px var(--black);
+    }
+
+    /* Special Styling for specific buttons */
+    .btn-fancy { border-color: var(--black); }
+    .btn-ats { border-color: var(--black); }
+
+    .btn-guide {
+        background: var(--black) !important;
+        color: var(--aqua) !important;
+        margin-top: 10px;
+        box-shadow: 6px 6px 0px var(--aqua);
+    }
+
+    /* --- DISCLOSURE CARD (RECTANGULAR GLASSMOPRHISM) --- */
+    .disclosure-card {
+        margin-top: 40px;
+        padding: 30px;
+        background: rgba(127, 255, 212, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        border: 2px solid var(--black);
+        text-align: left;
+        box-shadow: 8px 8px 0px var(--aqua);
+        position: relative;
+    }
+
+    .disclosure-title {
+        color: var(--black);
+        font-weight: 900;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        text-shadow: 1px 1px 0px var(--white);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .disclosure-title::before {
+        content: "◈";
+        color: var(--black);
+    }
+
+    .disclosure-text {
+        font-size: 0.9rem;
+        color: #000;
+        line-height: 1.7;
+        font-weight: 500;
+        text-align: justify;
+        font-family: 'Montserrat', sans-serif; /* For better readability */
+    }
+
+    /* Floating Visual elements */
+    .container::after {
+        content: "";
+        position: absolute;
+        top: -15px; right: -15px;
+        width: 50px; height: 50px;
+        background: var(--aqua);
+        z-index: -1;
+        border-radius: 5px;
+    }
+
+    /* Mobile Scale */
+    @media (max-width: 768px) {
+        .container { padding: 30px 20px; }
+        h1 { font-size: 1.8rem; }
+        .cv-btn { font-size: 1rem; }
+    }
+
+
+
+/* --- THICK BLACK SECTION DIVIDER --- */
+.section-divider {
+    border: none;
+    height: 10px; /* Thick */
+    background-color: var(--black);
+    margin: 80px 0; /* Spacing between cards */
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>GLOBAL RESUME HANDBOOK</h1>
+<hr class="section-divider">
+        <p style="letter-spacing: 2px;">The Ultimate Manual for International Career Export</p>
+    </header>
+
+    <!-- 1. AUSTRALIA / NEW ZEALAND -->
+    <div class="country-card">
+        <div class="country-header">
+            <span style="font-size: 3rem;">🇦🇺</span>
+            <h2>AUSTRALIA & NEW ZEALAND</h2>
+            <span class="badge">Country 1</span>
+        </div>
+        
+        <p><strong>Highlights:</strong> Extreme focus on Compliance and Local Readiness.</p>
+        <div class="usp-box">
+            <strong>USP (Unique Selling Point):</strong> Unlike the USA (1 page), AU/NZ resumes are 2–4 pages long. They require deep detail in the "Key Achievements" section.
+        </div>
+
+        <h3>1. ⚡ Action Verb Power-O-Meter (The Impact Analyzer)</h3>
+        <p><strong>What it is:</strong> A real-time linguistic engine that scans your CV for "Active" vs. "Passive" language.</p>
+        <p><strong>How it works:</strong> It uses a mathematical formula:</p>
+        <div class="formula-box">[(Strong Verbs - Weak Verbs) / Total Verbs] x 100.</div>
+        <p><strong>The Advantage:</strong> AU/NZ recruiters hate generic words like "Responsible for" or "Handled." The meter forces you to use high-impact AU-standard verbs like "Spearheaded," "Orchestrated," or "Automated."</p>
+        <p><strong>Goal:</strong> Aim for a score of +70 for a competitive edge.</p>
+
+        <h3>2. 🎯 Target Job Role (The Auto-Population Hub)</h3>
+        <p><strong>What it is:</strong> A dropdown menu containing hundreds of AU/NZ industry roles.</p>
+        <p><strong>How it works:</strong> Selecting a role (e.g., "FIFO Worker" or "Registered Nurse") triggers the Data Repository to auto-fill the "Professional Summary" and "Technical Skills" fields.</p>
+        <p><strong>Logic:</strong> It matches your profile to the ANZSCO (Australia and New Zealand Standard Classification of Occupations) coding standards used by government and enterprise ATS.</p>
+
+        <h3>3. 👤 Personal Details & Profile Photo (The Anti-Bias Shield)</h3>
+        <p><strong>What to fill:</strong> Name, Phone (with +61 or +64 code), Email, LinkedIn, and Portfolio.</p>
+        <p><span class="highlight-text">The Photo Rule:</span> NO PHOTO. Australia has strict anti-discrimination and privacy laws. Unless you are an Actor or Model, a photo is a "Reject" signal.</p>
+        <p><span class="highlight-text">The Privacy Rule:</span> Do NOT fill in Date of Birth, Gender, or Marital Status. This is to protect the employer from "unconscious bias" claims.</p>
+
+        <h3>4. 📝 Professional Summary (The 6-Second Hook)</h3>
+        <p><strong>Experienced Mode:</strong> Generates a "Professional Profile" focusing on years of service and industry expertise.</p>
+        <p><strong>Fresher Mode:</strong> Generates a "Career Objective" focusing on education and the desire to contribute to the local AU/NZ market.</p>
+
+        <h3>5. 💼 Work Experience & Key Achievements (The Meat)</h3>
+        <p><strong>Logic:</strong> For every job, you must fill out "Responsibilities" AND "Achievements."</p>
+        <p><strong>The Difference:</strong> AU/NZ recruiters look for Metrics. If you don't list a separate "Key Achievements" sub-section with percentages (%) or dollar amounts ($), your CV will likely fail.</p>
+
+        <h3>6. 👮 Checks & Availability (The Compliance Hub - MOST IMPORTANT)</h3>
+        <p><strong>What it is:</strong> A dedicated list for National Police Checks, WWCC (Working With Children Check), and Driver's Licenses.</p>
+        <p><strong>Logic:</strong> In AU/NZ, you are often legally barred from a site without these. Checking these boxes adds a "verified" badge to your preview.</p>
+        <p><strong>Availability:</strong> Mentions "Immediate Joiner" or "2-week notice."</p>
+
+        <h3>7. 🛂 Work Eligibility (The Filter)</h3>
+        <p><strong>Logic:</strong> You must select your status (Citizen, PR, or Seeking Visa Sponsorship). Indian offshore applicants must be transparent here to build trust with sponsors.</p>
+
+        <h3>8. 👥 Referees (The Trust Factor)</h3>
+        <p><strong>Logic:</strong> AU/NZ is a "reference-heavy" market. You must include the Name, Position, and Company of at least two past managers.</p>
+
+        <h3>9. 🎯 Keyword Challenge (The ATS Booster)</h3>
+        <p><strong>How it works:</strong> It generates 15 high-value keywords based on your AU/NZ role.</p>
+        <p><strong>Logic:</strong> It identifies the "Missing Keywords" in your draft. It tells you exactly which section (e.g., "Add 'Stakeholder Management' to your Summary") needs the word to bypass the computer filter.</p>
+
+        <h3>10. 📊 AU/NZ ATS Score Engine (The Final Audit)</h3>
+        <p><strong>How it works:</strong> It uses pdf.js to read your uploaded file and compares it to a specific Job Description.</p>
+        <div class="formula-box">
+            40% Keyword Match.<br>
+            20% Experience Relevance.<br>
+            10% Compliance (Police check/Work rights).<br>
+            10% Formatting.
+        </div>
+        <p><strong>Advantage:</strong> It gives you a "High/Moderate/Low" match score specifically tuned for AU/NZ hiring patterns.</p>
+
+        <h3>11. ✉️ Generate AU/NZ Cover Letter (Stochastic Engine)</h3>
+        <p><strong>Logic:</strong> It uses a Stochastic Semantic Pool. Every time you click, it shuffles professional AU-style paragraphs.</p>
+        <p><strong>The Result:</strong> It produces a direct, results-oriented letter that explicitly mentions your Work Rights and Availability—the two things AU recruiters care about most.</p>
+
+        <h3>12. 🎲 Randomize Design (The Combinatorial Engine)</h3>
+        <p><strong>Logic:</strong> Uses a Permutation Matrix of 5 structures, 7 color palettes, 4 font pairs, and 3 border styles.</p>
+        <div class="formula-box">Math: 5×7×4×3 = 420 unique AU/NZ professional "looks".</div>
+
+        <div class="usp-box" style="margin-top: 40px;">
+            <p style="margin:0;">🚀 <strong>SUMMARY HIGHLIGHTS:</strong></p>
+            <p style="margin:5px 0;">USP: Multi-page resumes (2-4 pages) are the norm.</p>
+            <p style="margin:5px 0;">USP: Achievements must be separated from Responsibilities.</p>
+            <p style="margin:5px 0;">HIGHLIGHT: Compliance (Police checks/Licenses) is the #1 filter.</p>
+            <p style="margin:5px 0;">HIGHLIGHT: Referees are mandatory and expected on the document.</p>
+        </div>
+    </div>
+<hr class="section-divider">
+
+    <!-- 2. GULF -->
+    <div class="country-card">
+        <div class="country-header">
+            <span style="font-size: 3rem;">🌍</span>
+            <h2>GULF (UAE, SAUDI, QATAR...)</h2>
+            <span class="badge">Country 2</span>
+        </div>
+
+        <p>This is the comprehensive, step-by-step technical and strategic guide for using the Infinite Gulf CV Factory.</p>
+        <p><strong>Highlights:</strong> Extreme focus on Visa Status and Immediate Availability.</p>
+        <div class="usp-box">
+            <strong>USP (Unique Selling Point):</strong> The Gulf market moves at "high speed." Recruiters filter candidates based on who is currently in the country and who can join tomorrow.
+        </div>
+
+        <h3>1. ⚡ Action Verb Power-O-Meters (The Linguistic Filter)</h3>
+        <p><strong>What it is:</strong> A sophisticated real-time analysis tool at the top of your dashboard.</p>
+        <p><strong>How it works:</strong> It tokenizes your text and looks for Strong Action Verbs (e.g., "Spearheaded," "Optimized") versus Weak Fillers (e.g., "Led," "Helped").</p>
+        <p><strong>The Advantage:</strong> Gulf recruiters often manage multi-national teams. High "Action Power" signals that you are an assertive professional who can take command in a multi-cultural environment.</p>
+        <p><strong>Goal:</strong> Maintain a score above +60 to stand out in a pile of thousands of applicants.</p>
+
+        <h3>2. 🎯 Target Job Role (The Regional Auto-Fill)</h3>
+        <p><strong>What it is:</strong> A drop-down menu of 200+ roles specifically mapped to Gulf industry demands (MEP, HVAC, VAT Accounting, etc.).</p>
+        <p><strong>How it works:</strong> Selecting a role auto-populates the Gulf-Ready Summary and Core Technical Skills.</p>
+        <p><strong>Logic:</strong> The summaries are written with "Gulf Tone"—focusing on international standards (IFRS, ISO, JCI) and large-scale operations.</p>
+
+        <h3>3. 👤 Personal Information & The Profile Photo</h3>
+        <p><strong>Personal Info:</strong> You must include a WhatsApp Number (with country code). In Dubai and Riyadh, recruiters often message you on WhatsApp before calling.</p>
+        <p><strong>LinkedIn/Portfolio:</strong> Essential for white-collar roles to prove your global professional footprint.</p>
+        <p><span class="highlight-text">The Photo:</span> HIGHLY RECOMMENDED. Unlike the USA, a professional headshot (suit and tie/formal wear) is expected in the Gulf. It builds a "trust factor" for ex-pat hiring.</p>
+
+        <h3>4. 🪪 Visa & Gulf Status (The "Deal Breaker" Section - HIGHLIGHT)</h3>
+        <p><strong>What it is:</strong> The most critical section of the Gulf CV.</p>
+        <p><strong>How it works:</strong> You must select your Current Visa Status (Visit Visa, Employment Visa, or Cancelled Visa).</p>
+        <p><strong>The Logic:</strong> If you are on a Visit Visa, you are an "Immediate Joiner" (High Value). If you have a Transferable Visa, the company saves on recruitment costs.</p>
+        <p><strong>Crucial Fields:</strong> You must list your Visa Expiry and Current Location (e.g., "Currently in Dubai on Visit Visa"). This prevents your CV from being ignored by recruiters who don't want to wait for offshore hiring.</p>
+
+        <h3>5. 💼 Work Experience & Leadership</h3>
+        <p><strong>Logic:</strong> For "Experienced" mode, the system adds a Leadership & Management box.</p>
+        <p><strong>Gulf Strategy:</strong> Mentioning experience with "Multi-cultural teams" or "International vendors" is a major bonus. List your responsibilities using the Power-O-Meter verbs.</p>
+
+        <h3>6. 🎓 Education & Certifications</h3>
+        <p><strong>Gulf Requirement:</strong> Certifications like NEBOSH (Safety), PMP (Project Mgmt), or CPA (Accounting) are often more important than degrees in the GCC.</p>
+
+        <h3>7. 🚀 Gulf ATS Score Engine (The Logic Engine)</h3>
+        <p><strong>How it works:</strong> You upload your CV (PDF) and paste the Job Description (JD).</p>
+        <div class="formula-box">
+            35% Keyword Match.<br>
+            15% Gulf Readiness (Detects regional keywords).<br>
+            20% Experience Relevance.
+        </div>
+        <p><strong>Advantage:</strong> It identifies "Missing Keywords" and gives you an Accurate Indian-to-Gulf Suggestion (e.g., "Convert 'Tally' to 'SAP' or 'Oracle' to match Gulf JD").</p>
+
+        <h3>8. 🎯 Keyword Challenge (The Computer Bypass)</h3>
+        <p><strong>How it works:</strong> A modal pops up with 15 specific keywords.</p>
+        <p><strong>The Logic:</strong> It maps keywords to sections. For the Gulf, it will tell you to put keywords like "Tax Compliance" or "Project MEP" into your Professional Summary to ensure the computer ranks you in the Top 1%.</p>
+
+        <h3>9. ✉️ Generate Gulf Cover Letter (The Professional Pitch)</h3>
+        <p><strong>What it is:</strong> A one-click generator that creates a formal, polite, and direct letter.</p>
+        <p><strong>Logic:</strong> It uses Stochastic Synthesis (shuffles different high-end phrases). The Gulf Twist: It automatically injects your Visa Status and Availability into the letter.</p>
+
+        <h3>10. 🎲 Randomize Layout (Combinatorial Design)</h3>
+        <p><strong>Logic:</strong> It uses a Permutation Matrix (Layout x Font x Shape x Border). Generates 400+ unique templates.</p>
+        <p><strong>Style:</strong> Gulf layouts are designed to be "Corporate Elegant"—bold headers with enough white space for easy reading.</p>
+
+        <div class="usp-box" style="margin-top: 40px;">
+            <p style="margin:0;">🚀 <strong>SUMMARY HIGHLIGHTS:</strong></p>
+            <p style="margin:5px 0;">HIGHLIGHT: VISA STATUS is the most important field on the paper.</p>
+            <p style="margin:5px 0;">HIGHLIGHT: WhatsApp Number and Professional Photo are mandatory.</p>
+            <p style="margin:5px 0;">USP: The CV focuses on Job Readiness (Immediate joiners get priority).</p>
+            <p style="margin:5px 0;">USP: ATS Score Engine prioritizes regional keywords (GCC experience, transferable NOC).</p>
+        </div>
+    </div>
+<hr class="section-divider">
+    <!-- 3. USA -->
+    <div class="country-card">
+        <div class="country-header">
+            <span style="font-size: 3rem;">🇺🇸</span>
+            <h2>USA (UNITED STATES)</h2>
+            <span class="badge">Country 3</span>
+        </div>
+
+        <p>This is the comprehensive, step-by-step technical and strategic guide for using the Infinite USA CV Engine.</p>
+        <p><strong>Highlights:</strong> Extreme focus on Anti-Discrimination Laws and Quantifiable Results.</p>
+        <div class="usp-box">
+            <strong>USP (Unique Selling Point):</strong> The "Gold Standard" is a 1-page resume. USA recruiters prioritize "What you achieved" over "What you did."
+        </div>
+
+        <h3>1. ⚡ Action Verb Power-O-Meter (The Impact Multiplier)</h3>
+        <p><strong>What it is:</strong> A real-time analysis tool that measures the "strength" of your bullet points.</p>
+        <p><strong>How it works:</strong> It uses a list of 500+ high-impact US corporate verbs. It calculates your score based on the ratio of Strong Action Verbs vs. Weak Verbs.</p>
+        <p><strong>Goal:</strong> You need a +80 score for US tech and finance roles.</p>
+
+        <h3>2. 🎯 Target Job Role (Standardized Occupation Mapping)</h3>
+        <p><strong>How it works:</strong> Selecting a role auto-fills the Professional Summary with "Achievement-First" language. Logic: It uses the O*NET logic to ensure skills align with US standards.</p>
+
+        <h3>3. 👤 Personal Details & The "No-Photo" Rule (CRITICAL HIGHLIGHT)</h3>
+        <p><strong>What to fill:</strong> Name, Phone (US format), Email, LinkedIn, and Portfolio/GitHub.</p>
+        <p><span class="highlight-text">NO PHOTO:</span> In the USA, adding a photo is the fastest way to get rejected. Companies fear "Bias Lawsuits" and will delete resumes with photos immediately.</p>
+        <p><span class="highlight-text">NO PERSONAL INFO:</span> Do NOT include Date of Birth, Marital Status, Nationality, or Gender.</p>
+        <p><strong>Code logic:</strong> Our USA ATS Engine has a "Strict Legal Penalty" (-10 to -20 points) if it detects any of these "illegal" fields on your paper.</p>
+
+        <h3>4. 📝 Summary vs. Career Objective</h3>
+        <p><strong>Experienced Mode:</strong> Generates a "Professional Summary"—a 3-line elevator pitch focusing on your biggest wins.</p>
+        <p><strong>Fresher Mode:</strong> Generates a "Career Objective"—focusing on your projects and how you will solve problems.</p>
+
+        <h3>5. 💼 Work Experience (The "Google XYZ" Formula)</h3>
+        <p><strong>The Rule:</strong> Every bullet point must be Quantifiable. Example: Don't write "Managed a team." Write "Led a team of 12 to increase revenue by 20% ($2M) in 6 months."</p>
+
+        <h3>6. 🎓 Education & Certifications</h3>
+        <p><strong>Logic:</strong> US employers value the prestige of the institution and the specific degree (B.S., M.S., MBA). List GPA only if it is above 3.5.</p>
+
+        <h3>7. 🎯 Keyword Challenge (The Stemming Engine)</h3>
+        <p><strong>The Logic:</strong> It uses "Stemming" (matching "Manage" with "Management"). It tells you exactly where to insert these words so the US ATS ranks you as a "99% Match."</p>
+
+        <h3>8. 📈 USA ATS Score Engine (The "Hard" Audit)</h3>
+        <div class="formula-box">
+            50% Weighted Skill Match (Stemmed).<br>
+            20% Experience & Partial Title Match.<br>
+            10% Formatting.<br>
+            -20% Penalty if it finds "Photo" or "DOB."
+        </div>
+
+        <h3>9. ✉️ Generate USA Cover Letter (The Confident Pitch)</h3>
+        <p><strong>USA Standards:</strong> It removes the "Subject Line" and focuses on a "Motivation Paragraph" that explains why you want that specific US company.</p>
+
+        <h3>10. 🎲 Randomize Design (The 1-Page Constraint)</h3>
+        <p><strong>Logic:</strong> Combinatorial Engine restricted to "Minimalist" and "Classic" structures. Math: Total combinations: 420+ visual looks, optimized for a strict 1-page limit.</p>
+
+        <div class="usp-box" style="margin-top: 40px;">
+            <p style="margin:0;">🚀 <strong>SUMMARY HIGHLIGHTS:</strong></p>
+            <p style="margin:5px 0;">HIGHLIGHT: BANNED INFO: No Photo, No DOB, No Marital Status.</p>
+            <p style="margin:5px 0;">HIGHLIGHT: NUMBERS MATTER: Experience must be quantifiable (%, $, #).</p>
+            <p style="margin:5px 0;">USP: Designed for a Strict 1-Page Limit for maximum recruiter impact.</p>
+            <p style="margin:5px 0;">USP: ATS Engine includes a "Legal Penalty" check to keep you safe.</p>
+        </div>
+    </div>
+<hr class="section-divider">
+    <!-- 4. EUROPASS -->
+    <div class="country-card">
+        <div class="country-header">
+            <span style="font-size: 3rem;">🇪🇺</span>
+            <h2>EUROPE (EUROPASS)</h2>
+            <span class="badge">Country 4</span>
+        </div>
+
+        <p>This is the comprehensive, step-by-step technical and strategic guide for the Infinite Europass Factory.</p>
+        <p><strong>Highlights:</strong> Extreme focus on CEFR Language Levels and Standardized Structuring.</p>
+        <div class="usp-box">
+            <strong>USP (Unique Selling Point):</strong> The only format universally recognized across 27 EU countries.
+        </div>
+
+        <h3>1. ⚡ Action Verb Power-O-Meter (Linguistic Precision)</h3>
+        <p><strong>Mode 1 (Strict):</strong> Evaluates verbs for "Factual Accuracy" and "Professionalism."</p>
+        <p><strong>Mode 2 (Designer):</strong> Monitors "Creative Impact" verbs like "Conceptualized" or "Visualized."</p>
+
+        <h3>2. 🎯 Target Job Role (Auto-Fill Hub)</h3>
+        <p><strong>Logic:</strong> It translates your background into the "European Tone"—which is formal, humble yet highly competent.</p>
+
+        <h3>3. 👤 Personal Information & Photo (GDPR Compliant)</h3>
+        <p><strong>The Photo:</strong> Strict Mode requires a standard professional headshot (White/Grey background). Designer Mode allows for creative portraits.</p>
+        <p><strong>The Passport Rule:</strong> Includes fields for Passport Number and Visa Type—crucial for Blue Card applications.</p>
+
+        <h3>4. 🎓 Education & Work Experience</h3>
+        <p><strong>Experienced Mode:</strong> Prioritizes Work Experience. <strong>Fresher Mode:</strong> Moves Education & Training to the top.</p>
+
+        <h3>5. 🗣️ Language Skills (The "Europass Special" - HIGHLIGHT)</h3>
+        <p><strong>What it is:</strong> A detailed proficiency grid based on the <strong>Common European Framework of Reference (CEFR)</strong>. Each language is scored from A1 (Beginner) to C2 (Master).</p>
+
+        <h3>6. 🛠️ Personal & Digital Skills</h3>
+        <p><strong>Logic:</strong> Europass requires categorization into Communication, Organisational, Job-Related, and Digital skills.</p>
+
+        <h3>7. 🎯 Keyword Challenge (The European ATS Booster)</h3>
+        <p><strong>Logic:</strong> It maps keywords specifically to Europass Section Names to ensure your CV passes through platforms like EURES.</p>
+
+        <h3>8. 🤖 EU ATS Score Engine (The Global Worker)</h3>
+        <div class="formula-box">
+            20% Structure (Date-left flow).<br>
+            15% Compliance (CEFR language table).<br>
+            20% Keyword Match.
+        </div>
+
+        <h3>9. ✉️ Generate European Cover Letter (The Formal Pitch)</h3>
+        <p><strong>Formatting:</strong> Includes the standard European header. Stochastic Content: Generates country-specific motivation paragraphs.</p>
+
+        <h3>10. 🎲 Randomize Design vs. Strict Mode (The Big Split)</h3>
+        <p><strong>Mode 1 (Strict):</strong> Randomize is DISABLED. locked to the official "Blue Line" format. <strong>Mode 2 (Designer):</strong> Randomize is ENABLED. Generates 400+ visual variations for creative professionals.</p>
+
+        <div class="usp-box" style="margin-top: 40px;">
+            <p style="margin:0;">🚀 <strong>SUMMARY HIGHLIGHTS:</strong></p>
+            <p style="margin:5px 0;">HIGHLIGHT: CEFR GRID: Language proficiency must use the A1-C2 standard.</p>
+            <p style="margin:5px 0;">HIGHLIGHT: GDPR: Professional headshot and nationality are standard/required.</p>
+            <p style="margin:5px 0;">USP: Strict Mode is for maximum compliance; Designer Mode is for the creative elite.</p>
+            <p style="margin:5px 0;">USP: The ATS Engine specifically looks for "Europass Structure".</p>
+        </div>
+    </div>
+<hr class="section-divider">
+    <!-- 5. INDIA -->
+    <div class="country-card">
+        <div class="country-header">
+            <span style="font-size: 3rem;">🇮🇳</span>
+            <h2>INDIA (ATS & DESIGNER)</h2>
+            <span class="badge">Country 5</span>
+        </div>
+
+        <p>This is the comprehensive, step-by-step technical and strategic guide for the Infinite India CV Factory.</p>
+        <p><strong>Highlights:</strong> Extreme focus on Educational Pedigree, Personal Background, and Information Density.</p>
+        <div class="usp-box">
+            <strong>USP (Unique Selling Point):</strong> Includes a mandatory Declaration & Signature section. Indian CVs are detail-heavy and academic-focused.
+        </div>
+
+        <h3>1. ⚡ Action Verb Power-O-Meter (Linguistic Authority)</h3>
+        <p><strong>Advantage:</strong> In the competitive Indian market, recruiters look for "Doers." A high Power Score proves you take ownership.</p>
+
+        <h3>2. 🎯 Target Job Role (The Repository Auto-Fill)</h3>
+        <p><strong>Logic:</strong> 200+ roles specific to the Indian economy (GST Practitioner, Tally Operator, BPO). Pre-optimized with local industry terminology.</p>
+
+        <h3>3. 👤 Personal Details & Profile Photo (The Trust Factor)</h3>
+        <p><strong>Regional Standard:</strong> Requires Date of Birth, Marital Status, and Nationality. Photo: Hidden in ATS Mode; Visible with colorful borders in Designer Mode.</p>
+
+        <h3>4. 💼 Work Experience vs. Internships (Career-Stage Toggle)</h3>
+        <p><strong>Logic:</strong> Fresher Mode automatically renames sections to Career Objective and Internships/Academic Projects to fill the gap.</p>
+
+        <h3>5. 🎓 Education & Certifications (The Academic Hierarchy)</h3>
+        <p><strong>Logic:</strong> Indian recruiters prioritize degrees. Allows multiple entries for 10th, 12th, Graduation, and Post-Graduation.</p>
+
+        <h3>6. 🎯 Keyword Challenge (The Portal Booster)</h3>
+        <p><strong>Advantage:</strong> Uses the exact words filtered by recruiters on Naukri.com, Monster, and LinkedIn.</p>
+
+        <h3>7. 📈 India ATS Score Engine (The Local Audit)</h3>
+        <div class="formula-box">
+            40% Weighted Skill Match.<br>
+            25% Experience & Title Match.<br>
+            10% Education Tiers (Points for B.Tech/MBA/CA).<br>
+            5% Profile Completeness.
+        </div>
+
+        <h3>8. ✉️ Generate Cover Letter (The Respectful Pitch)</h3>
+        <p><strong>Tone:</strong> Uses standard Indian closing salutations like "Yours sincerely" or "Yours faithfully."</p>
+
+        <h3>9. 🎲 Randomize Design (The Combinatorial Engine)</h3>
+        <p><strong>Mode 1 (ATS):</strong> Strict and Linear using standard fonts. <strong>Mode 2 (Designer):</strong> Generates 400+ unique visual identities with colorful icons.</p>
+
+        <h3>10. 📝 Declaration & Signature (The Final Highlight)</h3>
+        <p><strong>Logic:</strong> Adds the formal legal declaration and a placeholder for signature—a Mandatory Requirement for PSUs and large firms.</p>
+
+        <div class="usp-box" style="margin-top: 40px;">
+            <p style="margin:0;">🚀 <strong>SUMMARY HIGHLIGHTS:</strong></p>
+            <p style="margin:5px 0;">HIGHLIGHT: Information Heavy: Includes personal bio-data (DOB, Marital Status).</p>
+            <p style="margin:5px 0;">HIGHLIGHT: Academic Focus: Heavy emphasis on Degree types and Certifications.</p>
+            <p style="margin:5px 0;">USP: ATS Mode for portals; Designer Mode for direct HR emails.</p>
+            <p style="margin:5px 0;">USP: Built-in Declaration section ensures compliance with Indian standards.</p>
+        </div>
+    </div>
+
+
+</body>
+</html>

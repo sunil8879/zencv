@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Immigration Consultant Verification Table</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --aqua: #7FFFD4;
+            --white: #ffffff;
+            --black: #000000;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(160,100%,90%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(160,100%,90%,1) 0, transparent 50%);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--black);
+            text-align: center; /* Global Centering */
+        }
+
+        header {
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            border-bottom: 5px solid var(--black);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-decoration: underline;
+            text-decoration-color: var(--black);
+            text-underline-offset: 12px;
+            text-decoration-thickness: 5px;
+            margin: 0;
+        }
+
+        .alert-pill {
+            background: var(--black);
+            color: var(--aqua);
+            display: inline-block;
+            padding: 10px 35px;
+            border-radius: 50px;
+            margin-top: 30px;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            padding: 0 25px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            border: 3px solid var(--black);
+            border-radius: 35px;
+            padding: 45px 30px;
+            box-shadow: 12px 12px 0px var(--aqua);
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card:hover {
+            box-shadow: 12px 12px 0px var(--black);
+            transform: translateY(-8px);
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-decoration: underline;
+            text-decoration-color: var(--black);
+            text-underline-offset: 8px;
+            text-decoration-thickness: 4px;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        .sub-header {
+            display: block;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+            text-decoration-color: var(--black);
+            text-underline-offset: 5px;
+            text-decoration-thickness: 2px;
+        }
+
+        .info-text {
+            font-size: 1rem;
+            margin: 5px 0;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .link-box {
+            background: var(--black);
+            color: var(--aqua);
+            padding: 14px 25px;
+            border-radius: 15px;
+            margin: 12px auto;
+            width: fit-content;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .link-box a {
+            color: var(--aqua);
+            text-decoration: none;
+        }
+
+        /* --- LIST CENTERING ENGINE --- */
+        ul.points-list {
+            list-style: none; 
+            padding: 0;
+            margin: 20px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .points-list li {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        /* --- UNIVERSAL SECTION --- */
+        .universal-check {
+            grid-column: 1 / -1;
+            background: var(--black);
+            color: var(--white);
+            padding: 70px 40px;
+            border-radius: 50px;
+            border: 8px solid var(--aqua);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            margin-top: 40px;
+        }
+
+        .universal-check h2 {
+            color: var(--aqua);
+            text-decoration-color: var(--aqua);
+            font-size: 2.8rem;
+        }
+
+        .universal-check h3 {
+            color: var(--aqua);
+            text-decoration: underline;
+            text-decoration-color: var(--aqua);
+            text-underline-offset: 10px;
+            margin-bottom: 40px;
+            font-size: 1.5rem;
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .rule-card {
+            border: 2px solid var(--aqua);
+            padding: 25px;
+            border-radius: 25px;
+            background: rgba(127, 255, 212, 0.05);
+        }
+
+        .rule-card b {
+            color: var(--aqua);
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+
+        .footer {
+            padding: 80px 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0.4;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 1.4rem; }
+            .container { grid-template-columns: 1fr; }
+            .card { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Global Immigration / Placement Consultant Verification Table</h1>
+        <div class="alert-pill">🇮🇳 CAUTION: FOR INDIAN ASPIRANTS ONLY</div>
+    </header>
+
+    <div class="container">
+        
+        <!-- 1. USA -->
+        <div class="card">
+            <h2>1. USA</h2>
+            <span class="sub-header">Legal Body (Full Form)</span>
+            <p class="info-text">American Bar Association (ABA)</p>
+            <p class="info-text">Executive Office for Immigration Review (EOIR)</p>
+            
+            <span class="sub-header">Website</span>
+            <div class="link-box">
+                <a href="http://www.americanbar.org" target="_blank">www.americanbar.org</a>
+            </div>
+            <div class="link-box">
+                <a href="http://www.justice.gov/eoir" target="_blank">www.justice.gov/eoir</a>
+            </div>
+
+            <span class="sub-header">Email</span>
+            <p class="info-text"><a href="mailto:info@americanbar.org">info@americanbar.org</a></p>
+
+            <span class="sub-header">Points to Check Scam</span>
+            <ul class="points-list">
+                <li>✅ Only licensed immigration lawyers or DOJ reps allowed</li>
+                <li>✅ Verify lawyer via State Bar website</li>
+                <li>❌ “Visa consultant” without law license = illegal</li>
+                <li>❌ H1B / Green Card guarantee = scam</li>
+            </ul>
+        </div>
+
+        <!-- 2. CANADA -->
+        <div class="card">
+            <h2>2. CANADA</h2>
+            <span class="sub-header">Legal Body (Full Form)</span>
+            <p class="info-text">College of Immigration and Citizenship Consultants (CICC)</p>
+            
+            <span class="sub-header">Website</span>
+            <div class="link-box">
+                <a href="http://www.college-ic.ca" target="_blank">www.college-ic.ca</a>
+            </div>
+
+            <span class="sub-header">Email</span>
+            <p class="info-text"><a href="mailto:info@college-ic.ca">info@college-ic.ca</a></p>
+
+            <span class="sub-header">Points to Check Scam</span>
+            <ul class="points-list">
+                <li>✅ Must be RCIC (Regulated Consultant)</li>
+                <li>✅ Verify in public register</li>
+                <li>❌ Fake RCIC number common scam</li>
+                <li>❌ “Guaranteed PR” = fraud</li>
+            </ul>
+        </div>
+
+        <!-- 3. AUSTRALIA -->
+        <div class="card">
+            <h2>3. AUSTRALIA</h2>
+            <span class="sub-header">Legal Body (Full Form)</span>
+            <p class="info-text">Office of the Migration Agents Registration Authority (OMARA / MARA)</p>
+            
+            <span class="sub-header">Website</span>
+            <div class="link-box">
+                <a href="http://www.mara.gov.au" target="_blank">www.mara.gov.au</a>
+            </div>
+
+            <span class="sub-header">Email</span>
+            <p class="info-text"><a href="mailto:mara@homeaffairs.gov.ae">mara@homeaffairs.gov.au</a></p>
+
+            <span class="sub-header">Points to Check Scam</span>
+            <ul class="points-list">
+                <li>✅ Must have MARA registration number</li>
+                <li>✅ Check status (active/suspended)</li>
+                <li>❌ India-based agent without MARA = illegal advice</li>
+            </ul>
+        </div>
+
+        <!-- 4. NEW ZEALAND -->
+        <div class="card">
+            <h2>4. NEW ZEALAND</h2>
+            <span class="sub-header">Legal Body (Full Form)</span>
+            <p class="info-text">Immigration Advisers Authority (IAA)</p>
+            
+            <span class="sub-header">Website</span>
+            <div class="link-box">
+                <a href="http://www.iaa.govt.nz" target="_blank">www.iaa.govt.nz</a>
+            </div>
+
+            <span class="sub-header">Email</span>
+            <p class="info-text"><a href="mailto:info@iaa.govt.nz">info@iaa.govt.nz</a></p>
+
+            <span class="sub-header">Points to Check Scam</span>
+            <ul class="points-list">
+                <li>✅ Must be Licensed Immigration Adviser (LIA)</li>
+                <li>✅ Verify license number online</li>
+                <li>❌ Unlicensed advice = illegal</li>
+            </ul>
+        </div>
+
+        <!-- 5. UAE -->
+        <div class="card">
+            <h2>5. UAE (Dubai)</h2>
+            <span class="sub-header">Legal Body (Full Form)</span>
+            <p class="info-text">Ministry of Human Resources and Emiratisation (MOHRE)</p>
+            
+            <span class="sub-header">Website</span>
+            <div class="link-box">
+                <a href="http://www.mohre.gov.ae" target="_blank">www.mohre.gov.ae</a>
+            </div>
+
+            <span class="sub-header">Email</span>
+            <p class="info-text"><a href="mailto:ask@mohre.gov.ae">ask@mohre.gov.ae</a></p>
+
+            <span class="sub-header">Points to Check Scam</span>
+            <ul class="points-list">
+                <li>✅ Check valid UAE trade license</li>
+                <li>✅ Recruitment agencies must be MOHRE-approved</li>
+                <li>❌ “Direct Canada/PR from Dubai office” = suspicious</li>
+                <li>❌ No official consultant license exists → verify company</li>
+            </ul>
+        </div>
+
+        <!-- 6. QATAR -->
+        <div class="card">
+            <h2>6. QATAR</h2>
+            <span class="sub-header">Legal Body (Full Form)</span>
+            <p class="info-text">Ministry of Labour Qatar</p>
+            
+            <span class="sub-header">Website</span>
+            <div class="link-box">
+                <a href="http://www.mol.gov.qa" target="_blank">www.mol.gov.qa</a>
+            </div>
+
+            <span class="sub-header">Email</span>
+            <p class="info-text"><a href="mailto:info@mol.gov.qa">info@mol.gov.qa</a></p>
+
+            <span class="sub-header">Points to Check Scam</span>
+            <ul class="points-list">
+                <li>✅ Check licensed recruitment agency list</li>
+                <li>✅ Employer must issue visa—not agent</li>
+                <li>❌ Charging high recruitment fees = illegal</li>
+            </ul>
+        </div>
+
+        <!-- 7. BAHRAIN -->
+        <div class="card">
+            <h2>7. BAHRAIN</h2>
+            <span class="sub-header">Legal Body (Full Form)</span>
+            <p class="info-text">Labour Market Regulatory Authority (LMRA)</p>
+            
+            <span class="sub-header">Website</span>
+            <div class="link-box">
+                <a href="http://www.lmra.gov.bh" target="_blank">www.lmra.gov.bh</a>
+            </div>
+
+            <span class="sub-header">Email</span>
+            <p class="info-text"><a href="mailto:info@lmra.gov.bh">info@lmra.gov.bh</a></p>
+
+            <span class="sub-header">Points to Check Scam</span>
+            <ul class="points-list">
+                <li>✅ Verify employer via LMRA database</li>
+                <li>❌ Fake job offers without employer ID</li>
+            </ul>
+        </div>
+
+        <!-- 8. KUWAIT -->
+        <div class="card">
+            <h2>8. KUWAIT</h2>
+            <span class="sub-header">Legal Body (Full Form)</span>
+            <p class="info-text">Public Authority for Manpower (PAM)</p>
+            
+            <span class="sub-header">Website</span>
+            <div class="link-box">
+                <a href="http://www.manpower.gov.kw" target="_blank">www.manpower.gov.kw</a>
+            </div>
+
+            <span class="sub-header">Email</span>
+            <p class="info-text"><a href="mailto:info@manpower.gov.kw">info@manpower.gov.kw</a></p>
+
+            <span class="sub-header">Points to Check Scam</span>
+            <ul class="points-list">
+                <li>✅ Check recruitment agency license</li>
+                <li>❌ Visa trading scams common</li>
+            </ul>
+        </div>
+
+        <!-- 9. OMAN -->
+        <div class="card">
+            <h2>9. OMAN</h2>
+            <span class="sub-header">Legal Body (Full Form)</span>
+            <p class="info-text">Ministry of Labour Oman</p>
+            
+            <span class="sub-header">Website</span>
+            <div class="link-box">
+                <a href="http://www.mol.gov.om" target="_blank">www.mol.gov.om</a>
+            </div>
+
+            <span class="sub-header">Email</span>
+            <p class="info-text"><a href="mailto:info@mol.gov.om">info@mol.gov.om</a></p>
+
+            <span class="sub-header">Points to Check Scam</span>
+            <ul class="points-list">
+                <li>✅ Employer must sponsor visa</li>
+                <li>❌ Agents promising “free visa + job”</li>
+            </ul>
+        </div>
+
+        <!-- 10. SAUDI ARABIA -->
+        <div class="card">
+            <h2>10. SAUDI ARABIA</h2>
+            <span class="sub-header">Legal Body (Full Form)</span>
+            <p class="info-text">Ministry of Human Resources Saudi Arabia</p>
+            
+            <span class="sub-header">Website</span>
+            <div class="link-box">
+                <a href="http://www.hrsd.gov.sa" target="_blank">www.hrsd.gov.sa</a>
+            </div>
+
+            <span class="sub-header">Email</span>
+            <p class="info-text"><a href="mailto:info@hrsd.gov.sa">info@hrsd.gov.sa</a></p>
+
+            <span class="sub-header">Points to Check Scam</span>
+            <ul class="points-list">
+                <li>✅ Verify via Musaned platform</li>
+                <li>❌ Fake job contracts common</li>
+            </ul>
+        </div>
+
+        <!-- 11. GERMANY -->
+        <div class="card">
+            <h2>11. GERMANY</h2>
+            <span class="sub-header">Legal Body (Full Form)</span>
+            <p class="info-text">Federal Bar Association Germany (BRAK)</p>
+            
+            <span class="sub-header">Website</span>
+            <div class="link-box">
+                <a href="http://www.brak.de" target="_blank">www.brak.de</a>
+            </div>
+
+            <span class="sub-header">Email</span>
+            <p class="info-text"><a href="mailto:zentrale@brak.de">zentrale@brak.de</a></p>
+
+            <span class="sub-header">Points to Check Scam</span>
+            <ul class="points-list">
+                <li>✅ Only licensed lawyers (Rechtsanwalt) allowed</li>
+                <li>❌ “Consultants” without legal license</li>
+            </ul>
+        </div>
+
+        <!-- 12. FRANCE -->
+        <div class="card">
+            <h2>12. FRANCE</h2>
+            <span class="sub-header">Legal Body (Full Form)</span>
+            <p class="info-text">French Bar Council (CNB)</p>
+            
+            <span class="sub-header">Website</span>
+            <div class="link-box">
+                <a href="http://www.cnb.avocat.fr" target="_blank">www.cnb.avocat.fr</a>
+            </div>
+
+            <span class="sub-header">Email</span>
+            <p class="info-text"><a href="mailto:contact@cnb.avocat.fr">contact@cnb.avocat.fr</a></p>
+
+            <span class="sub-header">Points to Check Scam</span>
+            <ul class="points-list">
+                <li>✅ Must be Avocat (lawyer)</li>
+                <li>❌ Unauthorized agents illegal</li>
+            </ul>
+        </div>
+
+        <!-- 13. ITALY -->
+        <div class="card">
+            <h2>13. ITALY</h2>
+            <span class="sub-header">Legal Body (Full Form)</span>
+            <p class="info-text">Italian National Bar Council</p>
+            
+            <span class="sub-header">Website</span>
+            <div class="link-box">
+                <a href="http://www.consiglionazionaleforense.it" target="_blank">www.consiglionazionaleforense.it</a>
+            </div>
+
+            <span class="sub-header">Email</span>
+            <p class="info-text"><a href="mailto:info@consiglionazionaleforense.it">info@consiglionazionaleforense.it</a></p>
+
+            <span class="sub-header">Points to Check Scam</span>
+            <ul class="points-list">
+                <li>✅ Lawyer-based system</li>
+                <li>❌ Fake job visa schemes</li>
+            </ul>
+        </div>
+
+        <!-- 14. ROMANIA -->
+        <div class="card">
+            <h2>14. ROMANIA</h2>
+            <span class="sub-header">Legal Body (Full Form)</span>
+            <p class="info-text">Romanian National Bar Union (UNBR)</p>
+            
+            <span class="sub-header">Website</span>
+            <div class="link-box">
+                <a href="http://www.unbr.ro" target="_blank">www.unbr.ro</a>
+            </div>
+
+            <span class="sub-header">Email</span>
+            <p class="info-text"><a href="mailto:office@unbr.ro">office@unbr.ro</a></p>
+
+            <span class="sub-header">Points to Check Scam</span>
+            <ul class="points-list">
+                <li>✅ Work permits issued by employer only</li>
+                <li>❌ Agents selling work permits</li>
+            </ul>
+        </div>
+
+        <!-- 15. POLAND -->
+        <div class="card">
+            <h2>15. POLAND</h2>
+            <span class="sub-header">Legal Body (Full Form)</span>
+            <p class="info-text">Polish Bar Council (NRA)</p>
+            
+            <span class="sub-header">Website</span>
+            <div class="link-box">
+                <a href="http://www.nra.pl" target="_blank">www.nra.pl</a>
+            </div>
+
+            <span class="sub-header">Email</span>
+            <p class="info-text"><a href="mailto:nra@nra.pl">nra@nra.pl</a></p>
+
+            <span class="sub-header">Points to Check Scam</span>
+            <ul class="points-list">
+                <li>✅ Verify employer + work permit</li>
+                <li>❌ Fake seasonal job scams</li>
+            </ul>
+        </div>
+
+        <!-- 16. SPAIN -->
+        <div class="card">
+            <h2>16. SPAIN</h2>
+            <span class="sub-header">Legal Body (Full Form)</span>
+            <p class="info-text">General Council of Spanish Lawyers</p>
+            
+            <span class="sub-header">Website</span>
+            <div class="link-box">
+                <a href="http://www.abogacia.es" target="_blank">www.abogacia.es</a>
+            </div>
+
+            <span class="sub-header">Email</span>
+            <p class="info-text"><a href="mailto:info@abogacia.es">info@abogacia.es</a></p>
+
+            <span class="sub-header">Points to Check Scam</span>
+            <ul class="points-list">
+                <li>✅ Only lawyers authorized</li>
+                <li>❌ Residency scams</li>
+            </ul>
+        </div>
+
+        <!-- 17. BELGIUM -->
+        <div class="card">
+            <h2>17. BELGIUM</h2>
+            <span class="sub-header">Legal Body (Full Form)</span>
+            <p class="info-text">Belgian Bar Association</p>
+            
+            <span class="sub-header">Website</span>
+            <div class="link-box">
+                <a href="http://www.avocats.be" target="_blank">www.avocats.be</a>
+            </div>
+
+            <span class="sub-header">Email</span>
+            <p class="info-text"><a href="mailto:info@avocats.be">info@avocats.be</a></p>
+
+            <span class="sub-header">Points to Check Scam</span>
+            <ul class="points-list">
+                <li>✅ Lawyer-only system</li>
+                <li>❌ Fake EU job promises</li>
+            </ul>
+        </div>
+
+        <!-- 18. UK -->
+        <div class="card">
+            <h2>18. UK</h2>
+            <span class="sub-header">Legal Body (Full Form)</span>
+            <p class="info-text">Immigration Services Commissioner (OISC)</p>
+            
+            <span class="sub-header">Website</span>
+            <div class="link-box">
+                <a href="http://www.gov.uk/oisc" target="_blank">www.gov.uk/oisc</a>
+            </div>
+
+            <span class="sub-header">Email</span>
+            <p class="info-text"><a href="mailto:info@oisc.gov.uk">info@oisc.gov.uk</a></p>
+
+            <span class="sub-header">Points to Check Scam</span>
+            <ul class="points-list">
+                <li>✅ Must be OISC registered OR solicitor</li>
+                <li>✅ Check registration level (1, 2, or 3)</li>
+                <li>❌ “UK job guarantee visa” scams</li>
+            </ul>
+        </div>
+
+        <!-- FINAL UNIVERSAL CHECK -->
+        <div class="universal-check">
+            <h2>🔥 FINAL UNIVERSAL CHECK</h2>
+            <h3>✅ 5 UNIVERSAL VERIFICATION RULES</h3>
+            
+            <div class="rules-grid">
+                <div class="rule-card">
+                    <b>1. Identity</b>
+                    Ask for license / registration number.
+                </div>
+                <div class="rule-card">
+                    <b>2. Official</b>
+                    Verify on official government website.
+                </div>
+                <div class="rule-card">
+                    <b>3. Trade</b>
+                    Check company registration / trade license.
+                </div>
+                <div class="rule-card">
+                    <b>4. Reality</b>
+                    Avoid guarantees (visa/job/PR).
+                </div>
+                <div class="rule-card">
+                    <b>5. Payment</b>
+                    Never pay 100% upfront.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © GLOBAL PLACEMENT VERIFICATION GUIDE • PREPARED FOR INDIAN INTERNATIONAL ASPIRANTS
+    </div>
+
+</body>
+</html>
