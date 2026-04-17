@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Template Generator | Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+
     <style>
         :root {
             --aqua: #7FFFD4;
@@ -316,6 +319,13 @@
     </style>
 </head>
 <body>
+<button id="installBtn" class="no-print" style="display:none; position:fixed; bottom:20px; right:20px; background:black; color:#7FFFD4; border:2px solid #7FFFD4; padding:15px 25px; border-radius:50px; font-weight:bold; cursor:pointer; z-index:10000; box-shadow:0 10px 20px rgba(0,0,0,0.3); font-family: 'Montserrat', sans-serif;">
+   📲 INSTALL ZENCV APP
+</button>
+
+
+
+
 
     <!-- Decoration Background -->
     <div class="circle" style="width: 300px; height: 300px; top: -100px; left: -100px;"></div>
@@ -1298,6 +1308,35 @@ Webflow / No-code Designer,Digital Marketing Designer,Social Media Creative Stra
                 document.body.style.overflow = 'auto';
             }
         }
+
+
+
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+
+// Handle Install Prompt
+let deferredPrompt;
+const installBtn = document.getElementById('installBtn');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  // Show the button
+  installBtn.style.display = 'block';
+});
+
+installBtn.addEventListener('click', () => {
+  installBtn.style.display = 'none';
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then((choiceResult) => {
+    if (choiceResult.outcome === 'accepted') {
+      console.log('User installed ZenCV');
+    }
+    deferredPrompt = null;
+  });
+});
     </script>
 </body>
 </html>
