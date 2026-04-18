@@ -341,107 +341,104 @@ img.emoji {
 
 /* --- ULTIMATE HOME MOBILE COMPLIANCE (768px) --- */
 @media screen and (max-width: 768px) {
-    /* 1. Main Container Adjustments */
+    /* 1. Prevent Horizontal Scroll on Body */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100%;
+        position: relative;
+    }
+
+    /* 2. Container & Disclosure Fixes */
     .container {
-        padding: 30px 20px !important;
-        width: 88% !important;
-        border-radius: 20px !important;
+        padding: 30px 15px !important;
+        width: 90% !important; /* Slightly wider for better space usage */
+        margin: 0 auto;
+        box-sizing: border-box;
     }
 
     h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 25px !important;
+        font-size: 1.6rem !important;
+        margin-bottom: 20px !important;
     }
 
-    .brand-logo {
-        width: 110px !important;
-    }
-
-    .cv-btn {
-        padding: 14px 15px !important;
-        font-size: 0.95rem !important;
-    }
-
-    /* 2. Disclosure Card Fixes */
     .disclosure-text {
         font-size: 0.72rem !important;
         text-align: left !important;
     }
 
-    /* 3. Guide Overlay - General Fixes */
-    .guide-overlay {
-        padding: 60px 15px 30px 15px !important;
-    }
-
-    .guide-title {
-        font-size: 1.4rem !important;
-        margin-top: 30px !important;
-    }
-
-    .close-btn {
-        font-size: 40px !important;
-        right: 20px !important;
-        top: 10px !important;
-    }
-
-    /* 4. Stacking Grids & Rows */
-    .info-grid {
-        grid-template-columns: 1fr !important;
-        gap: 15px !important;
-    }
-
-    /* Target the 2-column layouts inside region cards (India, USA, etc) */
-    .region-card div[style*="display:grid"] {
-        grid-template-columns: 1fr !important;
-        gap: 10px !important;
-    }
-
-    .comparison-box {
-        flex-direction: column !important;
-    }
-
-    /* 5. Handling Global Tables (Mistake lists) */
-    /* On mobile, we allow horizontal scrolling for tables so text doesn't overlap */
+    /* 3. Tables: STOP HORIZONTAL SCROLLING */
+    /* We force the table to wrap text instead of stretching wide */
     .global-table {
-        display: block !important;
-        overflow-x: auto !important;
+        display: table !important; /* Reset from block */
         width: 100% !important;
-        white-space: nowrap !important;
+        white-space: normal !important; /* Force text to wrap */
+        table-layout: fixed !important; /* Ensures columns stay inside */
     }
 
     .global-table td {
-        padding: 10px 8px !important;
-        font-size: 0.7rem !important;
+        padding: 8px 4px !important;
+        font-size: 0.65rem !important;
+        white-space: normal !important; /* Allow words to wrap to next line */
+        word-break: break-word;
     }
 
-    /* 6. Power Words Grid Fix */
-    div[style*="display: grid; grid-template-columns: 1fr 1fr"] {
+    /* 4. Guide Overlay Fixes */
+    .guide-overlay {
+        padding: 50px 10px 20px 10px !important;
+        width: 100vw !important;
+    }
+
+    .guide-title {
+        font-size: 1.3rem !important;
+        margin-top: 20px !important;
+    }
+
+    .close-btn {
+        font-size: 35px !important;
+        right: 15px !important;
+        top: 5px !important;
+    }
+
+    /* 5. Force Single Columns everywhere */
+    .info-grid, 
+    .comparison-box, 
+    .region-card div[style*="display:grid"],
+    div[style*="display: grid; grid-template-columns: 1fr 1fr"],
+    div[style*="display: flex; gap: 20px; text-align: left; font-size: 0.9rem;"],
+    div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.8rem;"] {
         grid-template-columns: 1fr !important;
-        gap: 0 !important;
+        flex-direction: column !important;
+        display: block !important;
     }
 
-    /* 7. Score Chart Fix (0-40, 41-70 boxes) */
+    /* Spacing for blocked elements */
+    .info-card, .comp-item, .region-card > div {
+        margin-bottom: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* 6. Fix Score Chart (0-40, 71-90 boxes) */
     div[style*="display: flex; justify-content: center; gap: 10px; margin-top: 20px;"] {
-        flex-wrap: wrap !important;
-        justify-content: space-around !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
     }
 
     div[style*="width: 100px;"] {
-        width: 45% !important; /* Two per row on mobile */
-        margin-bottom: 10px !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 10px !important;
     }
 
-    /* 8. JD Decoder Fix */
-    div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.8rem;"] {
-        grid-template-columns: 1fr !important;
-    }
-
-    /* 9. Install Button Scaling */
+    /* 7. Install Button Fixing */
     #installBtn {
-        padding: 12px 20px !important;
-        font-size: 12px !important;
+        padding: 10px 18px !important;
+        font-size: 11px !important;
         bottom: 15px !important;
         right: 15px !important;
+        width: auto !important;
+        white-space: nowrap;
     }
 }
     </style>
