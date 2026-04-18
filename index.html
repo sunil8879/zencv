@@ -441,6 +441,59 @@ img.emoji {
         white-space: nowrap;
     }
 }
+
+
+
+
+
+/* --- FOOTER FLEX NAVIGATION --- */
+.zencv-footer {
+    width: 100%;
+    background: var(--black);
+    padding: 40px 20px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    box-sizing: border-box;
+}
+
+.footer-nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Mobile Responsiveness */
+    gap: 20px;
+}
+
+.footer-btn {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.footer-btn:hover {
+    color: var(--aqua);
+    border-bottom: 2px solid var(--aqua);
+}
+
+.footer-logo {
+    width: 100px;
+    height: auto;
+    filter: brightness(0) invert(1); /* Makes logo white to pop on black bg */
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .footer-nav-container { flex-direction: column; gap: 10px; }
+}
     </style>
 </head>
 <body>
@@ -495,13 +548,29 @@ img.emoji {
         </div>
     </div>
 
+
+
+
+
+<!-- FOOTER SECTION -->
+<footer class="zencv-footer no-print">
+    <div class="footer-nav-container">
+        <a href="features.html" class="footer-btn">Features</a>
+        <a href="about.html" class="footer-btn">About Us</a>
+        <a href="privacy.html" class="footer-btn">Privacy Policy</a>
+        <a href="disclaimer.html" class="footer-btn">Disclaimer</a>
+        <a href="contact.html" class="footer-btn">Contact Us</a>
     </div>
+    
+    <!-- Logo Provision -->
+    <img src="ZenCV1.png" alt="ZenCV Logo" class="footer-logo">
+    
+    <p style="color: rgba(255,255,255,0.4); font-size: 0.7rem; margin-top: 10px;">
+        © 2026 ZenCV Factory | Engineered for Excellence
+    </p>
+</footer>
 
-
-
-
-
-
+    </div>
 
     <!-- MUST KNOW GUIDE OVERLAY (Outside container for proper layout) -->
     <div id="guideOverlay" class="guide-overlay">
