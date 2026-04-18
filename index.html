@@ -538,6 +538,54 @@ img.emoji {
     .side-img { display: none; }
     .container { width: 95%; padding: 20px; }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- ULTIMATE 768px MOBILE COMPLIANCE --- */
+@media screen and (max-width: 768px) {
+    /* 1. Body and Container fix */
+    body {
+        justify-content: center !important;
+        align-items: center !important;
+        height: 100vh !important;
+    }
+
+    .container {
+        width: 85% !important;
+        max-width: 220px !important; /* Your skinny width */
+        padding: 30px 20px !important;
+        left: 0 !important; /* Removes the 5px nudge so it's centered */
+        margin: 0 auto !important;
+    }
+
+    /* 2. Side Images on Mobile - STILL ON THE SAME LEVEL */
+    .side-img {
+        display: block !important;
+        height: 220px !important; /* Smaller for mobile */
+        opacity: 0.2; /* Faded so they don't distract */
+        z-index: -1; /* Behind the white card */
+        top: 50% !important; /* Keeps them centered vertically */
+        transform: translateY(-50%) !important;
+    }
+
+    .side-img-left {
+        left: -30px !important; /* Peeking from the left */
+    }
+
+    .side-img-right {
+        right: -30px !important; /* Peeking from the right */
+    }
+}
     </style>
 </head>
 <body>
