@@ -5,29 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to ZenCV - Privacy Policy</title>
     <style>
-        body { background-color: #ffffff; color: #000000; font-family: sans-serif; margin: 0; }
-        .header { display: flex; align-items: center; padding: 20px; border-bottom: 4px solid #7FFFD4; background: #000; color: #fff; }
-        .logo { height: 60px; margin-right: 20px; }
-        .container { padding: 50px 10%; }
-        .policy-box { border: 1px solid #ddd; padding: 30px; background: #fafafa; border-radius: 10px; }
-        h2 { color: #000; border-bottom: 2px solid #7FFFD4; display: inline-block; padding-bottom: 5px; }
+        :root {
+            --aqua: #7FFFD4;
+            --black: #000000;
+            --white: #ffffff;
+        }
+
+        body { 
+            background-color: var(--white); 
+            color: var(--black); 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            margin: 0; 
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* FIXED HEADER VISIBILITY */
+        .header { 
+            display: flex; 
+            align-items: center; 
+            padding: 15px 5%; 
+            background-color: var(--black); 
+            border-bottom: 5px solid var(--aqua);
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo { 
+            height: 50px; 
+            margin-right: 20px; 
+            /* Placeholder styling if image is missing */
+            background: var(--white);
+            border-radius: 5px;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .header h2 span {
+            color: var(--aqua);
+        }
+
+        .container { 
+            padding: 50px 10%; 
+        }
+
+        h1 { 
+            color: var(--black); 
+            text-transform: uppercase; 
+            border-left: 8px solid var(--aqua);
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+
+        .policy-box { 
+            border: 2px solid var(--black); 
+            padding: 30px; 
+            background: #fff; 
+            border-radius: 15px; 
+            margin-bottom: 40px;
+            box-shadow: 5px 5px 0px var(--aqua);
+        }
+
+        h2 { 
+            color: var(--black); 
+            border-bottom: 3px solid var(--aqua); 
+            display: inline-block; 
+            padding-bottom: 5px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        /* REGULATORY SECTION */
+        .compliance-explanation {
+            background-color: #f4f4f4;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .compliance-explanation h3 {
+            margin-top: 0;
+            color: #1e3a8a; /* Deep blue for authority */
+        }
+
+        .term-box {
+            margin-top: 20px;
+        }
+
+        .term-title {
+            font-weight: 900;
+            color: var(--black);
+            display: block;
+            text-decoration: underline;
+            text-decoration-color: var(--aqua);
+        }
     </style>
 </head>
 <body>
+
     <div class="header">
-        <img src="ZenCV1.png" alt="ZenCV Logo" class="logo">
-        <h2>Welcome to ZenCV</h2>
+        <img src="ZenCV1.png" alt="ZenCV" class="logo">
+        <h2>Welcome to <span>ZenCV</span></h2>
     </div>
+
     <div class="container">
         <h1>Privacy Policy</h1>
+        
         <div class="policy-box">
-            <h2>Data Protection</h2>
-            <p>ZenCV respects your professional data. We do not store your CV information on our servers permanently. Once you download your file, the session data is cleared.</p>
-            <h2>Personal Information</h2>
-            <p>We do not sell or share your email or WhatsApp contact details with third-party recruiters. Your privacy is our priority.</p>
-            <h2>Compliance</h2>
-            <p>Our generator follows GDPR standards for European resumes and CCPA standards for North American applications.</p>
+            <h2>1. Data Protection</h2>
+            <p>ZenCV respects your professional data. We do not store your CV information on our servers permanently. Once you download your file or close your browser tab, the session data is cleared. We use local browser storage to ensure your privacy.</p>
+            
+            <h2>2. Personal Information</h2>
+            <p>We do not sell, rent, or share your email address or WhatsApp contact details with third-party recruiters, marketing agencies, or data brokers. Your contact information is used strictly for communication you initiate.</p>
+            
+            <h2>3. Document Security</h2>
+            <p>The PDF generation happens locally within your browser environment whenever possible, ensuring that your sensitive work history remains under your control.</p>
+        </div>
+
+        <!-- EXPLANATION OF GDPR AND CCPA -->
+        <div class="compliance-explanation">
+            <h3>Global Compliance Standards</h3>
+            <p>To protect our international users, ZenCV aligns its privacy framework with the world's strictest data laws:</p>
+            
+            <div class="term-box">
+                <span class="term-title">GDPR (General Data Protection Regulation)</span>
+                <p>This is the <b>European Union's</b> standard for data privacy. It gives you the "Right to be Forgotten" and ensures that companies cannot collect your data without explicit consent. ZenCV follows GDPR by not tracking your personal professional history.</p>
+            </div>
+
+            <div class="term-box">
+                <span class="term-title">CCPA (California Consumer Privacy Act)</span>
+                <p>This is the <b>North American</b> standard (USA) for consumer privacy. It requires businesses to be transparent about what data is collected and gives users the right to opt-out of the sale of their personal information. ZenCV complies by having a "Zero-Sale" policy for all user metadata.</p>
+            </div>
         </div>
     </div>
+
 </body>
 </html>
