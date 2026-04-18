@@ -498,26 +498,53 @@ img.emoji {
 
 
 
+/* UPDATED NARROW CENTERED CONTAINER */
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px 30px; /* Reduced padding to make box skinnier */
+    border-radius: 30px;
+    border: 1px solid var(--aqua);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px var(--shadow);
+    max-width: 400px; /* Reduced from 500px to show side images */
+    width: 85%;
+    z-index: 10;
+    margin: 0 auto; /* Ensures absolute centering */
+}
+
+
+
+
+
+
+
+
+/* SIDE IMAGES STYLING */
 .side-img {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    width: 200px; /* EXTREMELY REDUCED WIDTH */
-    z-index: 1;
+    height: 400px !important; /* As requested */
+    width: auto !important;
+    z-index: 1; /* Behind the container */
     pointer-events: none;
 }
-.side-img-left { left: 5px; }
-.side-img-right { right: 5px; }
+.side-img-left { left: 20px; }
+.side-img-right { right: 20px; }
 
-/* Hide them on mobile completely to save space */
-@media screen and (max-width: 768px) {
+/* Hide side images on small screens to keep UI clean */
+@media screen and (max-width: 800px) {
     .side-img { display: none; }
+    .container { width: 95%; padding: 20px; }
 }
     </style>
 </head>
 <body>
-<img src="ZenCV7.png" style="position:fixed; left:5px; top:50%; transform:translateY(-50%); height:450px !important; width:auto !important; z-index:1; pointer-events:none;">
-<img src="ZenCV9.png" style="position:fixed; right:5px; top:50%; transform:translateY(-50%); height:450px !important; width:auto !important; z-index:1; pointer-events:none;">
+<img src="ZenCV7.png" class="side-img side-img-left">
+<img src="ZenCV9.png" class="side-img side-img-right">
+
+
 
 <button id="installBtn" class="no-print" style="display:none; position:fixed; bottom:20px; right:20px; background:black; color:#7FFFD4; border:2px solid #7FFFD4; padding:15px 25px; border-radius:50px; font-weight:bold; cursor:pointer; z-index:10000; box-shadow:0 10px 20px rgba(0,0,0,0.3); font-family: 'Montserrat', sans-serif;">
    📲 INSTALL ZENCV APP
