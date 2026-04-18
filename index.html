@@ -494,9 +494,31 @@ img.emoji {
 @media (max-width: 768px) {
     .footer-nav-container { flex-direction: column; gap: 10px; }
 }
+
+
+
+
+.side-img {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px; /* EXTREMELY REDUCED WIDTH */
+    z-index: 1;
+    pointer-events: none;
+}
+.side-img-left { left: 5px; }
+.side-img-right { right: 5px; }
+
+/* Hide them on mobile completely to save space */
+@media screen and (max-width: 768px) {
+    .side-img { display: none; }
+}
     </style>
 </head>
 <body>
+<img src="ZenCV7.png" style="position:fixed; left:5px; top:50%; transform:translateY(-50%); height:450px !important; width:auto !important; z-index:1; pointer-events:none;">
+<img src="ZenCV9.png" style="position:fixed; right:5px; top:50%; transform:translateY(-50%); height:450px !important; width:auto !important; z-index:1; pointer-events:none;">
+
 <button id="installBtn" class="no-print" style="display:none; position:fixed; bottom:20px; right:20px; background:black; color:#7FFFD4; border:2px solid #7FFFD4; padding:15px 25px; border-radius:50px; font-weight:bold; cursor:pointer; z-index:10000; box-shadow:0 10px 20px rgba(0,0,0,0.3); font-family: 'Montserrat', sans-serif;">
    📲 INSTALL ZENCV APP
 </button>
@@ -520,15 +542,15 @@ img.emoji {
 <h1 style="text-decoration: none;">ZenCV <br> <span style="font-size: 0.5em; display: block; font-weight: 400;">Stress Free CV</span></h1>
 
         <div class="button-group">
-            <a href="NON_ATS.html" class="cv-btn btn-fancy">🇮🇳 VIBRANT INDIA — Designer Mode CV</a>
-            <a href="ATS.html" class="cv-btn btn-ats">🇮🇳 OPTIMIZED INDIA — ATS Mode CV</a>
-   <a href="EUROPASS_100.html" class="cv-btn btn-ats">🇪🇺 FORMAL EUROPASS — Structured Mode CV</a>
-            <a href="designer.html" class="cv-btn">🇪🇺 REFINED EUROPASS — Design Mode CV</a>
-            <a href="gulf_latest.html" class="cv-btn">🌍 ELITE GULF — Professional CV</a>
-            <a href="usa.html" class="cv-btn">🇺🇸 POWER USA — Corporate ATS CV</a>
-  <a href="aus_nz.html" class="cv-btn">🇦🇺🇳🇿 PRIME AUS/NZ — Smart CV</a>
-<a href="uk.html" class="cv-btn">🇬🇧 REGAL UK — Professional CV</a>
-<a href="canada.html" class="cv-btn">🇬🇧 MAPLE CANADA — Premium CV</a>
+            <a href="NON_ATS.html" class="cv-btn btn-fancy"> 🇮🇳  VIBRANT INDIA — Designer Mode CV</a>
+            <a href="ATS.html" class="cv-btn btn-ats"> 🇮🇳  OPTIMIZED INDIA — ATS Mode CV</a>
+   <a href="EUROPASS_100.html" class="cv-btn btn-ats"> 🇪🇺  FORMAL EUROPASS — Structured Mode CV</a>
+            <a href="designer.html" class="cv-btn"> 🇪🇺  REFINED EUROPASS — Design Mode CV</a>
+            <a href="gulf_latest.html" class="cv-btn"> 🌍  ELITE GULF — Professional CV</a>
+            <a href="usa.html" class="cv-btn"> 🇺🇸  POWER USA — Corporate ATS CV</a>
+  <a href="aus_nz.html" class="cv-btn"> 🇦🇺🇳🇿  PRIME AUS/NZ — Smart CV</a>
+<a href="uk.html" class="cv-btn"> 🇬🇧  REGAL UK — Professional CV</a>
+<a href="canada.html" class="cv-btn"> 🇬🇧  MAPLE CANADA — Premium CV</a>
 
 <!-- TOP BUTTON: BLUE -->
 <a href="consultants.html" class="cv-btn" style="background-color: #005596 !important; color: white !important; box-shadow: 0 8px 15px rgba(0, 85, 150, 0.4) !important;">GLOBAL IMMIGRATION CHECK</a>
@@ -562,7 +584,7 @@ img.emoji {
         <a href="contact.html" class="footer-btn">Contact Us</a>
     </div>
     
-
+   
     
     <p style="color: rgba(255,255,255,0.4); font-size: 0.7rem; margin-top: 10px;">
         © 2026 ZenCV Factory | Engineered for Excellence
@@ -1559,8 +1581,17 @@ Webflow / No-code Designer,Digital Marketing Designer,Social Media Creative Stra
             twemoji.parse(document.body);
         }
     });
+
+
+
+
+
+
 </script>
-</body>
-</html>
+
+
+
+
+
 </body>
 </html>
