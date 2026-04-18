@@ -18,20 +18,17 @@
             --shadow: rgba(0, 0, 0, 0.15);
         }
 
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: var(--white);
-            background-image: 
-                radial-gradient(at 0% 0%, hsla(160,100%,90%,1) 0, transparent 50%), 
-                radial-gradient(at 100% 100%, hsla(160,100%,90%,1) 0, transparent 50%);
-            font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden; /* Allow vertical scroll if needed, hide horizontal */
-        }
+      body {
+    margin: 0;
+    padding: 0;
+    display: flex !important;           /* Forces Flexbox */
+    justify-content: center !important; /* Centers horizontally */
+    align-items: center !important;     /* Centers vertically */
+    min-height: 100vh;
+    background-color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
 
         /* The Main Container Card */
         .container {
@@ -47,6 +44,7 @@
 margin: 20px auto !important; display: block !important;
             width: 90%;
             z-index: 10;
+position: relative;
         }
 
         h1 {
