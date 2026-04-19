@@ -1,16 +1,19 @@
 /* --- CONFIGURATION --- */
-const SECRET_PASS = "MUMBAI999"; // Change this to your desired password
-const CONTACT_INFO = "sv@nexusai-group.in OR 8879267011";
+const SECRET_PASS = "MUMBAI999"; 
+const CONTACT_INFO = "sv@nexusai-group.in.com OR 8879267011";
 
-// 1. INJECT THE POPUP UI (So you don't have to edit every HTML file)
+// Variable to remember what the user wanted to do (PDF, Word, or Image)
+let pendingAction = null;
+
+// 1. INJECT THE POPUP UI
 document.write(`
 <div id="downloadModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999999; flex-direction:column; align-items:center; justify-content:center; font-family:sans-serif;">
-    <div style="background:white; padding:40px; border-radius:20px; text-align:center; width:320px; border: 4px solid #7FFFD4;">
+    <div style="background:white; padding:40px; border-radius:20px; text-align:center; width:320px; border: 4px solid #7FFFD4; box-shadow: 0 10px 50px rgba(127,255,212,0.3);">
         <h2 style="color:black; margin-top:0;">Download Locked 🔒</h2>
-        <p style="color:#555; font-size:14px;">To download this professional CV without watermarks, please enter the Access Password.</p>
+        <p id="lockMessage" style="color:#555; font-size:14px;">Please enter the Access Password to download your file.</p>
         <hr style="border:0; border-top:1px solid #eee; margin:20px 0;">
-        <input id="passInput" type="text" placeholder="Enter Password" style="width:100%; padding:15px; border:2px solid #ddd; border-radius:10px; font-size:16px; box-sizing:border-box; margin-bottom:15px; text-align:center;">
-        <button onclick="verifyDownload()" style="width:100%; background:black; color:#7FFFD4; border:none; padding:15px; font-weight:900; border-radius:10px; cursor:pointer; font-size:16px;">UNLOCK PDF</button>
+        <input id="passInput" type="text" placeholder="Enter Password" style="width:100%; padding:15px; border:2px solid #ddd; border-radius:10px; font-size:16px; box-sizing:border-box; margin-bottom:15px; text-align:center; color: black;">
+        <button onclick="verifyDownload()" style="width:100%; background:black; color:#7FFFD4; border:none; padding:15px; font-weight:900; border-radius:10px; cursor:pointer; font-size:16px;">UNLOCK & DOWNLOAD</button>
         <div style="margin-top:20px; font-size:12px; color:#333; line-height:1.5;">
             <b>Contact for Password:</b><br>
             ${CONTACT_INFO}
@@ -20,22 +23,26 @@ document.write(`
 </div>
 `);
 
-// 2. SECURITY: DISABLE RIGHT-CLICK & INSPECT SHORTCUTS
-document.addEventListener('contextmenu', event => event.preventDefault()); // No right-click
+// 2. SECURITY: DISABLE RIGHT-CLICK & INSPECT
+document.addEventListener('contextmenu', event => event.preventDefault());
 document.onkeydown = function(e) {
     if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) {
-        alert("Code protection enabled. Contact admin for access.");
         return false;
     }
 };
 
-// 3. OVERRIDE THE PRINT FUNCTION
-// Call this function from your download buttons: onclick="attemptDownload()"
-function attemptDownload() {
-    // If they already unlocked it this session, just print
+/**
+ * 3. THE TRIGGER FUNCTION
+ * @param {string} type - 'pdf', 'word', or 'image'
+ */
+function attemptDownload(type) {
+    pendingAction = type; // Remember if they clicked PDF, Word, or Image
+
     if (sessionStorage.getItem("cv_unlocked") === "TRUE") {
-        window.print();
+        executeFileDownload();
     } else {
+        // Show the password box
+        document.getElementById("lockMessage").innerText = "Unlocking " + type.toUpperCase() + " version...";
         document.getElementById("downloadModal").style.display = "flex";
     }
 }
@@ -45,9 +52,35 @@ function verifyDownload() {
     if (input === SECRET_PASS) {
         sessionStorage.setItem("cv_unlocked", "TRUE");
         document.getElementById("downloadModal").style.display = "none";
-        window.print();
+        executeFileDownload();
     } else {
         alert("Invalid Password. Please contact " + CONTACT_INFO);
+    }
+}
+
+/**
+ * 4. THE EXECUTION LOGIC
+ * This checks the "pendingAction" and runs the correct command
+ */
+function executeFileDownload() {
+    if (pendingAction === 'pdf') {
+        window.print();
+    } 
+    else if (pendingAction === 'word') {
+        // Replace 'exportToWord' with your actual function name for Word export
+        if (typeof exportToWord === "function") {
+            exportToWord(); 
+        } else {
+            alert("Word Export function not found. Use Print > Save as PDF.");
+        }
+    } 
+    else if (pendingAction === 'image') {
+        // Replace 'exportToImage' with your actual function name for Image export
+        if (typeof exportToImage === "function") {
+            exportToImage();
+        } else {
+            alert("Image Export function not found.");
+        }
     }
 }
 
