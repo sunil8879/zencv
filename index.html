@@ -597,6 +597,28 @@ img.emoji {
     </style>
 </head>
 <body>
+<div id="lockScreen" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:white; z-index:99999; flex-direction:column; align-items:center; justify-content:center; font-family:sans-serif;">
+    <div style="background:black; padding:40px; border-radius:20px; text-align:center; color:white; width:300px;">
+        <h2 style="color:#7FFFD4;">ZEN CV LOCKED</h2>
+        <input id="uEmail" type="email" placeholder="Email" style="width:100%; padding:10px; margin:10px 0; border-radius:5px;">
+        <input id="uPass" type="password" placeholder="Password" style="width:100%; padding:10px; margin:10px 0; border-radius:5px;">
+        <button id="uBtn" onclick="login()" style="width:100%; background:#7FFFD4; color:black; border:none; padding:15px; font-weight:bold; border-radius:5px; cursor:pointer;">UNLOCK NOW</button>
+        <p style="font-size:12px; margin-top:15px;">Need access? WhatsApp: +91 8879267011</p>
+    </div>
+</div>
+
+<script>
+    // Show lock screen if not authenticated
+    if(localStorage.getItem("zencv_unlocked") !== "true") {
+        document.getElementById("lockScreen").style.display = "flex";
+    }
+</script>
+
+
+
+
+
+
 <img src="ZenCV7.png" class="side-img side-img-left">
 <img src="ZenCV9.png" class="side-img side-img-right">
 
