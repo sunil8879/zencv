@@ -704,11 +704,7 @@ async function processLogin() {
 }
 
 // --- LOGOUT LOGIC ---
-function processLogout() {
-    localStorage.removeItem("zencv_unlocked");
-    alert("Logged out successfully.");
-    checkProtection(); // Refresh UI to show lock screen
-}
+function processLogout() { localStorage.clear(); location.reload(); }
 
 // Initialize on start
 window.onload = checkProtection;
