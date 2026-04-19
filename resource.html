@@ -182,40 +182,42 @@
 
 
 
-
-@media (max-width: 768px) {
-    /* 1. Prevent the container from expanding or moving right */
+@media screen and (max-width: 768px) {
+    /* 1. Keep the main page fixed and prevent side-to-side wobble */
     .container, .summary-container {
-        max-width: 100% !important;
+        width: 100% !important;
+        max-width: 100vw !important;
         overflow: hidden !important;
         box-sizing: border-box;
     }
 
-    /* 2. Force the table to become its own scrollable block */
+    /* 2. Enable scrolling on the table */
     .matrix-table {
-        display: block;      /* Allows the table to scroll like a div */
+        display: block;
+        overflow-x: auto;
         width: 100%;
-        overflow-x: auto;    /* Adds the horizontal scroll bar */
-        white-space: nowrap; /* Prevents text from squishing so it forced a scroll */
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+        -webkit-overflow-scrolling: touch;
     }
 
-    /* 3. Ensure table parts remain visible as a block */
-    .matrix-table thead, 
-    .matrix-table tbody, 
-    .matrix-table tr {
-        display: table;      /* Keeps internal table structure intact */
-        width: 100%;
-        table-layout: fixed; /* Optional: keeps columns consistent */
+    /* 3. FIX OVERLAPPING: Allow text to wrap and set minimum widths */
+    .matrix-table th, 
+    .matrix-table td {
+        white-space: normal !important; /* Allows text to wrap into multiple lines */
+        word-wrap: break-word;         /* Breaks long words if necessary */
+        min-width: 140px;               /* Forces enough width to prevent overlap */
+        padding: 10px !important;
     }
 
-    /* 4. Visual Hint: Adds a scrollbar indicator on mobile */
-    .matrix-table::-webkit-scrollbar {
-        height: 5px;
+    /* 4. Ensure the Country Name column is readable */
+    .c-name {
+        min-width: 110px !important;
+        display: table-cell;
     }
-    .matrix-table::-webkit-scrollbar-thumb {
-        background: var(--aqua);
-        border-radius: 10px;
+
+    /* 5. Clean up lists so they don't bunch up */
+    .spec-list, .no-list {
+        min-width: 160px;
+        padding-left: 12px !important;
     }
 }
 </style>
