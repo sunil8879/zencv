@@ -1,5 +1,6 @@
 /* --- CONFIGURATION --- */
-const SECRET_PASS = "MUMBAI999"; 
+
+const SECRET_KEYS = ["MUMBAI999", "BRIGHT24", "ELITE01"]; // Add as many as you want here
 const CONTACT_INFO = "sv@nexusai-group.in.com OR 8879267011";
 
 // 1. INJECT THE POPUP UI
@@ -48,11 +49,17 @@ document.addEventListener('click', function(e) {
 
 // 4. VERIFY PASSWORD
 function verifyAndExecute() {
-    const input = document.getElementById("passInput").value;
-    if (input === SECRET_PASS) {
+    const input = document.getElementById("passInput").value.toUpperCase().trim();
+    
+    // This checks if the entered password is ANYWHERE in your list
+    if (SECRET_KEYS.includes(input)) {
         sessionStorage.setItem("cv_unlocked", "TRUE");
         document.getElementById("downloadModal").style.display = "none";
-        alert("System Unlocked! Please click the download button again.");
+        alert("System Unlocked! You can now download any template.");
+        // If it was a print command, trigger it automatically now
+        if (typeof originalPrint === "function") {
+            // This is optional if you want it to trigger immediately
+        }
     } else {
         alert("Invalid Password. Please contact " + CONTACT_INFO);
     }
