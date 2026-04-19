@@ -1,6 +1,6 @@
 /* --- CONFIGURATION --- */
-const SECRET_PASS = "MUMBAI99"; // Change this to your desired password
-const CONTACT_INFO = "xyz@rediffmail.com OR 9999988888";
+const SECRET_PASS = "MUMBAI999"; // Change this to your desired password
+const CONTACT_INFO = "sv@nexusai-group.in OR 8879267011";
 
 // 1. INJECT THE POPUP UI (So you don't have to edit every HTML file)
 document.write(`
