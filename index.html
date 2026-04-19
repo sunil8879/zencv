@@ -598,6 +598,30 @@ img.emoji {
     </style>
 </head>
 <body>
+<!-- Put this where you want the button to appear -->
+<button onclick="logout()" class="logout-btn">🔒 LOGOUT SESSION</button>
+
+<style>
+.logout-btn {
+    background: #ff4757; /* Red color for logout */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 0.7rem;
+    transition: 0.3s;
+}
+.logout-btn:hover {
+    background: #000;
+    color: #7FFFD4;
+    transform: scale(1.05);
+}
+</style>
+
 <div id="lockScreen" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:white; z-index:99999; flex-direction:column; align-items:center; justify-content:center; font-family:sans-serif;">
     <div style="background:black; padding:40px; border-radius:20px; text-align:center; color:white; width:300px;">
         <h2 style="color:#7FFFD4;">ZEN CV LOCKED</h2>
