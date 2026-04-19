@@ -29,7 +29,7 @@ async function login() {
            localStorage.setItem("zencv_unlocked", "true");
             location.reload(); // Unlocks the page
         } else {
-            alert("Invalid Login. Contact +91 XXXXX XXXXX");
+            alert("Invalid Login. Contact +91 8879267011");
             b.innerText = "Unlock Now";
         }
     } catch (err) {
