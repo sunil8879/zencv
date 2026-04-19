@@ -1098,9 +1098,9 @@ div:has(> #strong-count), #strong-count {
 </button>
 
 
-<button class="btn btn-word" onclick="attemptDownload('word')">📝 Download Word (.doc)</button>
-<button class="btn" onclick="attemptDownload('pdf')" style="background-color: red; color: white; padding: 10px 20px; cursor: pointer; border: none; border-radius: 5px;">Export PDF</button>
-<button class="btn" onclick="attemptDownload('image')" style="background-color: blue; color: white; padding: 15px; cursor: pointer; border: none; border-radius: 6px; margin-top: 10px;">🖼️ EXPORT IMAGE</button>
+<button class="btn btn-word" onclick="exportToWord()">📝 Download Word (.doc)</button>
+<button class="btn" onclick="exportPDF()" style="background-color: red; color: white; padding: 10px 20px; cursor: pointer; border: none; border-radius: 5px;">Export PDF</button>
+<button class="btn" onclick="exportImage()" style="background-color: blue; color: white; padding: 15px; cursor: pointer; border: none; border-radius: 6px; margin-top: 10px;">🖼️ EXPORT IMAGE</button>
 
 <!-- SKILLS ANALYZER BUTTON -->
 <button class="btn" onclick="analyzeSkills()" style="background: var(--aqua) !important; color: #000 !important; border: 2px solid #000 !important; margin-top: 15px;">
