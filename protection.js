@@ -1,6 +1,6 @@
 /* --- CONFIGURATION --- */
-const SECRET_PASS = "MUMBAI99"; 
-const CONTACT_INFO = "xyz@rediffmail.com OR 9999988888";
+const SECRET_PASS = "MUMBAI999"; 
+const CONTACT_INFO = "sv@nexusai-group.in.com OR 8879267011";
 
 // Variable to store the original button action
 let hijackedAction = null;
