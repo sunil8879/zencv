@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="auth.js"></script>
+ <script src="protection.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infinite Gulf CV Generator</title>
@@ -625,16 +625,16 @@ div:has(> #strong-count), #strong-count {
     <button class="btn-randomize" style="background:#2980b9; width: 50%; margin: 0;" onclick="openKeywordChallenge()">
         <i class="fas fa-bullseye"></i> KEYWORD CHALLENGE
     </button>     
-    <button onclick="downloadPDF()" class="btn-randomize" style="background:#c0392b; width: 50%; margin: 0;">
+    <button onclick="attemptDownload()" class="btn-randomize" style="background:#c0392b; width: 50%; margin: 0;">
         <i class="fas fa-file-pdf"></i> Download PDF
     </button>
 </div>
 
                <div style="display: flex; gap: 10px; margin-top: 10px; width: 100%;">
-    <button onclick="downloadPNG()" class="btn-randomize" style="background:#2980b9; width: 50%; margin: 0;">
+    <button onclick="attemptDownload()" class="btn-randomize" style="background:#2980b9; width: 50%; margin: 0;">
         <i class="fas fa-file-image"></i> Download Image (PNG)
     </button>
-    <button onclick="downloadWord()" class="btn-randomize" style="background:#2c3e50; border:1px solid #fff; width: 50%; margin: 0;">
+    <button onclick="attemptDownload()" class="btn-randomize" style="background:#2c3e50; border:1px solid #fff; width: 50%; margin: 0;">
         <i class="fas fa-file-word"></i> Download WORD
     </button>
 </div>

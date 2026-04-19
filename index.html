@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="auth.js"></script>
+ <script src="protection.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Template Generator | Home</title>
@@ -10,7 +10,6 @@
 <meta name="theme-color" content="#000000">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
-
 
     <style>
         :root {
@@ -596,128 +595,9 @@ img.emoji {
         display: none; 
     }
 }
-
-
-
-
-.logout-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 999999; /* Higher than everything else */
-    background: #ff4757;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 50px;
-    font-weight: 900;
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-    box-shadow: 0 10px 20px rgba(255, 71, 87, 0.3);
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-}
-
-.logout-btn:hover {
-    background: #000;
-    color: var(--aqua);
-    transform: scale(1.1);
-}
-
-/* Hide the button on small screens if it overlaps, or keep it */
-@media screen and (max-width: 768px) {
-    .logout-btn {
-        top: 10px;
-        right: 10px;
-        padding: 8px 15px;
-        font-size: 0.6rem;
-    }
-}
     </style>
 </head>
 <body>
-<!-- LOCK SCREEN UI -->
-<div id="lockScreen" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:white; z-index:999999; flex-direction:column; align-items:center; justify-content:center; font-family:sans-serif;">
-    <div style="background:black; padding:40px; border-radius:20px; text-align:center; color:white; width:320px; border: 2px solid #7FFFD4; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
-        <h2 style="color:#7FFFD4; letter-spacing:2px;">ZEN CV ACCESS</h2>
-        <p style="font-size:12px; margin-bottom:20px; opacity:0.8;">Mumbai Office Personnel Only</p>
-        <input id="uEmail" type="email" placeholder="Email" style="width:100%; padding:15px; margin:10px 0; border-radius:10px; border:none; box-sizing:border-box; font-size:16px;">
-        <input id="uPass" type="password" placeholder="Password" style="width:100%; padding:15px; margin:10px 0; border-radius:10px; border:none; box-sizing:border-box; font-size:16px;">
-        <button id="uBtn" onclick="processLogin()" style="width:100%; background:#7FFFD4; color:black; border:none; padding:15px; font-weight:900; border-radius:10px; cursor:pointer; margin-top:10px; text-transform:uppercase;">Unlock Now</button>
-        <p style="font-size:11px; margin-top:20px;">Support: +91 8879267011</p>
-    </div>
-</div>
-
-<!-- LOGOUT BUTTON -->
-<button id="logoutBtn" onclick="processLogout()" style="display:none; position:fixed; top:20px; right:20px; z-index:1000000; background:#ff4757; color:white; border:none; padding:10px 20px; border-radius:50px; font-weight:900; cursor:pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">🔒 LOGOUT</button>
-
-<script>
-// --- CONFIGURATION ---
-const API_URL = "https://script.google.com/macros/s/AKfycbyIaYWjMlNO-FCj_ac39vAZeOGmtJp4QHlRo-HJMjB0qcOLNnGBsJE9m0KDci65PAZY/exec"
-
-
-// --- ON PAGE LOAD ---
-function checkProtection() {
-    const isUnlocked = localStorage.getItem("zencv_unlocked") === "YES";
-    const lock = document.getElementById("lockScreen");
-    const btn = document.getElementById("logoutBtn");
-
-    if (isUnlocked) {
-        lock.style.display = "none";
-        btn.style.display = "block";
-    } else {
-        lock.style.display = "flex";
-        btn.style.display = "none";
-    }
-}
-
-// --- LOGIN LOGIC ---
-async function processLogin() {
-    const email = document.getElementById("uEmail").value;
-    const pass = document.getElementById("uPass").value;
-    const btn = document.getElementById("uBtn");
-
-    if (!email || !pass) return alert("Fill all fields");
-
-    btn.innerText = "VERIFYING...";
-    btn.style.opacity = "0.5";
-
-    try {
-        const target = `${API_URL}?email=${encodeURIComponent(email)}&pass=${encodeURIComponent(pass)}`;
-        const response = await fetch(target);
-        const text = await response.text();
-
-        if (text.includes("ALLOWED")) {
-            localStorage.setItem("zencv_unlocked", "YES");
-            checkProtection(); // Refresh UI
-        } else {
-            alert("❌ INVALID CREDENTIALS\nCheck spelling or contact admin.");
-            btn.innerText = "Unlock Now";
-            btn.style.opacity = "1";
-        }
-    } catch (e) {
-        alert("Network error. Check your internet.");
-        btn.innerText = "Unlock Now";
-        btn.style.opacity = "1";
-    }
-}
-
-// --- LOGOUT LOGIC ---
-function processLogout() { localStorage.clear(); location.reload(); }
-
-// Initialize on start
-window.onload = checkProtection;
-</script>
-
-
-
-
-
-
-
-
-
 <img src="ZenCV7.png" class="side-img side-img-left">
 <img src="ZenCV9.png" class="side-img side-img-right">
 
@@ -1798,16 +1678,7 @@ Webflow / No-code Designer,Digital Marketing Designer,Social Media Creative Stra
 
 </script>
 
-<script>
-    // Show lock screen or show logout button based on status
-    if(localStorage.getItem("zencv_unlocked") !== "true") {
-        document.getElementById("lockScreen").style.display = "flex";
-        document.getElementById("logoutBtn").style.display = "none";
-    } else {
-        document.getElementById("lockScreen").style.display = "none";
-        document.getElementById("logoutBtn").style.display = "block";
-    }
-</script>
+
 
 
 

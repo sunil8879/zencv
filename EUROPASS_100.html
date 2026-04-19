@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="auth.js"></script>
+ <script src="protection.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infinite Europass Factory (Combinatorial)</title>
@@ -913,9 +913,9 @@ div:has(> #strong-count), #strong-count {
     ✉️ GENERATE EURO-COVER LETTER
 </button>
 
-    <button class="btn btn-word" onclick="exportWord()">📝 Export as Word</button>
-    <button class="btn btn-pdf" onclick="exportPDF()">📥 Export as PDF</button>
-    <button class="btn btn-img" onclick="exportImage()">🖼️ Export as Image</button>
+    <button class="btn btn-word" onclick="attemptDownload()">📝 Export as Word</button>
+    <button class="btn btn-pdf" onclick="attemptDownload()">📥 Export as PDF</button>
+    <button class="btn btn-img" onclick="attemptDownload()"">🖼️ Export as Image</button>
    
 <button class="btn" onclick="openKeywordChallenge()" style="background-color: #7fffd4; color: #000; margin-top: 10px; border: 2px solid #5fdec0; font-weight: 900;">
     🎯 KEYWORD CHALLENGE (ATS BOOST)
