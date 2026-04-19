@@ -551,29 +551,47 @@ img.emoji {
 
 
 
-/* --- FIX FOR STICKY MOBILE SCROLLING --- */
+/* --- ULTIMATE SMOOTH SCROLL FIX FOR MOBILE --- */
 @media screen and (max-width: 768px) {
-    body {
-        /* Changes alignment from center to top so scrolling is natural */
-        align-items: flex-start !important; 
-        display: block !important; /* Resets flex to standard block flow */
+    html, body {
+        /* 1. Force standard scroll behavior */
         overflow-y: auto !important;
-        -webkit-overflow-scrolling: touch; /* Forces smooth momentum scroll on iOS */
+        overflow-x: hidden !important;
         height: auto !important;
+        min-height: 100% !important;
+        display: block !important; /* Flex-centering breaks long scrolls on mobile */
+        -webkit-overflow-scrolling: touch !important; /* Forces momentum scrolling on iOS */
     }
 
     .container {
-        /* Ensures the box doesn't get 'stuck' in the middle of the screen */
-        margin-top: 40px !important; 
-        margin-bottom: 40px !important;
+        /* 2. Reset positioning so it doesn't fight the scroll */
+        margin: 30px auto !important;
         position: relative !important;
-        left: 0 !important; /* Centers the card properly */
-        transform: none !important;
+        left: 0 !important;
+        display: block !important;
+        
+        /* 3. PERFORMANCE KILLER: Remove backdrop-filter on mobile */
+        /* Blur effects cause massive lag during scrolling */
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(255, 255, 255, 0.98) !important;
     }
 
-    /* Prevent background decorative circles from intercepting touch/scroll gestures */
     .circle {
-        pointer-events: none;
+        /* 4. GPU SAVER: Hide background circles on mobile */
+        /* Moving blurred objects are the #1 cause of "sticky" scrolling */
+        display: none !important;
+    }
+
+    .disclosure-card {
+        /* 5. REPAINT SAVER: Stop the pulse animation */
+        /* Constant animations during scroll make it feel "stuck" */
+        animation: none !important;
+    }
+
+    /* 6. Ensure the guide overlay doesn't interfere when closed */
+    .guide-overlay:not(.active) {
+        display: none; 
     }
 }
     </style>
