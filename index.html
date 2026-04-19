@@ -636,19 +636,83 @@ img.emoji {
     </style>
 </head>
 <body>
-<!-- THE LOCK SCREEN -->
+<!-- LOCK SCREEN UI -->
 <div id="lockScreen" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:white; z-index:999999; flex-direction:column; align-items:center; justify-content:center; font-family:sans-serif;">
-    <div style="background:black; padding:40px; border-radius:20px; text-align:center; color:white; width:300px; border: 2px solid #7FFFD4;">
-        <h2 style="color:#7FFFD4;">ZEN CV LOCKED</h2>
-        <input id="uEmail" type="email" placeholder="Email" style="width:100%; padding:12px; margin:10px 0; border-radius:8px; border:none; box-sizing: border-box;">
-        <input id="uPass" type="password" placeholder="Password" style="width:100%; padding:12px; margin:10px 0; border-radius:8px; border:none; box-sizing: border-box;">
-        <button id="uBtn" onclick="login()" style="width:100%; background:#7FFFD4; color:black; border:none; padding:15px; font-weight:bold; border-radius:8px; cursor:pointer; margin-top: 10px;">UNLOCK NOW</button>
-        <p style="font-size:12px; margin-top:20px; opacity:0.7;">Need access? WhatsApp: +91 8879267011</p>
+    <div style="background:black; padding:40px; border-radius:20px; text-align:center; color:white; width:320px; border: 2px solid #7FFFD4; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+        <h2 style="color:#7FFFD4; letter-spacing:2px;">ZEN CV ACCESS</h2>
+        <p style="font-size:12px; margin-bottom:20px; opacity:0.8;">Mumbai Office Personnel Only</p>
+        <input id="uEmail" type="email" placeholder="Email" style="width:100%; padding:15px; margin:10px 0; border-radius:10px; border:none; box-sizing:border-box; font-size:16px;">
+        <input id="uPass" type="password" placeholder="Password" style="width:100%; padding:15px; margin:10px 0; border-radius:10px; border:none; box-sizing:border-box; font-size:16px;">
+        <button id="uBtn" onclick="processLogin()" style="width:100%; background:#7FFFD4; color:black; border:none; padding:15px; font-weight:900; border-radius:10px; cursor:pointer; margin-top:10px; text-transform:uppercase;">Unlock Now</button>
+        <p style="font-size:11px; margin-top:20px;">Support: +91 8879267011</p>
     </div>
 </div>
 
-<!-- THE LOGOUT BUTTON -->
-<button onclick="logout()" id="logoutBtn" style="display:none; position:fixed; top:20px; right:20px; z-index:1000000; background:#ff4757; color:white; border:none; padding:10px 20px; border-radius:50px; font-weight:900; cursor:pointer; font-size:11px;">🔒 LOGOUT</button>
+<!-- LOGOUT BUTTON -->
+<button id="logoutBtn" onclick="processLogout()" style="display:none; position:fixed; top:20px; right:20px; z-index:1000000; background:#ff4757; color:white; border:none; padding:10px 20px; border-radius:50px; font-weight:900; cursor:pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">🔒 LOGOUT</button>
+
+<script>
+// --- CONFIGURATION ---
+const API_URL = "https://script.google.com/macros/s/AKfycbyIaYWjMlNO-FCj_ac39vAZeOGmtJp4QHlRo-HJMjB0qcOLNnGBsJE9m0KDci65PAZY/exec
+
+// --- ON PAGE LOAD ---
+function checkProtection() {
+    const isUnlocked = localStorage.getItem("zencv_unlocked") === "YES";
+    const lock = document.getElementById("lockScreen");
+    const btn = document.getElementById("logoutBtn");
+
+    if (isUnlocked) {
+        lock.style.display = "none";
+        btn.style.display = "block";
+    } else {
+        lock.style.display = "flex";
+        btn.style.display = "none";
+    }
+}
+
+// --- LOGIN LOGIC ---
+async function processLogin() {
+    const email = document.getElementById("uEmail").value;
+    const pass = document.getElementById("uPass").value;
+    const btn = document.getElementById("uBtn");
+
+    if (!email || !pass) return alert("Fill all fields");
+
+    btn.innerText = "VERIFYING...";
+    btn.style.opacity = "0.5";
+
+    try {
+        const target = `${API_URL}?email=${encodeURIComponent(email)}&pass=${encodeURIComponent(pass)}`;
+        const response = await fetch(target);
+        const text = await response.text();
+
+        if (text.includes("ALLOWED")) {
+            localStorage.setItem("zencv_unlocked", "YES");
+            checkProtection(); // Refresh UI
+        } else {
+            alert("❌ INVALID CREDENTIALS\nCheck spelling or contact admin.");
+            btn.innerText = "Unlock Now";
+            btn.style.opacity = "1";
+        }
+    } catch (e) {
+        alert("Network error. Check your internet.");
+        btn.innerText = "Unlock Now";
+        btn.style.opacity = "1";
+    }
+}
+
+// --- LOGOUT LOGIC ---
+function processLogout() {
+    localStorage.removeItem("zencv_unlocked");
+    alert("Logged out successfully.");
+    checkProtection(); // Refresh UI to show lock screen
+}
+
+// Initialize on start
+window.onload = checkProtection;
+</script>
+
+
 
 
 
