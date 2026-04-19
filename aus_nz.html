@@ -4073,12 +4073,104 @@ ${document.getElementById('yearsExp').value ? `<p style="font-size:14px; font-we
             });
         }
 
-        function exportWord() {
-            const header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'></head><body>";
-            const footer = "</body></html>";
-            const source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(header + document.getElementById('cv-paper').innerHTML + footer);
-            let link = document.createElement("a"); link.href = source; link.download = 'Resume.doc'; link.click();
-        }
+      function exportWord() {
+    const paper = document.getElementById('cv-paper');
+    const sidebarHtml = paper.querySelector('.sidebar-part') ? paper.querySelector('.sidebar-part').innerHTML : "";
+    const mainHtml = paper.querySelector('.main-part') ? paper.querySelector('.main-part').innerHTML : "";
+    
+    // Get the current colors and styles from the config
+    const pColor = currentConfig.palette.p;
+    const sColor = currentConfig.palette.s;
+    const tColor = currentConfig.palette.t;
+    const fontBody = "Arial, sans-serif";
+    const fontHead = "Impact, sans-serif";
+
+    // 1. Build the Table Structure based on current layout
+    let tableLayout = "";
+
+    if (currentConfig.structure === "l-split-left") {
+        tableLayout = `
+            <table width="100%" cellpadding="20" cellspacing="0" border="0" style="font-family:${fontBody}; color:${tColor};">
+                <tr>
+                    <td width="32%" valign="top" bgcolor="${sColor}" style="border-right: 1px solid #ddd;">${sidebarHtml}</td>
+                    <td width="68%" valign="top" bgcolor="#ffffff">${mainHtml}</td>
+                </tr>
+            </table>`;
+    } else if (currentConfig.structure === "l-split-right") {
+        tableLayout = `
+            <table width="100%" cellpadding="20" cellspacing="0" border="0" style="font-family:${fontBody}; color:${tColor};">
+                <tr>
+                    <td width="68%" valign="top" bgcolor="#ffffff">${mainHtml}</td>
+                    <td width="32%" valign="top" bgcolor="${sColor}" style="border-left: 1px solid #ddd;">${sidebarHtml}</td>
+                </tr>
+            </table>`;
+    } else {
+        tableLayout = `
+            <table width="100%" cellpadding="20" cellspacing="0" border="0" style="font-family:${fontBody}; color:${tColor};">
+                <tr>
+                    <td width="100%" valign="top" bgcolor="#ffffff">${mainHtml} <hr> ${sidebarHtml}</td>
+                </tr>
+            </table>`;
+    }
+
+    // 2. Word-Specific XML Header (Forces A4 and Landscape/Portrait correctly)
+    const header = `
+        <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+        <head>
+            <meta charset='utf-8'>
+            <title>Export</title>
+            <!--[if gte mso 9]>
+            <xml>
+                <w:WordDocument>
+                    <w:View>Print</w:View>
+                    <w:Zoom>90</w:Zoom>
+                    <w:DoNotOptimizeForBrowser/>
+                </w:WordDocument>
+            </xml>
+            <![endif]-->
+            <style>
+                @page { size: 21cm 29.7cm; margin: 1cm; }
+                body { font-family: ${fontBody}; }
+                .cv-section-title { 
+                    font-size: 14pt; 
+                    font-weight: bold; 
+                    text-transform: uppercase; 
+                    color: ${pColor}; 
+                    border-bottom: 2px solid ${pColor}; 
+                    margin-top: 15pt; 
+                    margin-bottom: 10pt;
+                    font-family: ${fontHead};
+                }
+                .cv-item-title { font-weight: bold; font-size: 11pt; }
+                h1 { color: ${pColor}; font-family: ${fontHead}; font-size: 28pt; margin: 0; }
+                ul { margin-left: 20px; }
+                li { font-size: 10pt; }
+                p { font-size: 10pt; margin-bottom: 5pt; }
+            </style>
+        </head>
+        <body>`;
+
+    const footer = "</body></html>";
+    
+    // 3. Combine and Clean up HTML for Word compatibility
+    let finalHtml = header + tableLayout + footer;
+    
+    // Convert relative styles to inline or fixed for Word
+    finalHtml = finalHtml.replace(/var\(--primary\)/g, pColor);
+    
+    const blob = new Blob(['\ufeff', finalHtml], {
+        type: 'application/msword'
+    });
+
+    // 4. Trigger Download
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'AU_NZ_Resume.doc';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
 
 
 
