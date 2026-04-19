@@ -551,7 +551,31 @@ img.emoji {
 
 
 
+/* --- FIX FOR STICKY MOBILE SCROLLING --- */
+@media screen and (max-width: 768px) {
+    body {
+        /* Changes alignment from center to top so scrolling is natural */
+        align-items: flex-start !important; 
+        display: block !important; /* Resets flex to standard block flow */
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch; /* Forces smooth momentum scroll on iOS */
+        height: auto !important;
+    }
 
+    .container {
+        /* Ensures the box doesn't get 'stuck' in the middle of the screen */
+        margin-top: 40px !important; 
+        margin-bottom: 40px !important;
+        position: relative !important;
+        left: 0 !important; /* Centers the card properly */
+        transform: none !important;
+    }
+
+    /* Prevent background decorative circles from intercepting touch/scroll gestures */
+    .circle {
+        pointer-events: none;
+    }
+}
     </style>
 </head>
 <body>
