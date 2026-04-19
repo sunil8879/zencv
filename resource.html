@@ -176,6 +176,48 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     display: block;
 }
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    /* 1. Prevent the container from expanding or moving right */
+    .container, .summary-container {
+        max-width: 100% !important;
+        overflow: hidden !important;
+        box-sizing: border-box;
+    }
+
+    /* 2. Force the table to become its own scrollable block */
+    .matrix-table {
+        display: block;      /* Allows the table to scroll like a div */
+        width: 100%;
+        overflow-x: auto;    /* Adds the horizontal scroll bar */
+        white-space: nowrap; /* Prevents text from squishing so it forced a scroll */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+    }
+
+    /* 3. Ensure table parts remain visible as a block */
+    .matrix-table thead, 
+    .matrix-table tbody, 
+    .matrix-table tr {
+        display: table;      /* Keeps internal table structure intact */
+        width: 100%;
+        table-layout: fixed; /* Optional: keeps columns consistent */
+    }
+
+    /* 4. Visual Hint: Adds a scrollbar indicator on mobile */
+    .matrix-table::-webkit-scrollbar {
+        height: 5px;
+    }
+    .matrix-table::-webkit-scrollbar-thumb {
+        background: var(--aqua);
+        border-radius: 10px;
+    }
+}
 </style>
 </head>
 <body>
