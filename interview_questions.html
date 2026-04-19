@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview Questionnaire</title>
+    <title>Interview Questionnaire | Professional Portal</title>
     <style>
+        :root {
+            --aqua: #00ffff;
+            --dark-aqua: #008b8b;
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
         body {
-            background-color: white;
-            color: black;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--white);
+            background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--black);
+            font-family: 'Poppins', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,24 +26,34 @@
             min-height: 100vh;
         }
 
+        /* Header with Text Shadow */
         header {
-            background-color: aqua;
+            background-color: var(--black);
             width: 100%;
-            padding: 40px 0;
+            padding: 60px 0;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            border-bottom: 5px solid var(--aqua);
         }
 
         h1 {
             margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: 2px;
+            font-size: 3rem;
+            color: var(--aqua);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            /* Text Shadow applied here */
+            text-shadow: 3px 3px 0px rgba(0, 255, 255, 0.2), 
+                         5px 5px 15px rgba(0,0,0,0.5);
         }
 
+        /* Navigation Container */
         nav {
-            margin: 50px 0;
-            width: 80%;
-            max-width: 600px;
+            margin: 60px 20px;
+            width: 100%;
+            max-width: 700px;
+            /* Drop shadow for the entire nav area */
+            filter: drop-shadow(0 15px 10px rgba(0,0,0,0.1));
         }
 
         ul {
@@ -42,41 +61,101 @@
             padding: 0;
         }
 
+        /* Link Cards with Box Shadow */
         li {
-            margin: 15px 0;
-            border: 2px solid aqua;
-            border-radius: 8px;
-            transition: transform 0.2s;
+            margin: 20px 0;
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-left: 8px solid var(--black);
+            box-shadow: var(--shadow);
         }
 
         li:hover {
-            transform: scale(1.02);
-            background-color: #f0ffff;
+            transform: translateY(-10px) scale(1.03);
+            border-left: 8px solid var(--aqua);
+            box-shadow: 0 20px 40px rgba(0, 255, 255, 0.3);
         }
 
         a {
             text-decoration: none;
-            color: black;
+            color: var(--black);
             display: block;
-            padding: 15px 20px;
-            font-weight: bold;
-            font-size: 1.1rem;
+            padding: 25px 30px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
+        a::after {
+            content: '→';
+            font-size: 1.5rem;
+            color: var(--aqua);
+            transition: 0.3s;
+        }
+
+        li:hover a::after {
+            transform: translateX(10px);
+            color: var(--black);
+        }
+
+        /* Bottom Description Section */
         .description {
-            background-color: aqua;
-            padding: 30px;
+            background-color: var(--black);
+            color: var(--white);
+            padding: 60px 20px;
             margin-top: auto;
             width: 100%;
             box-sizing: border-box;
-            text-align: center;
+            border-top: 10px solid var(--aqua);
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
         }
 
         .content-box {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            line-height: 1.6;
+            line-height: 1.8;
+            text-align: center;
         }
+
+        .content-box h3 {
+            color: var(--aqua);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .content-box p {
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        /* Mobile Compliance (768px) */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+                letter-spacing: 2px;
+            }
+            
+            nav {
+                width: 90%;
+                margin: 30px auto;
+            }
+
+            a {
+                padding: 18px 20px;
+                font-size: 1rem;
+            }
+
+            .description {
+                padding: 40px 20px;
+            }
+        }
+
+a { display: flex; justify-content: center; align-items: center; text-align: center; }
     </style>
 </head>
 <body>
@@ -95,17 +174,17 @@
         </ul>
     </nav>
 
-    <div class="description">
+    <footer class="description">
         <div class="content-box">
-            <h3>About This Interview Questionnaire</h3>
+            <h3>The Ultimate Career Roadmap</h3>
             <p>
-                This interview questionnaire is a comprehensive preparation tool designed to bridge the gap between academic knowledge and professional employment. It caters to different career stages—from <strong>Freshers</strong> entering the workforce to <strong>Experienced</strong> professionals looking to transition. 
+                This interview questionnaire is a strategically curated knowledge base designed to empower candidates across all professional levels. By segmenting requirements into <strong>Indian Domestic</strong> and <strong>Global Corporate</strong> standards, we provide targeted insights into localized cultural expectations versus international professional benchmarks.
             </p>
             <p>
-                The categorization distinguishes between domestic (Indian) corporate standards and <strong>Global</strong> expectations, ensuring candidates understand cultural nuances, technical requirements, and soft skills required in different geographical markets. Furthermore, the inclusion of <strong>Non-Verbal Communication</strong> highlights the importance of body language, tone, and presence, which are often the deciding factors in a successful interview process.
+                Whether you are a <strong>Fresher</strong> launching your career or an <strong>Experienced</strong> professional aiming for a leadership role, this resource covers technical competence, behavioral psychology, and the critical art of <strong>Non-Verbal Communication</strong>. It is designed to transform interview anxiety into peak performance by mastering both what you say and how you project yourself.
             </p>
         </div>
-    </div>
+    </footer>
 
 </body>
 </html>
