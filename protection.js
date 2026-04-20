@@ -69,8 +69,20 @@ function closeLock() {
     document.getElementById("downloadModal").style.display = "none";
 }
 
-// 5. SECURITY: DISABLE RIGHT-CLICK & INSPECT
-document.addEventListener('contextmenu', e => e.preventDefault());
+// 5. CONDITIONAL SECURITY: BLOCKS ONLY IF NOT UNLOCKED
+document.addEventListener('contextmenu', e => {
+    if (sessionStorage.getItem("cv_unlocked") !== "TRUE") {
+        e.preventDefault();
+    }
+});
+
 document.onkeydown = e => {
-    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) return false;
+    if (sessionStorage.getItem("cv_unlocked") !== "TRUE") {
+        // Blocks F12, Ctrl+Shift+I, Ctrl+Shift+J, and Ctrl+U
+        if (e.keyCode == 123 || 
+           (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || 
+           (e.ctrlKey && e.keyCode == 85)) {
+            return false;
+        }
+    }
 };
