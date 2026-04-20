@@ -640,65 +640,102 @@ function openQuiz() {
     const listDiv = document.getElementById('rankingsList');
     document.getElementById('modalTitle').innerText = "DESTINATION FINDER";
     
-    listDiv.innerHTML = `
-        <div class="country-card" style="border-left-color: var(--black);">
-            <p style="font-weight:900; margin-bottom:15px; text-align:center;">SELECT WHAT MATTERS MOST:</p>
-            <label class="quiz-option"><input type="checkbox" value="salary"> 1. I want high salary</label>
-            <label class="quiz-option"><input type="checkbox" value="fast"> 2. I want fast visa processing</label>
-            <label class="quiz-option"><input type="checkbox" value="lowCost"> 3. I want to bear low visa costs</label>
-            <label class="quiz-option"><input type="checkbox" value="options"> 4. I want more visa options</label>
-            <label class="quiz-option"><input type="checkbox" value="lowCol"> 5. I want low cost of living expenses</label>
-            <label class="quiz-option"><input type="checkbox" value="hassleFree"> 6. I want hassle free visa process</label>
+listDiv.innerHTML = `
+    <div class="country-card" style="border-left-color: var(--black); max-height: 75vh; overflow-y: auto; text-align:left;">
+        <p style="font-weight:900; text-align:center; font-size:1.1rem; margin-bottom:20px;">🔍 DESTINATION FINDER (TOP 3 SHOWN)</p>
+        
+        <div class="quiz-container">
+            <!-- 🎯 Career & Growth -->
+            <p style="color:var(--red); font-weight:900; margin:15px 0 5px;">🎯 Career & Growth</p>
+            <label class="quiz-option"><input type="checkbox" value="growth"> I want strong career growth</label>
+            <label class="quiz-option"><input type="checkbox" value="exposure"> I want international exposure</label>
+            <label class="quiz-option"><input type="checkbox" value="stability"> I want job stability</label>
+            <label class="quiz-option"><input type="checkbox" value="prof_opps"> I want opportunities in my profession</label>
             
-            <button class="cv-btn" onclick="calculateDestination()" style="margin-top:20px; background: var(--black); color: var(--aqua);">FIND MY DESTINATION</button>
-            <div id="quizResult"></div>
+            <!-- 💰 Money & Savings -->
+            <p style="color:var(--red); font-weight:900; margin:15px 0 5px;">💰 Money & Savings</p>
+            <label class="quiz-option"><input type="checkbox" value="max_savings"> I want to save maximum money</label>
+            <label class="quiz-option"><input type="checkbox" value="tax_free"> I want tax-free income</label>
+            <label class="quiz-option"><input type="checkbox" value="high_currency"> I want high currency value (USD/EUR level)</label>
+            
+            <!-- 🏡 Long-Term Goals -->
+            <p style="color:var(--red); font-weight:900; margin:15px 0 5px;">🏡 Long-Term Goals</p>
+            <label class="quiz-option"><input type="checkbox" value="pr"> I want Permanent Residency (PR)</label>
+            <label class="quiz-option"><input type="checkbox" value="settle_perm"> I want to settle abroad permanently</label>
+            <label class="quiz-option"><input type="checkbox" value="family"> I want to bring my family</label>
+            
+            <!-- 🌍 Lifestyle & Comfort -->
+            <p style="color:var(--red); font-weight:900; margin:15px 0 5px;">🌍 Lifestyle & Comfort</p>
+            <label class="quiz-option"><input type="checkbox" value="quality"> I want good quality of life</label>
+            <label class="quiz-option"><input type="checkbox" value="safe"> I want safe country</label>
+            <label class="quiz-option"><input type="checkbox" value="english"> I want English-speaking country</label>
+            <label class="quiz-option"><input type="checkbox" value="adjustment"> I want easy cultural adjustment</label>
+
+            <!-- ⚡ Entry-Level / Reality -->
+            <p style="color:var(--red); font-weight:900; margin:15px 0 5px;">⚡ Entry-Level / Reality-Based</p>
+            <label class="quiz-option"><input type="checkbox" value="low_exp"> I don’t have much experience</label>
+            <label class="quiz-option"><input type="checkbox" value="low_comp"> I want low competition countries</label>
+            <label class="quiz-option"><input type="checkbox" value="easy_job"> I want easy job availability</label>
+            <label class="quiz-option"><input type="checkbox" value="easy_visa"> I want less strict visa rules</label>
         </div>
-    `;
+
+        <button class="cv-btn" onclick="calculateDestination()" style="margin-top:20px; background: var(--black); color: var(--aqua);">FIND MY TOP 3 DESTINATIONS</button>
+        <div id="quizResult"></div>
+    </div>
+`;
     document.getElementById('overlay').classList.add('active');
 }
 
 function calculateDestination() {
-    const checkedInputs = Array.from(document.querySelectorAll('.quiz-option input:checked'));
-    const selectedKeys = checkedInputs.map(el => el.value);
-    
-    if (selectedKeys.length === 0) { 
-        alert("Please select at least one preference!"); 
-        return; 
-    }
+    const selected = Array.from(document.querySelectorAll('.quiz-option input:checked')).map(el => el.value);
+    if (selected.length === 0) return alert("Please select at least one goal!");
 
-    // Mapping choices to the dynamic scores in your 'data' array
-    const results = data.map(country => {
-        let matchCount = 0;
+    const results = data.map(c => {
+        let score = 0;
         
-        selectedKeys.forEach(key => {
-            if (key === 'salary' && country.salary.score >= 8) matchCount++;
-            if (key === 'fast' && country.time.score >= 8) matchCount++;
-            if (key === 'lowCol' && country.col.score >= 7) matchCount++;
-            if (key === 'hassleFree' && country.ease.score >= 7.5) matchCount++;
-            // Dynamic check: Low cost usually correlates with high Ease (Employer driven)
-            if (key === 'lowCost' && country.ease.score >= 7) matchCount++;
-            // Dynamic check: More options usually correlates with high Opportunity scores
-            if (key === 'options' && country.opps.score >= 8) matchCount++;
-        });
+        // Career mapping
+        if (selected.includes('growth') && c.salary.score >= 8) score++;
+        if (selected.includes('exposure') && ["USA", "UK", "Canada", "Singapore", "Germany"].some(n => c.name.includes(n))) score++;
+        if (selected.includes('stability') && c.overall >= 7) score++;
+        if (selected.includes('prof_opps') && c.opps.score >= 8) score++;
+        
+        // Money mapping
+        if (selected.includes('max_savings') && c.col.score >= 7) score++;
+        if (selected.includes('tax_free') && c.salary.details.some(d => d.toLowerCase().includes('tax'))) score++;
+        if (selected.includes('high_currency') && c.salary.score >= 8.5) score++;
+        
+        // Long-term mapping
+        if (selected.includes('pr') && ["Canada", "Australia", "Germany", "Poland", "Romania", "UK"].some(n => c.name.includes(n))) score++;
+        if (selected.includes('settle_perm') && c.ease.details.some(d => d.includes('PR'))) score++;
+        if (selected.includes('family') && c.ease.score >= 6) score++;
+        
+        // Lifestyle mapping
+        if (selected.includes('quality') && c.overall >= 7.2) score++;
+        if (selected.includes('safe') && ["Singapore", "UAE", "Japan", "Mauritius", "Oman"].some(n => c.name.includes(n))) score++;
+        if (selected.includes('english') && ["Canada", "USA", "UK", "Australia", "Singapore", "UAE"].some(n => c.name.includes(n))) score++;
+        if (selected.includes('adjustment') && ["UAE", "Qatar", "Saudi Arabia", "Kuwait", "Bahrain", "Oman"].some(n => c.name.includes(n))) score++;
 
-        return { name: country.name, matches: matchCount };
+        // Entry Level mapping
+        if (selected.includes('low_exp') && c.opps.details.some(d => d.includes('Low-skilled'))) score++;
+        if (selected.includes('low_comp') && ["Poland", "Romania", "Mauritius", "China"].some(n => c.name.includes(n))) score++;
+        if (selected.includes('easy_job') && c.opps.score >= 7.5) score++;
+        if (selected.includes('easy_visa') && c.ease.score >= 7.5) score++;
+
+        return { name: c.name, matches: score };
     });
 
-    // Sort descending by matches, then alphabetical
-    const filteredResults = results
+    // FILTER, SORT, and SLICE FOR TOP 3
+    const top3 = results
         .filter(r => r.matches > 0)
-        .sort((a, b) => b.matches - a.matches);
+        .sort((a, b) => b.matches - a.matches)
+        .slice(0, 3);
 
-const countryNames = filteredResults.slice(0, 3).map(r => r.name).join(', ');
-    const userChoicesText = checkedInputs.map(el => el.parentElement.innerText.split('. ')[1]).join(', ');
+    const namesText = top3.map(r => r.name).join(', ');
 
     document.getElementById('quizResult').innerHTML = `
-        <div class="quiz-result-box" style="text-align:left; font-family: Montserrat; border-radius:15px; margin-top:20px;">
-            <p style="font-size: 0.7rem; text-transform: uppercase; color: #333; margin-bottom: 5px;">Your Choices:</p>
-            <p style="font-size: 0.9rem; margin-bottom: 15px; color: #000;">${userChoicesText}</p>
-            
-            <p style="font-size: 0.7rem; text-transform: uppercase; color: #333; margin-bottom: 5px;">Top 3 Recommended Destinations:</p>
-            <p style="font-size: 1.1rem; color: #000; line-height: 1.4;">${countryNames || "No matches found for this specific combination."}</p>
+        <div class="quiz-result-box" style="margin-top:20px; border: 2px solid var(--black); text-align:center;">
+            <p style="font-size: 0.7rem; color: #555; text-transform:uppercase;">Based on your choices, your Top 3 are:</p>
+            <p style="font-size: 1.2rem; color: #000; font-weight:900;">${namesText || "No specific match. Try selecting more general goals."}</p>
         </div>
     `;
 }
