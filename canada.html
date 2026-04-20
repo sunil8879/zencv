@@ -4196,42 +4196,7 @@ document.getElementById('sb-languages').innerHTML = `
             updateCV();
         }
 
-        function handleGulfUpload(input) {
-            const file = input.files[0];
-            const status = document.getElementById('upload-status');
-            if (file) {
-                status.innerText = "File: " + file.name + " uploaded.";
-                uploadedCVText = "Mock extracted text from PDF containing accountant ledger balance sheet quickbooks and strong verbs spearheaded.";
-            }
-        }
-
-        function calculateATS() {
-            const jd = document.getElementById('jd-box').value.toLowerCase();
-            const display = document.getElementById('ats-display');
-            display.style.display = 'block';
-
-            if (!jd) {
-                display.innerHTML = "<p style='color:red;'>Please paste a Job Description first!</p>";
-                return;
-            }
-
-            let score = 30; // base score
-            if (uploadedCVText.includes('ledger')) score += 20;
-            if (uploadedCVText.includes('balance sheet')) score += 20;
-            if (uploadedCVText.includes('spearheaded')) score += 20;
-            if (uploadedCVText.includes('quickbooks')) score += 10;
-
-            display.innerHTML = `
-                <div style="text-align:center;">
-                    <h2 style="margin:0; font-size:32px; color:#27ae60;">${score}%</h2>
-                    <p style="font-size:12px; margin:5px 0;">ATS Match Score</p>
-                </div>
-                <p style="font-size:11px; line-height:1.4; margin-top:10px;">
-                    <strong>Suggestions:</strong> Ensure to match verbs with the JD. Your score is based on a simulated reading of the PDF against standard Canada NOC terminologies.
-                </p>
-            `;
-        }
-
+     
         function exportWord() { alert("Export to Word requested. Connecting to server-side parser..."); }
         function downloadPDF() { window.print(); }
         function downloadImage() { alert("Generating PNG via html-to-image..."); }
