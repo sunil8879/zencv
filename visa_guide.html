@@ -213,6 +213,40 @@
     display: block !important;
     max-width: 300px; /* Keeps it consistent with the skinny container */
 }
+
+
+
+
+
+
+
+
+/* Quiz Specific Styles */
+.quiz-option {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align: left;
+}
+.quiz-option input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--black);
+}
+.quiz-result-box {
+    background: var(--aqua);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid var(--black);
+    margin-top: 20px;
+    font-weight: 900;
+}
     </style>
 </head>
 <body>
@@ -255,6 +289,7 @@
             <button class="cv-btn" onclick="renderRankings('col')">COST OF LIVING</button>
             <button class="cv-btn" onclick="renderRankings('time')">PROCESSING TIME</button>
             <button class="cv-btn btn-fancy" onclick="renderRankings('overall')">OVERALL SCORE</button>
+<button class="cv-btn" onclick="openQuiz()" style="background: var(--black); color: var(--aqua); border-left: 8px solid var(--white);">KNOW YOUR DESTINATION</button>
         </div>
     </div>
 
@@ -445,7 +480,7 @@
             modalTitle.innerText = titles[criteria] + " Rankings";
             let sortedData = [...data].sort((a, b) => (criteria === 'overall' ? b.overall : b[criteria].score) - (criteria === 'overall' ? a.overall : a[criteria].score));
             
-            sortedData.forEach((country, index) => {
+            sortedData.slice(0, 3).forEach((country, index) => { 
                 const card = document.createElement('div');
                 card.className = 'country-card';
                 let scoreVal = (criteria === 'overall') ? country.overall : country[criteria].score;
@@ -594,6 +629,79 @@ function showScoreHelp() {
 }
 
         function closeOverlay() { document.getElementById('overlay').classList.remove('active'); }
+
+
+
+
+
+
+
+function openQuiz() {
+    const listDiv = document.getElementById('rankingsList');
+    document.getElementById('modalTitle').innerText = "DESTINATION FINDER";
+    
+    listDiv.innerHTML = `
+        <div class="country-card" style="border-left-color: var(--black);">
+            <p style="font-weight:900; margin-bottom:15px; text-align:center;">SELECT WHAT MATTERS MOST:</p>
+            <label class="quiz-option"><input type="checkbox" value="salary"> 1. I want high salary</label>
+            <label class="quiz-option"><input type="checkbox" value="fast"> 2. I want fast visa processing</label>
+            <label class="quiz-option"><input type="checkbox" value="lowCost"> 3. I want to bear low visa costs</label>
+            <label class="quiz-option"><input type="checkbox" value="options"> 4. I want more visa options</label>
+            <label class="quiz-option"><input type="checkbox" value="lowCol"> 5. I want low cost of living expenses</label>
+            <label class="quiz-option"><input type="checkbox" value="hassleFree"> 6. I want hassle free visa process</label>
+            
+            <button class="cv-btn" onclick="calculateDestination()" style="margin-top:20px; background: var(--black); color: var(--aqua);">FIND MY DESTINATION</button>
+            <div id="quizResult"></div>
+        </div>
+    `;
+    document.getElementById('overlay').classList.add('active');
+}
+
+function calculateDestination() {
+    const checkedInputs = Array.from(document.querySelectorAll('.quiz-option input:checked'));
+    const selectedKeys = checkedInputs.map(el => el.value);
+    
+    if (selectedKeys.length === 0) { 
+        alert("Please select at least one preference!"); 
+        return; 
+    }
+
+    // Mapping choices to the dynamic scores in your 'data' array
+    const results = data.map(country => {
+        let matchCount = 0;
+        
+        selectedKeys.forEach(key => {
+            if (key === 'salary' && country.salary.score >= 8) matchCount++;
+            if (key === 'fast' && country.time.score >= 8) matchCount++;
+            if (key === 'lowCol' && country.col.score >= 7) matchCount++;
+            if (key === 'hassleFree' && country.ease.score >= 7.5) matchCount++;
+            // Dynamic check: Low cost usually correlates with high Ease (Employer driven)
+            if (key === 'lowCost' && country.ease.score >= 7) matchCount++;
+            // Dynamic check: More options usually correlates with high Opportunity scores
+            if (key === 'options' && country.opps.score >= 8) matchCount++;
+        });
+
+        return { name: country.name, matches: matchCount };
+    });
+
+    // Sort descending by matches, then alphabetical
+    const filteredResults = results
+        .filter(r => r.matches > 0)
+        .sort((a, b) => b.matches - a.matches);
+
+const countryNames = filteredResults.slice(0, 3).map(r => r.name).join(', ');
+    const userChoicesText = checkedInputs.map(el => el.parentElement.innerText.split('. ')[1]).join(', ');
+
+    document.getElementById('quizResult').innerHTML = `
+        <div class="quiz-result-box" style="text-align:left; font-family: Montserrat; border-radius:15px; margin-top:20px;">
+            <p style="font-size: 0.7rem; text-transform: uppercase; color: #333; margin-bottom: 5px;">Your Choices:</p>
+            <p style="font-size: 0.9rem; margin-bottom: 15px; color: #000;">${userChoicesText}</p>
+            
+            <p style="font-size: 0.7rem; text-transform: uppercase; color: #333; margin-bottom: 5px;">Top 3 Recommended Destinations:</p>
+            <p style="font-size: 1.1rem; color: #000; line-height: 1.4;">${countryNames || "No matches found for this specific combination."}</p>
+        </div>
+    `;
+}
     </script>
 </body>
 </html>
