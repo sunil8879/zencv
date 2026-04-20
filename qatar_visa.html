@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qatar Work Immigration Guide</title>
+<style>
+        :root {
+            --aqua: #7FFFD4;
+            --black: #000000;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.85);
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            background-color: var(--white);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(160,100%,95%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(160,100%,95%,1) 0, transparent 50%);
+            font-family: 'Britannic Bold', 'Impact', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; 
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- THE NARROW CENTERED CONTAINER --- */
+        .container {
+            text-align: center;
+            background: var(--glass);
+            padding: 40px 25px;
+            border-radius: 30px;
+            border: 2px solid var(--black);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px var(--shadow), 15px 15px 0px var(--aqua);
+            max-width: 420px !important; 
+            width: 90%;
+            margin: 40px auto !important;
+            position: relative;
+            z-index: 10;
+            box-sizing: border-box;
+        }
+
+        /* --- GLOBAL GLASS SHINE ANIMATION --- */
+        @keyframes shine {
+            0% { transform: translateX(-200%) translateY(-200%) rotate(45deg); }
+            100% { transform: translateX(200%) translateY(200%) rotate(45deg); }
+        }
+
+        /* --- THE GLASS CONTENT CARDS --- */
+        .card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid var(--black);
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            text-align: left; /* Details left-aligned for readability */
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 4px 4px 10px rgba(255,255,255,0.5), 5px 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: shine 4s infinite linear;
+        }
+
+        /* --- VERTICAL PANEL SHINE (THE REQUESTED EFFECT) --- */
+        .card::after {
+            content: "";
+            position: absolute;
+            top: -100%; left: -150%;
+            width: 50%; height: 300%;
+            background: linear-gradient(to right, transparent, rgba(127, 255, 212, 0.4), transparent);
+            transform: rotate(25deg);
+            animation: verticalShine 5s infinite;
+        }
+
+        @keyframes verticalShine {
+            0% { left: -150%; }
+            30% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 8px;
+            color: var(--black);
+            text-align: center; /* Explicitly Centered */
+            width: 100%;
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--aqua);
+            display: inline-block;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .card-title, .step-title {
+            font-size: 1.1rem;
+            color: var(--black);
+            text-transform: uppercase;
+            text-decoration: underline;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .oneliner {
+            display: block;
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+            border-left: 3px solid var(--aqua);
+            padding-left: 10px;
+        }
+
+        p, li {
+            font-size: 0.85rem;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        ul { list-style: none; padding: 0; }
+        ul li::before {
+            content: "🇶🇦 ";
+            font-weight: bold;
+        }
+
+        .stats-grid { display: block; width: 100%; } 
+
+        @media (max-width: 768px) {
+            .container { width: 95%; padding: 20px 15px; margin: 20px auto; }
+            h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🇶🇦 QATAR — WORK IMMIGRATION GUIDE FOR INDIANS</h1>
+    </header>
+
+    <div class="container">
+        
+        <h2>🔹 1. OVERVIEW</h2>
+        <div class="card">
+            <p class="content-body">Qatar is a high-income Gulf nation offering tax-free salaries and strong job opportunities for Indian workers, especially in construction, oil & gas, healthcare, hospitality, logistics, and services. The country follows an employer-sponsored system for work visas, with streamlined processes and fast approvals. However, long-term settlement options are limited.</p>
+        </div>
+
+        <h2>🔹 2. TYPES OF WORK VISAS</h2>
+        
+        <div class="card">
+            <span class="card-title">1. Work Visa (Employment Visa)</span>
+            <span class="oneliner">Most common visa for long-term employment.</span>
+            <p class="content-body">Requires direct employer sponsorship and is the primary route for professionals and skilled labor.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">2. Temporary Work Visa</span>
+            <span class="oneliner">For short-term projects and specific work assignments.</span>
+            <p class="content-body">Valid for a limited duration and tied to specific project timelines.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">3. Family Residence Visa</span>
+            <span class="oneliner">For dependents of professionals working in Qatar.</span>
+            <p class="content-body">Requires the worker to meet a minimum salary threshold to sponsor family members.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">4. Business Visa</span>
+            <span class="oneliner">For corporate meetings and short-term visits.</span>
+        </div>
+
+        <h2>🔹 3. ELIGIBILITY CRITERIA</h2>
+        <div class="card">
+            <ul>
+                <li>✔ Valid job offer from a registered Qatari employer</li>
+                <li>✔ Age between 21–60 years</li>
+                <li>✔ Relevant qualifications or skills for the position</li>
+                <li>✔ Mandatory medical fitness certification</li>
+                <li>✔ Valid passport (minimum 6 months validity)</li>
+                <li>✔ Clean criminal record (Police Clearance Certificate)</li>
+            </ul>
+        </div>
+
+        <h2>🔹 4. REQUIRED DOCUMENTS</h2>
+        <div class="card">
+            <ul>
+                <li>📄 Valid passport & Passport-size photographs</li>
+                <li>📄 Job offer / Official employment contract</li>
+                <li>📄 Work visa approval from Qatar authorities</li>
+                <li>📄 Attested educational certificates (if required)</li>
+                <li>📄 Medical fitness certificate & Police clearance certificate</li>
+            </ul>
+        </div>
+
+        <h2>🔹 5. STEP-BY-STEP PROCESS</h2>
+
+        <div class="card">
+            <span class="step-title">✅ A & B: Eligibility & Job Offer</span>
+            <span class="oneliner">THE MOST IMPORTANT STEP.</span>
+            <p class="content-body">Secure a job offer via LinkedIn, Indeed Qatar, or recruitment agencies. Ensure the employer is legally registered and authorized to sponsor foreign workers.</p>
+        </div>
+
+        <div class="card">
+            <span class="step-title">✅ C & D: Employer Authorization</span>
+            <p class="content-body">The employer submits the application to Qatari authorities to verify the job role and quota. Once approved, you receive the official work visa approval document.</p>
+        </div>
+
+        <div class="card">
+            <span class="step-title">✅ E & F: Medicals & Travel</span>
+            <p class="content-body">Complete a mandatory medical examination and travel to Qatar using the approved visa document.</p>
+        </div>
+
+        <div class="card">
+            <span class="step-title">✅ G, H & I: Residence Permit & QID</span>
+            <p class="content-body">After arrival, the employer applies for your <strong>Residence Permit (RP)</strong>. You must complete biometrics (fingerprints) to receive your <strong>Qatar ID (QID)</strong>.</p>
+        </div>
+
+        <h2>🧠 REALITY CHECK</h2>
+        <div class="card" style="border-left: 10px solid var(--aqua);">
+            <p class="content-body">
+                ❌ Beware of fake agents charging illegal recruitment fees.<br>
+                ❌ The system is strictly employer-controlled with limited PR options.<br>
+                ❌ Working illegally or for a non-sponsor carries strict penalties.<br>
+                ❌ Verify your contract terms before traveling to ensure job security.
+            </p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="card">
+                <span class="card-title">Salary Expectation</span>
+                <p>Low-skilled: QAR 1,200 – 3,000/m<br>Skilled: QAR 10,000+/m<br><strong>(TAX-FREE)</strong></p>
+            </div>
+            <div class="card">
+                <span class="card-title">Processing Time</span>
+                <p>Typically 2–6 weeks for visa approval.</p>
+            </div>
+            <div class="card">
+                <span class="card-title">Difficulty Level</span>
+                <p>👉 EASY<br>The process is straightforward once a job is secured.</p>
+            </div>
+        </div>
+
+        <h2>🧾 QUICK SUMMARY</h2>
+        <div class="card">
+            <p class="content-body" style="text-align: center;">
+                <strong>Best for:</strong> Gulf jobs (low to high-skilled)<br>
+                <strong>Job offer:</strong> Mandatory<br>
+                <strong>PR:</strong> Not available<br>
+                <strong>Processing time:</strong> 2–6 weeks<br>
+                <strong>Difficulty:</strong> Easy
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

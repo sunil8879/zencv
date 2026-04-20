@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romania Work Immigration Guide</title>
+ <style>
+        :root {
+            --aqua: #7FFFD4;
+            --black: #000000;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.85);
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            background-color: var(--white);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(160,100%,95%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(160,100%,95%,1) 0, transparent 50%);
+            font-family: 'Britannic Bold', 'Impact', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; 
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- THE NARROW CENTERED CONTAINER --- */
+        .container {
+            text-align: center;
+            background: var(--glass);
+            padding: 40px 25px;
+            border-radius: 30px;
+            border: 2px solid var(--black);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px var(--shadow), 15px 15px 0px var(--aqua);
+            max-width: 420px !important; 
+            width: 90%;
+            margin: 40px auto !important;
+            position: relative;
+            z-index: 10;
+            box-sizing: border-box;
+        }
+
+        /* --- GLOBAL GLASS SHINE ANIMATION --- */
+        @keyframes shine {
+            0% { transform: translateX(-200%) translateY(-200%) rotate(45deg); }
+            100% { transform: translateX(200%) translateY(200%) rotate(45deg); }
+        }
+
+        /* --- THE GLASS CONTENT CARDS --- */
+        .card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid var(--black);
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            text-align: left; /* Details left-aligned for readability */
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 4px 4px 10px rgba(255,255,255,0.5), 5px 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: shine 4s infinite linear;
+        }
+
+        /* --- VERTICAL PANEL SHINE (THE REQUESTED EFFECT) --- */
+        .card::after {
+            content: "";
+            position: absolute;
+            top: -100%; left: -150%;
+            width: 50%; height: 300%;
+            background: linear-gradient(to right, transparent, rgba(127, 255, 212, 0.4), transparent);
+            transform: rotate(25deg);
+            animation: verticalShine 5s infinite;
+        }
+
+        @keyframes verticalShine {
+            0% { left: -150%; }
+            30% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 8px;
+            color: var(--black);
+            text-align: center; /* Explicitly Centered */
+            width: 100%;
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--aqua);
+            display: inline-block;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            color: var(--black);
+            text-transform: uppercase;
+            text-decoration: underline;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .oneliner {
+            display: block;
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+            border-left: 3px solid var(--aqua);
+            padding-left: 10px;
+        }
+
+        p, li {
+            font-size: 0.85rem;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        ul { list-style: none; padding: 0; }
+        ul li::before {
+            content: "🇷🇴 ";
+            font-weight: bold;
+        }
+
+        .step-tag {
+            background: var(--aqua);
+            color: var(--black);
+            padding: 4px 10px;
+            border: 1px solid var(--black);
+            font-size: 0.8rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .grid-layout { display: block; width: 100%; } 
+
+        @media (max-width: 768px) {
+            .container { width: 95%; padding: 20px 15px; margin: 20px auto; }
+            h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🇷🇴 ROMANIA — WORK IMMIGRATION GUIDE FOR INDIANS</h1>
+    </header>
+
+    <div class="container">
+        
+        <h2>🔹 1. OVERVIEW</h2>
+        <div class="card">
+            <p class="content-body">Romania is becoming a popular destination for Indian workers due to its growing economy, labor shortages, and relatively simple work visa process. Opportunities are available in construction, manufacturing, hospitality, logistics, agriculture, and some IT roles. Romania offers employer-sponsored work visas and a pathway to long-term residence within the European Union.</p>
+        </div>
+
+        <h2>🔹 2. TYPES OF WORK VISAS</h2>
+        
+        <div class="card">
+            <span class="card-title">1. Long-Stay Work Visa (D/AM)</span>
+            <span class="oneliner">Most common work visa for employment purposes.</span>
+            <p class="content-body">Requires a formal job offer and work authorization from Romanian authorities.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">2. EU Blue Card</span>
+            <span class="oneliner">For highly skilled professionals.</span>
+            <p class="content-body">Requires higher salary thresholds and provides a pathway to long-term EU residence.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">3. Seasonal Work Visa</span>
+            <span class="oneliner">Short-term employment in agriculture and hospitality.</span>
+        </div>
+
+        <div class="card">
+            <span class="card-title">4. Temporary Residence Permit</span>
+            <span class="oneliner">Issued after arrival for legal stay and work.</span>
+        </div>
+
+        <h2>🔹 3. ELIGIBILITY CRITERIA</h2>
+        <div class="card">
+            <ul>
+                <li>✔ Valid job offer from Romanian employer</li>
+                <li>✔ Employer must obtain official work authorization</li>
+                <li>✔ Relevant skills or qualifications for the position</li>
+                <li>✔ Valid passport & Medical fitness</li>
+                <li>✔ Clean criminal record</li>
+            </ul>
+        </div>
+
+        <h2>🔹 4. REQUIRED DOCUMENTS</h2>
+        <div class="card">
+            <ul>
+                <li>📄 Valid passport & Photographs</li>
+                <li>📄 Job offer / Employment contract</li>
+                <li>📄 Work authorization from employer</li>
+                <li>📄 Educational & Work experience certificates</li>
+                <li>📄 Medical insurance & Proof of accommodation</li>
+            </ul>
+        </div>
+
+        <h2>🔹 5. STEP-BY-STEP PROCESS</h2>
+
+        <div class="card">
+            <div class="step-tag">Step A & B</div>
+            <span class="card-title">Job Search & Verification</span>
+            <span class="oneliner">The MOST IMPORTANT STEP.</span>
+            <p class="content-body">Secure a job offer via LinkedIn, Indeed, or agencies. Target companies that hire foreign workers and provide work authorization support.</p>
+        </div>
+
+        <div class="card">
+            <div class="step-tag">Step C & D</div>
+            <span class="card-title">Work Authorization</span>
+            <p class="content-body">The employer applies for authorization from Romanian authorities. Once approved, you receive the document required for your visa application.</p>
+        </div>
+
+        <div class="card">
+            <div class="step-tag">Step E, F & G</div>
+            <span class="card-title">Visa Application</span>
+            <p class="content-body">Apply for the Long-Stay Visa (D/AM) at the Romanian Embassy. Attend your appointment for verification. Decision takes 2–6 weeks.</p>
+        </div>
+
+        <div class="card">
+            <div class="step-tag">Step H, I & J</div>
+            <span class="card-title">Arrival & Residence Permit</span>
+            <p class="content-body">Travel to Romania and apply for your residence permit to start working legally for the long term.</p>
+        </div>
+
+        <h2>🧠 REALITY CHECK</h2>
+        <div class="card" style="border-left: 10px solid var(--aqua);">
+            <p class="content-body">
+                ❌ Fake job offers are a risk; verify your employer.<br>
+                ❌ Salaries are lower than in Western Europe.<br>
+                ❌ Work conditions can vary by sector.
+            </p>
+        </div>
+
+        <div class="grid-layout">
+            <div class="card">
+                <span class="card-title">Salary Expectation</span>
+                <p>Low-skilled: €600 – €1,200/m<br>Mid-level: €1,200 – €2,500/m</p>
+            </div>
+            <div class="card">
+                <span class="card-title">PR Options</span>
+                <p>Available after 5 years of continuous stay in Romania.</p>
+            </div>
+            <div class="card">
+                <span class="card-title">Cost & Time</span>
+                <p>Visa: €120 approx<br>Time: 2–6 weeks</p>
+            </div>
+        </div>
+
+        <h2>🔹 11. DIFFICULTY LEVEL</h2>
+        <div class="card" style="text-align: center;">
+            <span class="card-title">👉 EASY TO MEDIUM</span>
+            <p class="content-body">Job availability is moderate and the process is simpler than many other EU countries.</p>
+        </div>
+
+    </div>
+</body>
+</html>

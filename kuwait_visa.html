@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuwait Work Immigration Guide</title>
+    <style>
+        :root {
+            --aqua: #7FFFD4;
+            --black: #000000;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.85);
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            background-color: var(--white);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(160,100%,95%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(160,100%,95%,1) 0, transparent 50%);
+            font-family: 'Britannic Bold', 'Impact', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; 
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- THE NARROW CENTERED CONTAINER --- */
+        .container {
+            text-align: center;
+            background: var(--glass);
+            padding: 40px 25px;
+            border-radius: 30px;
+            border: 2px solid var(--black);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px var(--shadow), 15px 15px 0px var(--aqua);
+            max-width: 420px !important; 
+            width: 90%;
+            margin: 40px auto !important;
+            position: relative;
+            z-index: 10;
+            box-sizing: border-box;
+        }
+
+        /* --- GLOBAL GLASS SHINE ANIMATION --- */
+        @keyframes shine {
+            0% { transform: translateX(-200%) translateY(-200%) rotate(45deg); }
+            100% { transform: translateX(200%) translateY(200%) rotate(45deg); }
+        }
+
+        /* --- THE GLASS CONTENT CARDS --- */
+        .card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid var(--black);
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            text-align: left; /* Details left-aligned for readability */
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 4px 4px 10px rgba(255,255,255,0.5), 5px 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: shine 4s infinite linear;
+        }
+
+        /* --- VERTICAL PANEL SHINE (THE EFFECT YOU REQUESTED) --- */
+        .card::after {
+            content: "";
+            position: absolute;
+            top: -100%; left: -150%;
+            width: 50%; height: 300%;
+            background: linear-gradient(to right, transparent, rgba(127, 255, 212, 0.4), transparent);
+            transform: rotate(25deg);
+            animation: verticalShine 5s infinite;
+        }
+
+        @keyframes verticalShine {
+            0% { left: -150%; }
+            30% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 8px;
+            color: var(--black);
+            text-align: center; /* Explicitly Centered */
+            width: 100%;
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--aqua);
+            display: inline-block;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .card-title, .step-label {
+            font-size: 1.1rem;
+            color: var(--black);
+            text-transform: uppercase;
+            text-decoration: underline;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .oneliner {
+            display: block;
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+            border-left: 3px solid var(--aqua);
+            padding-left: 10px;
+        }
+
+        p, li {
+            font-size: 0.85rem;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        ul { list-style: none; padding: 0; }
+        ul li::before {
+            content: "🇰🇼 ";
+            font-weight: bold;
+        }
+
+        .stats-grid { display: block; width: 100%; } 
+
+        @media (max-width: 768px) {
+            .container { width: 95%; padding: 20px 15px; margin: 20px auto; }
+            h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🇰🇼 KUWAIT — WORK IMMIGRATION GUIDE FOR INDIANS</h1>
+    </header>
+
+    <div class="container">
+        
+        <h2>🔹 1. OVERVIEW</h2>
+        <div class="card">
+            <p class="content-body">Kuwait is a popular destination for Indian workers due to tax-free income, demand for labor, and employer-driven visa processes. Opportunities are available in construction, oil & gas, healthcare, hospitality, retail, and domestic work. Kuwait offers employer-sponsored work visas under a sponsorship system, with limited long-term settlement options.</p>
+        </div>
+
+        <h2>🔹 2. TYPES OF WORK VISAS</h2>
+        
+        <div class="card">
+            <span class="card-title">1. Work Visa (Article 18)</span>
+            <span class="oneliner">Most common work visa for private sector employees.</span>
+            <p class="content-body">Requires employer sponsorship and is the standard pathway for most Indian professionals.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">2. Government Work Visa (Article 17)</span>
+            <span class="oneliner">For employees working in the government sector.</span>
+            <p class="content-body">Requires direct sponsorship from a Kuwaiti government entity.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">3. Domestic Worker Visa (Article 20)</span>
+            <span class="oneliner">For housemaids, drivers, and household staff.</span>
+            <p class="content-body">Sponsored by individual Kuwaiti employers.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">4. Temporary Work Permit</span>
+            <span class="oneliner">For short-term projects and limited duration roles.</span>
+        </div>
+
+        <h2>🔹 3. ELIGIBILITY CRITERIA</h2>
+        <div class="card">
+            <ul>
+                <li>✔ Valid job offer from a Kuwaiti employer</li>
+                <li>✔ Age between 21–60 years (varies by job role)</li>
+                <li>✔ Relevant skills or professional qualifications</li>
+                <li>✔ Mandatory medical fitness certification</li>
+                <li>✔ Valid passport (minimum 6 months validity)</li>
+                <li>✔ Clean criminal record (Police Clearance Certificate)</li>
+            </ul>
+        </div>
+
+        <h2>🔹 4. REQUIRED DOCUMENTS</h2>
+        <div class="card">
+            <ul>
+                <li>📄 Valid passport & Passport-size photographs</li>
+                <li>📄 Job offer / Official employment contract</li>
+                <li>📄 Work permit approval from Kuwait authorities</li>
+                <li>📄 Attested educational certificates</li>
+                <li>📄 Medical fitness certificate & Police clearance certificate</li>
+            </ul>
+        </div>
+
+        <h2>🔹 5. STEP-BY-STEP PROCESS</h2>
+
+        <div class="card">
+            <span class="step-label">✅ A & B: Eligibility & Job Search</span>
+            <span class="oneliner">THE MOST IMPORTANT STEP.</span>
+            <p class="content-body">Secure a job offer from a legally registered Kuwaiti employer. Without a job offer and sponsorship, the process cannot begin.</p>
+        </div>
+
+        <div class="card">
+            <span class="step-label">✅ C & D: Employer Actions</span>
+            <p class="content-body">The employer applies for work permit approval and submits the contract. Once government verification is complete, you receive the official work permit document.</p>
+        </div>
+
+        <div class="card">
+            <span class="step-label">✅ E & F: Visa & Medicals</span>
+            <p class="content-body">Apply for the Entry Visa through the Kuwait Embassy. Complete your mandatory medical examination and obtain your Police Clearance Certificate (PCC).</p>
+        </div>
+
+        <div class="card">
+            <span class="step-label">✅ G, H & I: Arrival & Civil ID</span>
+            <p class="content-body">Enter Kuwait on your entry visa. Your employer then applies for your <strong>Iqama (Residence Permit)</strong> and your <strong>Civil ID card</strong>, which is required for banking and legal identity.</p>
+        </div>
+
+        <h2>🧠 REALITY CHECK</h2>
+        <div class="card" style="border-left: 10px solid var(--aqua);">
+            <p class="content-body">
+                ❌ Beware of fake recruitment agents; always verify the employer.<br>
+                ❌ Never work on a visit visa; it carries strict legal penalties.<br>
+                ❌ The process is fully employer-controlled with no current PR pathway.
+            </p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="card">
+                <span class="card-title">Salary Expectation</span>
+                <p>Low-skilled: KWD 100 – 250/m<br>Skilled: KWD 600+/month<br><strong>(TAX-FREE)</strong></p>
+            </div>
+            <div class="card">
+                <span class="card-title">Processing Time</span>
+                <p>Typically 2–6 weeks for visa and permit approval.</p>
+            </div>
+            <div class="card">
+                <span class="card-title">Difficulty Level</span>
+                <p>👉 EASY<br>Process is straightforward once a job is secured.</p>
+            </div>
+        </div>
+
+        <h2>🔹 10. PROS & CONS</h2>
+        <div class="card">
+            <p class="content-body">
+                <strong>✔ PROS:</strong> Tax-free salary, Employer handles most steps, High demand for labor.<br><br>
+                <strong>❌ CONS:</strong> No PR or citizenship options, Job dependency, Strict labor regulations.
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

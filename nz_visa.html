@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMMIGRATION PROCESS FOR INDIANS IN NEW ZEALAND</title>
+   <style>
+        :root {
+            --aqua: #7FFFD4;
+            --black: #000000;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.85);
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            background-color: var(--white);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(160,100%,95%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(160,100%,95%,1) 0, transparent 50%);
+            font-family: 'Britannic Bold', 'Impact', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; 
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- THE NARROW CENTERED CONTAINER --- */
+        .container {
+            text-align: center;
+            background: var(--glass);
+            padding: 40px 25px;
+            border-radius: 30px;
+            border: 2px solid var(--black);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px var(--shadow), 15px 15px 0px var(--aqua);
+            max-width: 420px !important; 
+            width: 90%;
+            margin: 40px auto !important;
+            position: relative;
+            z-index: 10;
+            box-sizing: border-box;
+        }
+
+        /* --- GLOBAL GLASS SHINE ANIMATION --- */
+        @keyframes shine {
+            0% { transform: translateX(-200%) translateY(-200%) rotate(45deg); }
+            100% { transform: translateX(200%) translateY(200%) rotate(45deg); }
+        }
+
+        /* --- THE GLASS CONTENT CARDS --- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid var(--black);
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            text-align: left; /* Details left-aligned for readability */
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 4px 4px 10px rgba(255,255,255,0.5), 5px 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .glass-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: shine 4s infinite linear;
+        }
+
+        /* --- VERTICAL PANEL SHINE (BEVEL BOXES) --- */
+        .bevel-box {
+            background: var(--white);
+            border: 1px solid var(--black);
+            padding: 20px;
+            margin: 15px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 10px rgba(127, 255, 212, 0.2);
+            text-align: left;
+        }
+
+        .bevel-box::after {
+            content: "";
+            position: absolute;
+            top: -100%; left: -150%;
+            width: 50%; height: 300%;
+            background: linear-gradient(to right, transparent, rgba(127, 255, 212, 0.4), transparent);
+            transform: rotate(25deg);
+            animation: verticalShine 5s infinite;
+        }
+
+        @keyframes verticalShine {
+            0% { left: -150%; }
+            30% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 8px;
+            color: var(--black);
+            text-align: center; /* Explicitly Centered */
+            width: 100%;
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--aqua);
+            display: inline-block;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 0.9rem;
+            background: var(--black);
+            color: var(--aqua);
+            padding: 8px 15px;
+            display: inline-block;
+            margin: 15px 0;
+            text-transform: uppercase;
+        }
+
+        p, li {
+            font-size: 0.85rem;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        ul { list-style: none; padding: 0; }
+        ul li::before {
+            content: "🇳🇿 ";
+            font-weight: bold;
+        }
+
+        .step-num {
+            background: var(--aqua);
+            padding: 4px 10px;
+            border: 1px solid var(--black);
+            font-weight: 900;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .highlight-red {
+            color: #ff0055;
+            font-weight: 900;
+        }
+
+        .summary-footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 30px 20px;
+            margin-top: 30px;
+            border: 3px solid var(--aqua);
+            box-sizing: border-box;
+        }
+
+        .pros-cons-grid { display: block; width: 100%; } 
+
+        @media (max-width: 768px) {
+            .container { width: 95%; padding: 20px 15px; margin: 20px auto; }
+            h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>IMMIGRATION PROCESS FOR INDIANS IN NEW ZEALAND</h1>
+
+        <!-- SECTION 1 & 2 -->
+        <div class="glass-card">
+            <h2>🇳🇿 NEW ZEALAND — WORK IMMIGRATION GUIDE</h2>
+            <h3>🔹 1. Overview</h3>
+            <p>New Zealand is an attractive destination for Indian professionals due to its high quality of life, safe environment, and growing demand for skilled workers. Key sectors include healthcare, construction, IT, agriculture, engineering, and trades. New Zealand offers employer-sponsored work visas as well as pathways to Permanent Residency (PR), though policies have become more selective in recent years.</p>
+            
+            <h3>🔹 2. Types of Work Visas</h3>
+            <div class="bevel-box">
+                <p><strong>1. Accredited Employer Work Visa (AEWV):</strong> Most common work visa. Requires job offer from an accredited employer. Employer must be approved by immigration authorities.</p>
+                <p><strong>2. Skilled Migrant Category (SMC):</strong> Points-based PR system. For skilled professionals. Requires meeting eligibility criteria.</p>
+                <p><strong>3. Green List Visa:</strong> For occupations in high demand. Fast-track to residence. Includes healthcare, engineering roles.</p>
+                <p><strong>4. Working Holiday Visa:</strong> For young applicants (limited category). Short-term work and travel.</p>
+                <p><strong>5. Post-Study Work Visa:</strong> For students who studied in New Zealand. Allows temporary work.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 3 & 4 -->
+        <div class="glass-card">
+            <h2>🔹 3. Eligibility Criteria</h2>
+            <ul>
+                <li>Valid job offer (for AEWV)</li>
+                <li>Relevant qualifications and work experience</li>
+                <li>English language proficiency (IELTS/PTE)</li>
+                <li>Occupation must meet skill level requirements</li>
+                <li>Health and character requirements</li>
+                <li>Employer must be accredited (for job-based visas)</li>
+            </ul>
+
+            <h2 style="margin-top:40px;">🔹 4. Required Documents</h2>
+            <ul>
+                <li>Valid passport</li>
+                <li>Job offer letter</li>
+                <li>Educational certificates</li>
+                <li>Work experience letters</li>
+                <li>English test results (IELTS/PTE)</li>
+                <li>Medical examination report</li>
+                <li>Police clearance certificate</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 5 - STEP BY STEP -->
+        <div class="glass-card">
+            <h2>🔹 5. STEP-BY-STEP PROCESS</h2>
+            
+            <div class="bevel-box">
+                <span class="step-num">A</span>
+                <p><strong>Check Eligibility for the Appropriate Visa:</strong> You must first decide your pathway.</p>
+                <p>👉 <em>Example:</em> Job-based → AEWV | Skilled PR → SMC | High-demand job → Green List</p>
+                <p><strong>What you check here:</strong> Is your job role in demand? Do you meet qualification requirements? Do you meet English language requirement?</p>
+                <p class="highlight-red">👉 Wrong selection reduces chances.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">B</span>
+                <p><strong>Secure a Job Offer from Accredited Employer:</strong> This is the <strong>MOST IMPORTANT STEP</strong>. An Accredited Employer is a company approved by immigration authorities to hire foreign workers.</p>
+                <p><strong>What you must do:</strong> Apply via LinkedIn, Indeed New Zealand, or Company career websites. Target employers that are accredited and offer visa sponsorship.</p>
+                <p class="highlight-red">👉 Without job offer → AEWV not possible.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">C</span>
+                <p><strong>Employer Completes Job Check:</strong> Before hiring you, the employer must prove that no local worker is available and that the job meets wage standards. This is called <strong>Job Check approval</strong>.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">D</span>
+                <p><strong>Apply for Work Visa:</strong> Now you apply via <strong>Immigration New Zealand</strong>. You must fill the application form, upload documents, and pay the visa fee.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">E</span>
+                <p><strong>Submit Biometrics (if required):</strong> Some applicants may need to provide fingerprints and a photograph. This depends on the specific case.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">F</span>
+                <p><strong>Medical & Police Verification:</strong> Mandatory steps include a medical examination and police clearance to ensure you meet health and character requirements.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">G</span>
+                <p><strong>Wait for Decision:</strong> Authorities process your application. Standard AEWV processing takes 1–3 months; PR pathways take longer.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">H</span>
+                <p><strong>Receive Visa Approval:</strong> If approved, you receive a visa grant which confirms your legal entry into the country.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">I</span>
+                <p><strong>Travel to New Zealand:</strong> You enter the country and prepare for your professional transition.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">J</span>
+                <p><strong>Start Working and Settle:</strong> After arrival, open a bank account, get an IRD number (tax number), and start working. Eligible candidates can later apply for PR.</p>
+            </div>
+        </div>
+
+        <!-- REALITY CHECK -->
+        <div class="glass-card" style="border-color: #ff0055; box-shadow: 15px 15px 0px #ff0055;">
+            <h2 style="border-color: #ff0055;">🧠 REALITY CHECK (IMPORTANT)</h2>
+            <p>New Zealand is a good option, but: Job offer is critical. Employer accreditation is mandatory. Opportunities are fewer compared to bigger countries.</p>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+                <li>❌ Applying without checking employer accreditation</li>
+                <li>❌ Low IELTS score</li>
+                <li>❌ Incomplete documents</li>
+                <li>❌ Fake job offers</li>
+            </ul>
+        </div>
+
+        <!-- COST & SALARY INFO -->
+        <div class="pros-cons-grid">
+            <div class="glass-card">
+                <h3>🔹 7. Cost Estimate</h3>
+                <p>Visa fee: NZD 750 – 1,500 approx<br>
+                IELTS: ₹15,000 approx<br>
+                Medical + PCC: variable</p>
+                <p><strong>🔹 6. Processing Time:</strong><br>Work visa: 1–3 months</p>
+            </div>
+            <div class="glass-card">
+                <h3>🔹 8. Salary Expectation</h3>
+                <p>Entry-level: NZD 45,000 – 60,000/year<br>
+                Skilled professionals: NZD 60,000 – 100,000/year<br>
+                High-demand roles: NZD 100,000+</p>
+                <p><strong>🔹 9. PR Options:</strong> Available via Skilled Migrant Category or Green List pathway.</p>
+            </div>
+        </div>
+
+        <!-- PROS & CONS -->
+        <div class="pros-cons-grid">
+            <div class="glass-card" style="border-color: #2ed573; box-shadow: 15px 15px 0px #2ed573;">
+                <h2 style="border-color: #2ed573;">✔ Pros</h2>
+                <p>High quality of life, Safe and peaceful environment, PR pathways available, Work-life balance.</p>
+            </div>
+            <div class="glass-card" style="border-color: #ff4757; box-shadow: 15px 15px 0px #ff4757;">
+                <h2 style="border-color: #ff4757;">❌ Cons</h2>
+                <p>Limited job market, Distance from India, Strict immigration policies, Slower processing for PR.</p>
+            </div>
+        </div>
+
+        <!-- DIFFICULTY & SUMMARY -->
+        <div class="summary-footer">
+            <h2>🔹 11. Difficulty Level: Medium</h2>
+            <p>The job offer is the key challenge. The process is structured but highly selective.</p>
+            <div class="glass-card" style="margin: 30px auto; max-width: 450px; box-shadow: 10px 10px 0px var(--aqua); color: black;">
+                <h2 style="font-size: 1.6rem; border-color: black;">🧾 QUICK SUMMARY</h2>
+                <p style="font-size: 1rem; text-align: left;">
+                    Best for: Skilled professionals (balanced lifestyle)<br>
+                    Job offer: Required (mostly)<br>
+                    PR: Yes (available)<br>
+                    Processing: 1–3 months<br>
+                    Difficulty: Medium
+                </p>
+            </div>
+            <p style="color: var(--aqua); font-size: 0.8rem;">© 2026 ZenCV Factory | Engineered for Excellence</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

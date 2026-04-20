@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMMIGRATION PROCESS FOR INDIANS IN UK</title>
+   <style>
+        :root {
+            --aqua: #7FFFD4;
+            --black: #000000;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.85);
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            background-color: var(--white);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(160,100%,95%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(160,100%,95%,1) 0, transparent 50%);
+            font-family: 'Britannic Bold', 'Impact', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; 
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- THE NARROW CENTERED CONTAINER --- */
+        .container {
+            text-align: center;
+            background: var(--glass);
+            padding: 40px 25px;
+            border-radius: 30px;
+            border: 2px solid var(--black);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px var(--shadow), 15px 15px 0px var(--aqua);
+            max-width: 420px !important; 
+            width: 90%;
+            margin: 40px auto !important;
+            position: relative;
+            z-index: 10;
+            box-sizing: border-box;
+        }
+
+        /* --- GLOBAL GLASS SHINE ANIMATION --- */
+        @keyframes shine {
+            0% { transform: translateX(-200%) translateY(-200%) rotate(45deg); }
+            100% { transform: translateX(200%) translateY(200%) rotate(45deg); }
+        }
+
+        /* --- THE GLASS CONTENT CARDS --- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid var(--black);
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            text-align: left; /* Details left-aligned for readability */
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 4px 4px 10px rgba(255,255,255,0.5), 5px 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .glass-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: shine 4s infinite linear;
+        }
+
+        /* --- VERTICAL PANEL SHINE (BEVEL BOXES) --- */
+        .bevel-box {
+            background: var(--white);
+            border: 1px solid var(--black);
+            padding: 20px;
+            margin: 15px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 10px rgba(127, 255, 212, 0.2);
+        }
+
+        .bevel-box::after {
+            content: "";
+            position: absolute;
+            top: -100%; left: -150%;
+            width: 50%; height: 300%;
+            background: linear-gradient(to right, transparent, rgba(127, 255, 212, 0.4), transparent);
+            transform: rotate(25deg);
+            animation: verticalShine 5s infinite;
+        }
+
+        @keyframes verticalShine {
+            0% { left: -150%; }
+            30% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 8px;
+            color: var(--black);
+            text-align: center; /* Explicitly Centered */
+            width: 100%;
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--aqua);
+            display: inline-block;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 0.9rem;
+            background: var(--black);
+            color: var(--aqua);
+            padding: 8px 15px;
+            display: inline-block;
+            margin: 15px 0;
+            text-transform: uppercase;
+        }
+
+        p, li {
+            font-size: 0.85rem;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        ul { list-style: none; padding: 0; }
+        ul li::before {
+            content: "🇬🇧 ";
+            font-weight: bold;
+        }
+
+        .step-num {
+            background: var(--aqua);
+            padding: 4px 10px;
+            border: 1px solid var(--black);
+            font-weight: 900;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .highlight-text {
+            color: #ff0055;
+            font-weight: 900;
+        }
+
+        .summary-footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 30px 20px;
+            margin-top: 30px;
+            border: 3px solid var(--aqua);
+            box-sizing: border-box;
+        }
+
+        .pros-cons-grid { display: block; width: 100%; } 
+
+        @media (max-width: 768px) {
+            .container { width: 95%; padding: 20px 15px; margin: 20px auto; }
+            h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>IMMIGRATION PROCESS FOR INDIANS IN UK</h1>
+
+        <!-- SECTION 1 & 2 -->
+        <div class="glass-card">
+            <h2>🇬🇧 UNITED KINGDOM — WORK IMMIGRATION GUIDE</h2>
+            <h3>🔹 1. Overview</h3>
+            <p>The United Kingdom is one of the most preferred destinations for Indian professionals due to its strong economy, global job market, and structured immigration system. High demand exists in sectors such as IT, healthcare, engineering, finance, and education. The UK offers both temporary work visas and long-term settlement (PR) options.</p>
+            
+            <h3>🔹 2. Types of Work Visas</h3>
+            <div class="bevel-box">
+                <p><strong>1. Skilled Worker Visa:</strong> Most common work visa. Requires a job offer from a UK employer. Employer must be a licensed sponsor.</p>
+                <p><strong>2. Health and Care Worker Visa:</strong> For doctors, nurses, and healthcare professionals. Faster processing and lower fees.</p>
+                <p><strong>3. Global Talent Visa:</strong> For highly skilled individuals in tech, science, arts. No job offer required.</p>
+                <p><strong>4. Graduate Visa:</strong> For students who completed studies in the UK. Allows work for 2 years (3 years for PhD).</p>
+                <p><strong>5. Temporary Worker Visa:</strong> Short-term work (seasonal, charity, etc.).</p>
+            </div>
+        </div>
+
+        <!-- SECTION 3 & 4 -->
+        <div class="glass-card">
+            <h2>🔹 3. Eligibility Criteria</h2>
+            <ul>
+                <li>Valid job offer (for most visas)</li>
+                <li>Minimum salary threshold (usually £26,200/year or as per role)</li>
+                <li>English language proficiency (IELTS or equivalent)</li>
+                <li>Relevant educational qualifications</li>
+                <li>Work experience (role-dependent)</li>
+                <li>Employer sponsorship license</li>
+            </ul>
+
+            <h2 style="margin-top:40px;">🔹 4. Required Documents</h2>
+            <ul>
+                <li>Valid passport</li>
+                <li>Certificate of Sponsorship (CoS) from employer</li>
+                <li>Proof of English proficiency (IELTS/PTE)</li>
+                <li>Educational certificates</li>
+                <li>Work experience letters</li>
+                <li>Bank statements (proof of funds, if required)</li>
+                <li>Tuberculosis (TB) test results (for Indian applicants)</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 5 - STEP BY STEP -->
+        <div class="glass-card">
+            <h2>🔹 5. STEP-BY-STEP PROCESS</h2>
+            
+            <div class="bevel-box">
+                <span class="step-num">A</span>
+                <p><strong>Check Eligibility for the Appropriate Visa:</strong> This is where most people make mistakes. You must first decide <strong>which visa fits your profile</strong>, not randomly apply.</p>
+                <p>👉 <em>Example:</em> IT job → Skilled Worker Visa | Nurse/doctor → Health and Care Worker Visa | No job but highly skilled → Global Talent Visa</p>
+                <p><strong>What you check here:</strong> Is your job on the Shortage Occupation List? Does your role meet minimum salary requirement? Do you meet English language requirement?</p>
+                <p class="highlight-text">👉 If you fail here, your visa will be rejected later.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">B</span>
+                <p><strong>Secure a Job Offer from a Licensed UK Sponsor:</strong> This is the <strong>MOST IMPORTANT STEP</strong>. You cannot just go to the UK and find a job (in most cases).</p>
+                <p><strong>What is a Licensed Sponsor?</strong> A UK company approved by the government to hire foreign workers.</p>
+                <p><strong>What you must do:</strong> Apply via job portals (LinkedIn, Indeed UK, GOV.UK sponsor list). Target companies that offer visa sponsorship and are registered sponsors.</p>
+                <p class="highlight-text">👉 Without this, process stops here.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">C</span>
+                <p><strong>Receive Certificate of Sponsorship (CoS):</strong> Once selected, employer gives you a <strong>CoS (digital document)</strong>.</p>
+                <p><strong>What CoS contains:</strong> Job role, Salary, Employer details, Unique reference number.</p>
+                <p>👉 This is your <strong>key document</strong>. Without CoS, you cannot apply for visa.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">D</span>
+                <p><strong>Prepare Required Documents:</strong> Now you gather everything carefully. Core documents include: Passport, CoS number, IELTS / English proof, Degree certificates, Work experience letters, Bank statement (if required), and TB test (mandatory for Indians).</p>
+                <p class="highlight-text">👉 Mistakes here = delay or rejection.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">E</span>
+                <p><strong>Apply Online for Visa:</strong> You apply through official UK government portal: <strong>UK Visas and Immigration</strong>.</p>
+                <p><strong>What you do:</strong> Create account, Fill application form, Enter CoS number, Upload documents.</p>
+                <p>👉 Takes 1–2 hours if prepared properly.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">F</span>
+                <p><strong>Pay Visa Fee + Immigration Health Surcharge (IHS):</strong> Two major payments: 1. Visa Fee (usually £610–£1,408) and 2. IHS (Around £624 per year, gives access to NHS healthcare).</p>
+                <p class="highlight-text">👉 Without payment → application not processed.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">G</span>
+                <p><strong>Book Biometrics Appointment:</strong> After payment, you must book appointment at <strong>VFS Global</strong> (handles UK visa in India). Choose nearest center and select date & time.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">H</span>
+                <p><strong>Attend Visa Application Center:</strong> You go physically to VFS center for fingerprints, photograph, and document verification. You don’t give interview normally.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">I</span>
+                <p><strong>Wait for Decision:</strong> Now your application is processed by UK authorities. Standard timeline is 3–8 weeks. During this time they verify job offer, employer, and documents.</p>
+                <p class="highlight-text">👉 If anything suspicious → rejection.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">J</span>
+                <p><strong>Receive Visa and Travel to the UK:</strong> If approved, you get a visa vignette (sticker in passport) and a decision letter. After reaching UK, collect your <strong>BRP (Biometric Residence Permit)</strong>.</p>
+                <p>👉 Now you can work legally, open bank account, and start your job.</p>
+            </div>
+        </div>
+
+        <!-- REALITY CHECK -->
+        <div class="glass-card" style="border-color: #ff0055; box-shadow: 15px 15px 0px #ff0055;">
+            <h2 style="border-color: #ff0055;">🧠 REALITY CHECK (IMPORTANT)</h2>
+            <p>This process looks simple, but: Step 2 (job offer) is the hardest. Without sponsorship → no visa.</p>
+            <p><strong>Many people fail because:</strong></p>
+            <ul>
+                <li>❌ Fake agents</li>
+                <li>❌ Wrong visa type</li>
+                <li>❌ Weak CV</li>
+            </ul>
+        </div>
+
+        <!-- COST & SALARY INFO -->
+        <div class="pros-cons-grid">
+            <div class="glass-card">
+                <h3>🔹 7. Cost Estimate</h3>
+                <p>Visa fee: £610 – £1,408<br>
+                IHS: £624/year<br>
+                IELTS: ₹15,000 approx<br>
+                Misc: Variable</p>
+            </div>
+            <div class="glass-card">
+                <h3>🔹 8. Salary Expectation</h3>
+                <p>IT: £30k – £70k/yr<br>
+                Healthcare: £25k – £50k/yr<br>
+                Entry-level: £20k – £30k/yr</p>
+            </div>
+        </div>
+
+        <!-- PROS & CONS -->
+        <div class="pros-cons-grid">
+            <div class="glass-card" style="border-color: #2ed573; box-shadow: 15px 15px 0px #2ed573;">
+                <h2 style="border-color: #2ed573;">✔ Pros</h2>
+                <p>High earning potential, Strong job market, Clear PR pathway, International work exposure.</p>
+            </div>
+            <div class="glass-card" style="border-color: #ff4757; box-shadow: 15px 15px 0px #ff4757;">
+                <h2 style="border-color: #ff4757;">❌ Cons</h2>
+                <p>High cost of living, Strict visa rules, High competition, Challenging weather.</p>
+            </div>
+        </div>
+
+        <!-- DIFFICULTY & SUMMARY -->
+        <div class="summary-footer">
+            <h2>🔹 11. Difficulty Level: Medium to Hard</h2>
+            <p>Apply for PR (ILR) after 5 years. Standard processing takes 3–8 weeks.</p>
+            <div class="glass-card" style="margin: 20px auto; max-width: 400px; box-shadow: 10px 10px 0px var(--aqua);">
+                <h2 style="font-size: 1.5rem;">🧾 QUICK SUMMARY</h2>
+                <p style="font-size: 0.9rem; text-align: left;">
+                    Best for: Skilled professionals<br>
+                    Job offer: Required<br>
+                    PR: Possible after 5 years<br>
+                    Difficulty: Medium–Hard
+                </p>
+            </div>
+            <p style="color: var(--aqua); font-size: 0.8rem;">© 2026 ZenCV Factory | Engineered for Excellence</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

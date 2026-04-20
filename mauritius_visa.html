@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauritius Work Immigration Guide</title>
+   <style>
+        :root {
+            --aqua: #7FFFD4;
+            --black: #000000;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.85);
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            background-color: var(--white);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(160,100%,95%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(160,100%,95%,1) 0, transparent 50%);
+            font-family: 'Britannic Bold', 'Impact', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; 
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- THE NARROW CENTERED CONTAINER --- */
+        .container {
+            text-align: center;
+            background: var(--glass);
+            padding: 40px 25px;
+            border-radius: 30px;
+            border: 2px solid var(--black);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px var(--shadow), 15px 15px 0px var(--aqua);
+            max-width: 420px !important; 
+            width: 90%;
+            margin: 40px auto !important;
+            position: relative;
+            z-index: 10;
+            box-sizing: border-box;
+        }
+
+        /* --- GLOBAL GLASS SHINE ANIMATION --- */
+        @keyframes shine {
+            0% { transform: translateX(-200%) translateY(-200%) rotate(45deg); }
+            100% { transform: translateX(200%) translateY(200%) rotate(45deg); }
+        }
+
+        /* --- THE GLASS CONTENT CARDS --- */
+        .card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid var(--black);
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            text-align: left; /* Details left-aligned for readability */
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 4px 4px 10px rgba(255,255,255,0.5), 5px 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: shine 4s infinite linear;
+        }
+
+        /* --- VERTICAL PANEL SHINE (THE REQUESTED EFFECT) --- */
+        .card::after {
+            content: "";
+            position: absolute;
+            top: -100%; left: -150%;
+            width: 50%; height: 300%;
+            background: linear-gradient(to right, transparent, rgba(127, 255, 212, 0.4), transparent);
+            transform: rotate(25deg);
+            animation: verticalShine 5s infinite;
+        }
+
+        @keyframes verticalShine {
+            0% { left: -150%; }
+            30% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 8px;
+            color: var(--black);
+            text-align: center; /* Explicitly Centered */
+            width: 100%;
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--aqua);
+            display: inline-block;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .card-title, .step-heading {
+            font-size: 1.1rem;
+            color: var(--black);
+            text-transform: uppercase;
+            text-decoration: underline;
+            font-weight: 900;
+            display: block;
+            margin: 10px 0 5px 0;
+        }
+
+        .oneliner {
+            display: block;
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+            border-left: 3px solid var(--aqua);
+            padding-left: 10px;
+        }
+
+        p, li {
+            font-size: 0.85rem;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        ul { list-style: none; padding: 0; }
+        ul li::before {
+            content: "🇲🇺 ";
+            font-weight: bold;
+        }
+
+        .stats-grid { display: block; width: 100%; } 
+
+        @media (max-width: 768px) {
+            .container { width: 95%; padding: 20px 15px; margin: 20px auto; }
+            h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🇲🇺 MAURITIUS — WORK IMMIGRATION GUIDE FOR INDIANS</h1>
+    </header>
+
+    <div class="container">
+        
+        <h2>🔹 1. OVERVIEW</h2>
+        <div class="card">
+            <p class="content-body">Mauritius is an emerging destination for Indian professionals due to its stable economy, cultural similarities, and proximity to India. Opportunities exist in tourism, hospitality, finance, IT, education, and construction. Mauritius offers employer-sponsored work permits and combined residence permits, with some long-term stay options for skilled professionals and investors.</p>
+        </div>
+
+        <h2>🔹 2. TYPES OF WORK VISAS</h2>
+        
+        <div class="card">
+            <span class="card-title">1. Occupation Permit (OP)</span>
+            <span class="oneliner">Most common permit combining work and residence.</span>
+            <p class="content-body">For professionals, investors, and self-employed individuals. Requires meeting specific salary or investment thresholds.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">2. Work Permit</span>
+            <span class="oneliner">Employer-sponsored for standard employment.</span>
+            <p class="content-body">Usually issued for short to medium-term roles in sectors like construction and manufacturing.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">3. Residence Permit</span>
+            <span class="oneliner">Issued for long-term stay.</span>
+            <p class="content-body">Often linked with an occupation permit or significant investment in the country.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">4. Premium Visa</span>
+            <span class="oneliner">For remote workers and long-stay tourists.</span>
+            <p class="content-body">Allows a stay of up to one year but does not permit entry into the local Mauritian labor market.</p>
+        </div>
+
+        <h2>🔹 3. ELIGIBILITY CRITERIA</h2>
+        <div class="card">
+            <ul>
+                <li>✔ Valid job offer (mandatory for Work Permits and OPs)</li>
+                <li>✔ Relevant educational qualifications and work experience</li>
+                <li>✔ Minimum salary threshold (specifically for Occupation Permits)</li>
+                <li>✔ Valid passport & Medical fitness certification</li>
+                <li>✔ Clean criminal record (Police Clearance Certificate)</li>
+            </ul>
+        </div>
+
+        <h2>🔹 4. REQUIRED DOCUMENTS</h2>
+        <div class="card">
+            <ul>
+                <li>📄 Valid passport & Passport-size photographs</li>
+                <li>📄 Job offer / Official employment contract</li>
+                <li>📄 Educational certificates & Work experience letters</li>
+                <li>📄 Medical certificate & Police clearance certificate</li>
+            </ul>
+        </div>
+
+        <h2>🔹 5. STEP-BY-STEP PROCESS</h2>
+
+        <span class="step-heading">✅ A. Eligibility & Job Offer</span>
+        <div class="card">
+            <span class="oneliner">THE MOST IMPORTANT STEP.</span>
+            <p class="content-body">Secure a job offer via LinkedIn, Indeed Mauritius, or direct portals. Ensure the employer is willing to provide permit support.</p>
+        </div>
+
+        <span class="step-heading">✅ B. Employer Application</span>
+        <div class="card">
+            <p class="content-body">The employer submits your application to the <strong>Economic Development Board (EDB)</strong>. They verify the job role, salary, and company credentials.</p>
+        </div>
+
+        <span class="step-heading">✅ C. Approval & Travel</span>
+        <div class="card">
+            <p class="content-body">Once you receive "Approval in Principle," you can travel to Mauritius to complete post-arrival formalities.</p>
+        </div>
+
+        <span class="step-heading">✅ D. Post-Arrival Formalities</span>
+        <div class="card">
+            <p class="content-body">Complete a local medical check-up and register with authorities. Your physical Occupation Permit or Work Permit card is then issued.</p>
+        </div>
+
+        <h2>🧠 REALITY CHECK</h2>
+        <div class="card" style="border-left: 10px solid var(--aqua);">
+            <p class="content-body">
+                ❌ Beware of fake job offers; verify the company through official channels.<br>
+                ❌ The job market is smaller than major EU or Gulf destinations.<br>
+                ❌ Salaries are moderate compared to Western countries.<br>
+                ❌ Permanent Residency is limited mainly to high-end investors and long-term professionals.
+            </p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="card">
+                <span class="card-title">Salary Expectation</span>
+                <p>Entry: MUR 20k – 40k/m<br>Skilled: MUR 80,000+/m</p>
+            </div>
+            <div class="card">
+                <span class="card-title">Processing Time</span>
+                <p>Typically 2–6 weeks for permit approval.</p>
+            </div>
+            <div class="card">
+                <span class="card-title">Difficulty Level</span>
+                <p>👉 EASY TO MEDIUM<br>Process is simple once the job is secured.</p>
+            </div>
+        </div>
+
+        <h2>🧾 QUICK SUMMARY</h2>
+        <div class="card">
+            <p class="content-body" style="text-align: center;">
+                <strong>Best for:</strong> Niche professionals, lifestyle jobs<br>
+                <strong>Job offer:</strong> Mandatory<br>
+                <strong>PR:</strong> Limited options<br>
+                <strong>Processing time:</strong> 2–6 weeks<br>
+                <strong>Difficulty:</strong> Easy–Medium
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

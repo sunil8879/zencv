@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oman Work Immigration Guide</title>
+    <style>
+        :root {
+            --aqua: #7FFFD4;
+            --black: #000000;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.85);
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            background-color: var(--white);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(160,100%,95%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(160,100%,95%,1) 0, transparent 50%);
+            font-family: 'Britannic Bold', 'Impact', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; 
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- THE NARROW CENTERED CONTAINER --- */
+        .container {
+            text-align: center;
+            background: var(--glass);
+            padding: 40px 25px;
+            border-radius: 30px;
+            border: 2px solid var(--black);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px var(--shadow), 15px 15px 0px var(--aqua);
+            max-width: 420px !important; 
+            width: 90%;
+            margin: 40px auto !important;
+            position: relative;
+            z-index: 10;
+            box-sizing: border-box;
+        }
+
+        /* --- GLOBAL GLASS SHINE ANIMATION --- */
+        @keyframes shine {
+            0% { transform: translateX(-200%) translateY(-200%) rotate(45deg); }
+            100% { transform: translateX(200%) translateY(200%) rotate(45deg); }
+        }
+
+        /* --- THE GLASS CONTENT CARDS --- */
+        .glass-card, .card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid var(--black);
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            text-align: left; /* Details left-aligned for readability */
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 4px 4px 10px rgba(255,255,255,0.5), 5px 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .glass-card::before, .card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: shine 4s infinite linear;
+        }
+
+        /* --- VERTICAL PANEL SHINE (THE REQUESTED EFFECT) --- */
+        .glass-card::after, .card::after {
+            content: "";
+            position: absolute;
+            top: -100%; left: -150%;
+            width: 50%; height: 300%;
+            background: linear-gradient(to right, transparent, rgba(127, 255, 212, 0.4), transparent);
+            transform: rotate(25deg);
+            animation: verticalShine 5s infinite;
+        }
+
+        @keyframes verticalShine {
+            0% { left: -150%; }
+            30% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 8px;
+            color: var(--black);
+            text-align: center; /* Explicitly Centered */
+            width: 100%;
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--aqua);
+            display: inline-block;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .card-title, .step-marker {
+            font-size: 1.1rem;
+            color: var(--black);
+            text-transform: uppercase;
+            text-decoration: underline;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .oneliner {
+            display: block;
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+            border-left: 3px solid var(--aqua);
+            padding-left: 10px;
+        }
+
+        p, li {
+            font-size: 0.85rem;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        ul { list-style: none; padding: 0; }
+        ul li::before {
+            content: "🇴🇲 ";
+            font-weight: bold;
+        }
+
+        .stats-grid { display: block; width: 100%; } 
+
+        @media (max-width: 768px) {
+            .container { width: 95%; padding: 20px 15px; margin: 20px auto; }
+            h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🇴🇲 OMAN — WORK IMMIGRATION GUIDE FOR INDIANS</h1>
+    </header>
+
+    <div class="container">
+        
+        <h2>🔹 1. OVERVIEW</h2>
+        <div class="card">
+            <p class="content-body">Oman is a popular destination for Indian workers due to steady job demand, tax-free income, and relatively simple employer-driven visa processes. Opportunities are available in construction, oil & gas, healthcare, retail, hospitality, logistics, and services. Oman follows a sponsorship system for employment visas and offers limited long-term settlement options.</p>
+        </div>
+
+        <h2>🔹 2. TYPES OF WORK VISAS</h2>
+        
+        <div class="card">
+            <span class="card-title">1. Employment Visa</span>
+            <span class="oneliner">Most common visa, typically valid for 2 years.</span>
+            <p class="content-body">Requires direct employer sponsorship and is the primary route for both skilled and unskilled labor.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">2. Temporary Work Visa</span>
+            <span class="oneliner">For short-term projects or specific tasks.</span>
+            <p class="content-body">Linked to a specific duration and employer for urgent or temporary staffing needs.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">3. Express Visa</span>
+            <span class="oneliner">Fast-track processing for urgent travel.</span>
+        </div>
+
+        <div class="card">
+            <span class="card-title">4. Family Joining Visa</span>
+            <span class="oneliner">For dependents of professionals working in Oman.</span>
+            <p class="content-body">Requires the sponsor (worker) to meet a specific minimum salary threshold set by the government.</p>
+        </div>
+
+        <h2>🔹 3. ELIGIBILITY CRITERIA</h2>
+        <div class="card">
+            <ul>
+                <li>✔ Valid job offer from a registered Omani employer</li>
+                <li>✔ Age between 21–60 years (varies by profession)</li>
+                <li>✔ Relevant qualifications or skills for the specific role</li>
+                <li>✔ Mandatory medical fitness (GAMCA/Medical certification)</li>
+                <li>✔ Valid passport (minimum 6 months validity)</li>
+                <li>✔ Clean criminal record (Police Clearance Certificate)</li>
+            </ul>
+        </div>
+
+        <h2>🔹 4. REQUIRED DOCUMENTS</h2>
+        <div class="card">
+            <ul>
+                <li>📄 Valid passport & Passport-size photographs</li>
+                <li>📄 Job offer / Official employment contract</li>
+                <li>📄 Work visa approval from Oman authorities</li>
+                <li>📄 Attested educational certificates (if required)</li>
+                <li>📄 Medical fitness certificate & Police clearance certificate</li>
+            </ul>
+        </div>
+
+        <h2>🔹 5. STEP-BY-STEP PROCESS (DETAILED)</h2>
+
+        <div class="card">
+            <span class="step-marker">✅ A & B: Eligibility & Job Search</span>
+            <span class="oneliner">THE MOST IMPORTANT STEP.</span>
+            <p class="content-body">Secure a job offer via LinkedIn, Indeed Oman, or recruitment agencies. Ensure the employer is legally registered and authorized to sponsor foreign workers.</p>
+        </div>
+
+        <div class="card">
+            <span class="step-marker">✅ C & D: Employer Authorization</span>
+            <p class="content-body">The employer submits the application to Omani authorities. The government verifies the job role and company quota. Once approved, you receive the work visa approval document.</p>
+        </div>
+
+        <div class="card">
+            <span class="step-marker">✅ E & F: Medicals & Entry</span>
+            <p class="content-body">Complete your medical examination and attest your documents if required. Enter Oman using the approved entry visa within its validity period.</p>
+        </div>
+
+        <div class="card">
+            <span class="step-marker">✅ G, H & I: Residence Card & Biometrics</span>
+            <p class="content-body">After arrival, the employer applies for your <strong>Resident Card (Residence Card)</strong>. You must complete biometrics (fingerprints and photos) for official records before you can legally start work.</p>
+        </div>
+
+        <h2>🧠 REALITY CHECK</h2>
+        <div class="card" style="border-left: 10px solid var(--aqua);">
+            <p class="content-body">
+                ❌ Beware of fake agents charging illegal fees for visas.<br>
+                ❌ The system is strictly employer-controlled (Sponsorship).<br>
+                ❌ Permanent residency is not available for general workers.<br>
+                ❌ Strict penalties are imposed for working for a non-sponsor or working illegally.
+            </p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="card">
+                <span class="card-title">Salary Expectation</span>
+                <p>Low-skilled: OMR 100 – 250/m<br>Skilled: OMR 700+/month<br><strong>(TAX-FREE)</strong></p>
+            </div>
+            <div class="card">
+                <span class="card-title">Processing Time</span>
+                <p>Typically 2–6 weeks for visa and authorization approval.</p>
+            </div>
+            <div class="card">
+                <span class="card-title">Difficulty Level</span>
+                <p>👉 EASY<br>The process is straightforward once an employer is found.</p>
+            </div>
+        </div>
+
+        <h2>🔹 10. PROS & CONS</h2>
+        <div class="card">
+            <p class="content-body">
+                <strong>✔ PROS:</strong> Tax-free salary, simple visa process, employer handles most steps, stable job market.<br><br>
+                <strong>❌ CONS:</strong> No PR, job dependency, moderate salaries compared to other Gulf states, limited job mobility.
+            </p>
+        </div>
+
+        <h2>🧾 QUICK SUMMARY</h2>
+        <div class="card">
+            <p class="content-body" style="text-align: center;">
+                <strong>Best for:</strong> Gulf jobs (low to mid-skilled)<br>
+                <strong>Job offer:</strong> Mandatory<br>
+                <strong>PR:</strong> Not available<br>
+                <strong>Processing time:</strong> 2–6 weeks<br>
+                <strong>Difficulty:</strong> Easy
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxembourg Work Immigration Guide</title>
+    <style>
+        :root {
+            --aqua: #7FFFD4;
+            --black: #000000;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.85);
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            background-color: var(--white);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(160,100%,95%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(160,100%,95%,1) 0, transparent 50%);
+            font-family: 'Britannic Bold', 'Impact', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; 
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- THE NARROW CENTERED CONTAINER --- */
+        .container {
+            text-align: center;
+            background: var(--glass);
+            padding: 40px 25px;
+            border-radius: 30px;
+            border: 2px solid var(--black);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px var(--shadow), 15px 15px 0px var(--aqua);
+            max-width: 420px !important; 
+            width: 90%;
+            margin: 40px auto !important;
+            position: relative;
+            z-index: 10;
+            box-sizing: border-box;
+        }
+
+        /* --- GLOBAL GLASS SHINE ANIMATION --- */
+        @keyframes shine {
+            0% { transform: translateX(-200%) translateY(-200%) rotate(45deg); }
+            100% { transform: translateX(200%) translateY(200%) rotate(45deg); }
+        }
+
+        /* --- THE GLASS CONTENT CARDS --- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid var(--black);
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            text-align: left; 
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 4px 4px 10px rgba(255,255,255,0.5), 5px 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .glass-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: shine 4s infinite linear;
+        }
+
+        /* --- VERTICAL PANEL SHINE (BEVEL BOXES) --- */
+        .bevel-box {
+            background: var(--white);
+            border: 1px solid var(--black);
+            padding: 20px;
+            margin: 15px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 10px rgba(127, 255, 212, 0.2);
+            text-align: left;
+        }
+
+        .bevel-box::after {
+            content: "";
+            position: absolute;
+            top: -100%; left: -150%;
+            width: 50%; height: 300%;
+            background: linear-gradient(to right, transparent, rgba(127, 255, 212, 0.4), transparent);
+            transform: rotate(25deg);
+            animation: verticalShine 5s infinite;
+        }
+
+        @keyframes verticalShine {
+            0% { left: -150%; }
+            30% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 8px;
+            color: var(--black);
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--aqua);
+            display: inline-block;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 0.9rem;
+            background: var(--black);
+            color: var(--aqua);
+            padding: 8px 15px;
+            display: inline-block;
+            margin: 15px 0;
+            text-transform: uppercase;
+        }
+
+        p, li {
+            font-size: 0.85rem;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        ul { list-style: none; padding: 0; }
+        ul li { margin-bottom: 10px; }
+        ul li::before {
+            content: "🇱🇺 ";
+            font-weight: bold;
+        }
+
+        .step-label {
+            background: var(--aqua);
+            padding: 4px 10px;
+            border: 1px solid var(--black);
+            font-weight: 900;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .summary-footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 30px 20px;
+            margin-top: 30px;
+            border: 3px solid var(--aqua);
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+            .container { width: 95%; padding: 25px 15px; margin: 20px auto; }
+            h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🇱🇺 LUXEMBOURG — WORK IMMIGRATION GUIDE FOR INDIANS</h1>
+
+        <!-- SECTION 1 -->
+        <div class="glass-card">
+            <h2>🔹 1. Overview</h2>
+            <p>Luxembourg is a small but highly developed European nation known for its strong economy, especially in finance, banking, IT, and logistics. It offers high salaries and a high standard of living, but has a <strong>limited job market</strong> and strict immigration procedures. Work visas are mainly employer-sponsored, and long-term residency is possible.</p>
+        </div>
+
+        <!-- SECTION 2 -->
+        <div class="glass-card">
+            <h2>🔹 2. Types of Work Visas</h2>
+            <div class="bevel-box">
+                <p><strong>1. Short-Stay Visa (Type C):</strong> For business trips or short-term work (up to 90 days).</p>
+                <p><strong>2. Long-Stay Work Visa (Type D):</strong> For employment exceeding 90 days. Requires job offer.</p>
+                <p><strong>3. EU Blue Card:</strong> For highly skilled professionals. Higher salary threshold required.</p>
+                <p><strong>4. Intra-Company Transfer Visa:</strong> For employees transferred within a company.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 3 & 4 -->
+        <div class="glass-card">
+            <h2>🔹 3. Eligibility Criteria</h2>
+            <ul>
+                <li>Valid job offer from Luxembourg employer</li>
+                <li>Work authorization approved by government</li>
+                <li>Relevant qualifications</li>
+                <li>Work experience (role-dependent)</li>
+                <li>Clean criminal record</li>
+                <li>Medical fitness</li>
+            </ul>
+
+            <h2 style="margin-top:30px;">🔹 4. Required Documents</h2>
+            <ul>
+                <li>Valid passport</li>
+                <li>Employment contract</li>
+                <li>Work authorization approval</li>
+                <li>Educational certificates</li>
+                <li>Work experience proof</li>
+                <li>Medical certificate</li>
+                <li>Police clearance certificate</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 5 -->
+        <h1>🔹 5. STEP-BY-STEP PROCESS</h1>
+
+        <div class="bevel-box">
+            <span class="step-label">✅ A</span>
+            <p><strong>Check Eligibility for the Appropriate Visa:</strong> You must first identify the correct visa type.</p>
+            <p>👉 <em>Example:</em> High-skilled → EU Blue Card | Regular job → Long-Stay Work Visa</p>
+            <p><strong>What you check here:</strong> Salary threshold eligibility, Qualification requirements, and Job contract validity.</p>
+            <p style="color: #ff0055; font-weight: 900;">👉 Wrong category → rejection</p>
+        </div>
+
+        <div class="bevel-box">
+            <span class="step-label">✅ B</span>
+            <p><strong>Secure a Job Offer from Luxembourg Employer:</strong> This is the <strong>MOST IMPORTANT STEP</strong>. You cannot enter Luxembourg for work without a job offer.</p>
+            <p><strong>What you must do:</strong> Apply via LinkedIn, Indeed Europe, or Company websites. Target companies that hire international workers and offer sponsorship.</p>
+            <p style="color: #ff0055; font-weight: 900;">👉 Without job → process stops</p>
+        </div>
+
+        <div class="bevel-box">
+            <span class="step-label">✅ C</span>
+            <p><strong>Employer Applies for Work Authorization:</strong> Before visa, the employer applies to Luxembourg authorities.</p>
+            <p>👉 Mandatory approval required.</p>
+        </div>
+
+        <div class="bevel-box">
+            <span class="step-label">✅ D</span>
+            <p><strong>Receive Temporary Authorization:</strong> Once approved, you receive official authorization.</p>
+            <p>👉 Required before visa application.</p>
+        </div>
+
+        <div class="bevel-box">
+            <span class="step-label">✅ E</span>
+            <p><strong>Apply for Long-Stay Visa:</strong> Apply through Luxembourg Embassy. Submit application, provide all documents, and pay visa fee.</p>
+        </div>
+
+        <div class="bevel-box">
+            <span class="step-label">✅ F - I</span>
+            <p><strong>Travel & Formalities:</strong> Enter the country. Within 3 days, register with local authorities. Undergo mandatory medical examination and apply for your physical residence card.</p>
+        </div>
+
+        <div class="bevel-box">
+            <span class="step-label">✅ J</span>
+            <p><strong>Start Working:</strong> Now you can work legally, open a bank account, and settle in Luxembourg.</p>
+        </div>
+
+        <!-- REALITY CHECK -->
+        <div class="glass-card" style="border-left: 10px solid #ff0055;">
+            <h2 style="border-color: #ff0055;">🧠 REALITY CHECK (IMPORTANT)</h2>
+            <p>Job market is <strong>small and competitive</strong>. Language (French/German) often required. High salary but high living cost.</p>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+                <li>❌ Applying without job offer</li>
+                <li>❌ Ignoring language requirements</li>
+                <li>❌ Weak CV</li>
+            </ul>
+        </div>
+
+        <!-- STATS -->
+        <div class="glass-card">
+            <p><strong>🔹 6. Processing Time:</strong> 4–12 weeks (approx)</p>
+            <p><strong>🔹 7. Cost Estimate:</strong> Visa fee: €80–€100</p>
+            <p><strong>🔹 8. Salary Expectation:</strong><br>Finance/IT: €50,000 – €100,000/year<br>Entry-level: €30,000 – €50,000/year</p>
+            <p><strong>🔹 9. PR Options:</strong> Apply after 5 years. Must meet residency and integration requirements.</p>
+        </div>
+
+        <!-- PROS & CONS -->
+        <div class="glass-card">
+            <h2>🔹 10. Pros & Cons</h2>
+            <p><strong>✔ Pros:</strong> Very high salaries, Strong economy, EU mobility.</p>
+            <p><strong>❌ Cons:</strong> Limited jobs, High cost of living, Language barrier.</p>
+        </div>
+
+        <!-- SUMMARY -->
+        <div class="summary-footer">
+            <h2>🔹 11. Difficulty Level: Medium to Hard</h2>
+            <div class="glass-card" style="margin: 20px auto; color: black;">
+                <h2 style="font-size: 1.1rem; border-color: black;">🧾 QUICK SUMMARY</h2>
+                <p style="font-size: 0.8rem; text-align: left;">
+                    Best for: Finance, IT professionals<br>
+                    Job offer: Mandatory<br>
+                    PR: Possible after 5 years<br>
+                    Processing time: 4–12 weeks<br>
+                    Difficulty: Medium–Hard
+                </p>
+            </div>
+            <p style="font-size: 0.7rem; margin-top: 15px;">© 2026 ZenCV Factory | Engineered for Excellence</p>
+        </div>
+
+    </div>
+</body>
+</html>

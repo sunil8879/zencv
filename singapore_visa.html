@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapore Work Immigration Guide</title>
+   <style>
+        :root {
+            --aqua: #7FFFD4;
+            --black: #000000;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.85);
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            background-color: var(--white);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(160,100%,95%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(160,100%,95%,1) 0, transparent 50%);
+            font-family: 'Britannic Bold', 'Impact', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; 
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- THE NARROW CENTERED CONTAINER --- */
+        .container {
+            text-align: center;
+            background: var(--glass);
+            padding: 40px 25px;
+            border-radius: 30px;
+            border: 2px solid var(--black);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px var(--shadow), 15px 15px 0px var(--aqua);
+            max-width: 420px !important; 
+            width: 90%;
+            margin: 40px auto !important;
+            position: relative;
+            z-index: 10;
+            box-sizing: border-box;
+        }
+
+        /* --- GLOBAL GLASS SHINE ANIMATION --- */
+        @keyframes shine {
+            0% { transform: translateX(-200%) translateY(-200%) rotate(45deg); }
+            100% { transform: translateX(200%) translateY(200%) rotate(45deg); }
+        }
+
+        /* --- THE GLASS CONTENT CARDS --- */
+        .card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid var(--black);
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            text-align: left; /* Details left-aligned for readability */
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 4px 4px 10px rgba(255,255,255,0.5), 5px 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: shine 4s infinite linear;
+        }
+
+        /* --- VERTICAL PANEL SHINE (THE REQUESTED EFFECT) --- */
+        .card::after {
+            content: "";
+            position: absolute;
+            top: -100%; left: -150%;
+            width: 50%; height: 300%;
+            background: linear-gradient(to right, transparent, rgba(127, 255, 212, 0.4), transparent);
+            transform: rotate(25deg);
+            animation: verticalShine 5s infinite;
+        }
+
+        @keyframes verticalShine {
+            0% { left: -150%; }
+            30% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 8px;
+            color: var(--black);
+            text-align: center; /* Explicitly Centered */
+            width: 100%;
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--aqua);
+            display: inline-block;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .card-title, .step-heading {
+            font-size: 1.1rem;
+            color: var(--black);
+            text-transform: uppercase;
+            text-decoration: underline;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .oneliner {
+            display: block;
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+            border-left: 3px solid var(--aqua);
+            padding-left: 10px;
+        }
+
+        p, li {
+            font-size: 0.85rem;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        ul { list-style: none; padding: 0; }
+        ul li::before {
+            content: "🇸🇬 ";
+            font-weight: bold;
+        }
+
+        .stats-grid { display: block; width: 100%; } 
+
+        @media (max-width: 768px) {
+            .container { width: 95%; padding: 20px 15px; margin: 20px auto; }
+            h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🇸🇬 SINGAPORE — WORK IMMIGRATION GUIDE FOR INDIANS</h1>
+    </header>
+
+    <div class="container">
+        
+        <h2>🔹 1. OVERVIEW</h2>
+        <div class="card">
+            <p class="content-text">Singapore is a major global financial and business hub, attracting Indian professionals due to its high salaries, tax advantages, and proximity to India. Key sectors include finance, IT, banking, logistics, healthcare, and hospitality. Singapore offers employer-sponsored work passes rather than traditional visas, and while it provides long-term stay options, obtaining Permanent Residency (PR) is selective.</p>
+        </div>
+
+        <h2>🔹 2. TYPES OF WORK VISAS</h2>
+        
+        <div class="card">
+            <span class="card-title">1. Employment Pass (EP)</span>
+            <span class="oneliner">Most common for professionals.</span>
+            <p class="content-text">Requires job offer from Singapore employer. High salary threshold.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">2. S Pass</span>
+            <span class="oneliner">For mid-skilled workers.</span>
+            <p class="content-text">Lower salary requirement than EP. Quota-based system.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">3. Work Permit</span>
+            <span class="oneliner">For semi-skilled or low-skilled workers.</span>
+            <p class="content-text">Strict employer control. Common in construction, manufacturing.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">4. EntrePass</span>
+            <span class="oneliner">For entrepreneurs starting a business.</span>
+            <p class="content-text">Requires business plan approval.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">5. Personalised Employment Pass (PEP)</span>
+            <span class="oneliner">For high-earning professionals.</span>
+            <p class="content-text">More flexibility than EP.</p>
+        </div>
+
+        <h2>🔹 3. ELIGIBILITY CRITERIA</h2>
+        <div class="card">
+            <ul>
+                <li>✔ Valid job offer (mandatory for most passes)</li>
+                <li>✔ Relevant educational qualifications</li>
+                <li>✔ Minimum salary requirement (varies by pass)</li>
+                <li>✔ Work experience (preferred)</li>
+                <li>✔ Employer eligibility and quota compliance</li>
+                <li>✔ Clean legal and medical record</li>
+            </ul>
+        </div>
+
+        <h2>🔹 4. REQUIRED DOCUMENTS</h2>
+        <div class="card">
+            <ul>
+                <li>📄 Valid passport</li>
+                <li>📄 Job offer letter</li>
+                <li>📄 Educational certificates</li>
+                <li>📄 Resume/CV</li>
+                <li>📄 Work experience letters</li>
+                <li>📄 Passport-size photographs</li>
+                <li>📄 Employer details and company registration</li>
+            </ul>
+        </div>
+
+        <h2>🔹 5. STEP-BY-STEP PROCESS</h2>
+
+        <div class="step-heading">✅ A. Check Eligibility for the Appropriate Work Pass</div>
+        <div class="card">
+            <p class="content-text">Professional → Employment Pass (EP) | Mid-level → S Pass | Low-skilled → Work Permit. Check if salary meets threshold and job role is eligible.</p>
+        </div>
+
+        <div class="step-heading">✅ B. Secure a Job Offer from Singapore Employer</div>
+        <div class="card">
+            <span class="oneliner">The MOST IMPORTANT STEP.</span>
+            <p class="content-text">Apply via LinkedIn, Indeed Singapore, or Company portals. Target companies that sponsor work passes and meet quota requirements.</p>
+        </div>
+
+        <div class="step-heading">✅ C. Employer Applies for Work Pass</div>
+        <div class="card">
+            <p class="content-text">Employer handles most of the process via the Ministry of Manpower (MOM). You do not apply directly in most cases.</p>
+        </div>
+
+        <div class="step-heading">✅ D. Receive In-Principle Approval (IPA)</div>
+        <div class="card">
+            <p class="content-text">Receive your IPA letter. This allows entry into Singapore and is valid for a limited time.</p>
+        </div>
+
+        <div class="step-heading">✅ E. Final Formalities in Singapore</div>
+        <div class="card">
+            <p class="content-text">Travel to Singapore, undergo medical examination (if required), and attend biometrics for pass issuance.</p>
+        </div>
+
+        <h2>🧠 REALITY CHECK</h2>
+        <div class="card" style="border-left: 8px solid var(--aqua);">
+            <p class="content-text">❌ Applying without checking salary eligibility | ❌ Fake job offers | ❌ Ignoring quota restrictions | ❌ Weak CV</p>
+            <p><strong>Note: PR is attractive but difficult and selective to obtain.</strong></p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="card">
+                <span class="card-title">Processing Time</span>
+                <p>1–4 weeks (work pass approval)</p>
+            </div>
+            <div class="card">
+                <span class="card-title">Cost Estimate</span>
+                <p>Fee: SGD 105–225 (Usually paid by employer)</p>
+            </div>
+            <div class="card">
+                <span class="card-title">Salary Expectation</span>
+                <p>Entry: SGD 3k-5k | High: SGD 10k+/month</p>
+            </div>
+        </div>
+
+        <h2>🔹 11. DIFFICULTY LEVEL</h2>
+        <div class="card" style="text-align: center;">
+            <span class="card-title">👉 MEDIUM</span>
+            <p class="content-text">Getting a job is the key challenge; the visa process itself is very fast.</p>
+        </div>
+
+    </div>
+</body>
+</html>

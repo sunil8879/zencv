@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spain Work Immigration Guide</title>
+<style>
+        :root {
+            --aqua: #7FFFD4;
+            --black: #000000;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.85);
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            background-color: var(--white);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(160,100%,95%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(160,100%,95%,1) 0, transparent 50%);
+            font-family: 'Britannic Bold', 'Impact', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; 
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- THE NARROW CENTERED CONTAINER --- */
+        .container {
+            text-align: center;
+            background: var(--glass);
+            padding: 40px 25px;
+            border-radius: 30px;
+            border: 2px solid var(--black);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px var(--shadow), 15px 15px 0px var(--aqua);
+            max-width: 420px !important; 
+            width: 90%;
+            margin: 40px auto !important;
+            position: relative;
+            z-index: 10;
+            box-sizing: border-box;
+        }
+
+        /* --- GLOBAL GLASS SHINE ANIMATION --- */
+        @keyframes shine {
+            0% { transform: translateX(-200%) translateY(-200%) rotate(45deg); }
+            100% { transform: translateX(200%) translateY(200%) rotate(45deg); }
+        }
+
+        /* --- THE GLASS CONTENT CARDS --- */
+        .card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid var(--black);
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            text-align: left; /* Details left-aligned for readability */
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 4px 4px 10px rgba(255,255,255,0.5), 5px 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: shine 4s infinite linear;
+        }
+
+        /* --- VERTICAL PANEL SHINE (THE REQUESTED EFFECT) --- */
+        .card::after {
+            content: "";
+            position: absolute;
+            top: -100%; left: -150%;
+            width: 50%; height: 300%;
+            background: linear-gradient(to right, transparent, rgba(127, 255, 212, 0.4), transparent);
+            transform: rotate(25deg);
+            animation: verticalShine 5s infinite;
+        }
+
+        @keyframes verticalShine {
+            0% { left: -150%; }
+            30% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 8px;
+            color: var(--black);
+            text-align: center; /* Explicitly Centered */
+            width: 100%;
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--aqua);
+            display: inline-block;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 0.9rem;
+            background: var(--black);
+            color: var(--aqua);
+            padding: 8px 15px;
+            display: inline-block;
+            margin: 15px 0;
+            text-transform: uppercase;
+        }
+
+        .card-title, .step-heading {
+            font-size: 1.1rem;
+            color: var(--black);
+            text-transform: uppercase;
+            text-decoration: underline;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .oneliner {
+            display: block;
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+            border-left: 3px solid var(--aqua);
+            padding-left: 10px;
+        }
+
+        p, li {
+            font-size: 0.85rem;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        ul { list-style: none; padding: 0; }
+        ul li::before {
+            content: "🇪🇸 ";
+            font-weight: bold;
+        }
+
+        .stats-grid { display: block; width: 100%; } 
+
+        @media (max-width: 768px) {
+            .container { width: 95%; padding: 20px 15px; margin: 20px auto; }
+            h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🇪🇸 SPAIN — WORK IMMIGRATION GUIDE FOR INDIANS</h1>
+    </header>
+
+    <div class="container">
+        
+        <h2>🔹 1. OVERVIEW</h2>
+        <div class="card">
+            <p class="content-body">Spain is a popular European destination offering opportunities for Indian workers in tourism, hospitality, construction, agriculture, logistics, IT, and services. Spain has a structured immigration system that includes employer-sponsored work visas, a digital nomad visa, and pathways to long-term residence (PR). However, the job market can be competitive, and knowledge of Spanish is often important.</p>
+        </div>
+
+        <h2>🔹 2. TYPES OF WORK VISAS</h2>
+        
+        <div class="card">
+            <span class="card-title">1. Work Visa (Employee Visa)</span>
+            <span class="oneliner">Most common visa for long-term employment.</span>
+            <p class="content-body">Requires a job offer from a Spanish employer. The employer must obtain work authorization before you apply for the visa.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">2. EU Blue Card</span>
+            <span class="oneliner">For highly skilled professionals.</span>
+            <p class="content-body">Designed for specialists with higher salary thresholds and advanced qualifications.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">3. Digital Nomad Visa</span>
+            <span class="oneliner">For remote workers earning from outside Spain.</span>
+            <p class="content-body">Allows professionals to live in Spain while working for companies located in other countries.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">4. Seasonal & Self-Employment</span>
+            <span class="oneliner">For agriculture, tourism, or freelancers.</span>
+        </div>
+
+        <h2>🔹 3. ELIGIBILITY CRITERIA</h2>
+        <div class="card">
+            <ul>
+                <li>✔ Valid job offer from a registered Spanish employer</li>
+                <li>✔ Employer must secure official work authorization</li>
+                <li>✔ Relevant qualifications or skills for the specific position</li>
+                <li>✔ Basic Spanish language proficiency (highly preferred)</li>
+                <li>✔ Valid passport & Medical fitness certificate</li>
+                <li>✔ Clean criminal record (Police Clearance Certificate)</li>
+            </ul>
+        </div>
+
+        <h2>🔹 4. REQUIRED DOCUMENTS</h2>
+        <div class="card">
+            <ul>
+                <li>📄 Valid passport & Passport-size photographs</li>
+                <li>📄 Job offer / Official employment contract</li>
+                <li>📄 Work authorization issued from Spain</li>
+                <li>📄 Educational & Work experience certificates</li>
+                <li>📄 Police clearance certificate (PCC)</li>
+                <li>📄 Proof of accommodation & Medical certificate</li>
+            </ul>
+        </div>
+
+        <h2>🔹 5. STEP-BY-STEP PROCESS</h2>
+
+        <span class="step-heading">✅ A & B: Eligibility & Job Search</span>
+        <div class="card">
+            <span class="oneliner">THE MOST IMPORTANT STEP.</span>
+            <p class="content-body">Identify the correct visa category and secure a job offer via LinkedIn or Spanish career portals. Target employers authorized to hire foreign workers.</p>
+        </div>
+
+        <span class="step-heading">✅ C & D: Employer Authorization</span>
+        <div class="card">
+            <p class="content-body">The employer applies to Spanish labor authorities. Once the hiring is justified and approved, you receive the authorization document required for your visa application.</p>
+        </div>
+
+        <span class="step-heading">✅ E, F & G: Visa Application & Approval</span>
+        <div class="card">
+            <p class="content-body">Submit your application at the Spanish Embassy. Attend your interview for verification. Processing typically takes between 1 to 3 months.</p>
+        </div>
+
+        <span class="step-heading">✅ H, I & J: Arrival & TIE Card</span>
+        <div class="card">
+            <p class="content-body">Travel to Spain and apply for your residence permit (<strong>TIE card</strong>) within 30 days of arrival. This finalized permit allows you to work and live legally for the long term.</p>
+        </div>
+
+        <h2>🧠 REALITY CHECK</h2>
+        <div class="card" style="border-left: 10px solid var(--aqua);">
+            <p class="content-body">
+                ❌ Spanish language skills are often vital for local recruitment.<br>
+                ❌ Salaries in Spain may be lower compared to Germany or the UK.<br>
+                ❌ The job market is highly competitive with a focus on local and EU talent first.<br>
+                ❌ Bureaucracy can be slow; ensure all documents are complete and translated.
+            </p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="card">
+                <span class="card-title">Salary Expectation</span>
+                <p>Mid-level: €1,800 – €3,500/m<br>Skilled: €3,500+/month</p>
+            </div>
+            <div class="card">
+                <span class="card-title">PR Options</span>
+                <p>Available after 5 years of continuous legal stay in Spain.</p>
+            </div>
+            <div class="card">
+                <span class="card-title">Processing Time</span>
+                <p>Typically 1–3 months for visa and permit processing.</p>
+            </div>
+        </div>
+
+        <h2>🧾 QUICK SUMMARY</h2>
+        <div class="card">
+            <p class="content-body" style="text-align: center;">
+                <strong>Best for:</strong> Hospitality, Services, Skilled Professionals<br>
+                <strong>Job offer:</strong> Mandatory<br>
+                <strong>PR:</strong> Yes (after 5 years)<br>
+                <strong>Processing time:</strong> 1–3 months<br>
+                <strong>Difficulty:</strong> Medium
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

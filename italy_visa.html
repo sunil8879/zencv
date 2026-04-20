@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italy Work Immigration Guide</title>
+ <style>
+        :root {
+            --aqua: #7FFFD4;
+            --black: #000000;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.85);
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            background-color: var(--white);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(160,100%,95%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(160,100%,95%,1) 0, transparent 50%);
+            font-family: 'Britannic Bold', 'Impact', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; 
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- THE NARROW CENTERED CONTAINER --- */
+        .container {
+            text-align: center;
+            background: var(--glass);
+            padding: 40px 25px;
+            border-radius: 30px;
+            border: 2px solid var(--black);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px var(--shadow), 15px 15px 0px var(--aqua);
+            max-width: 420px !important; 
+            width: 90%;
+            margin: 40px auto !important;
+            position: relative;
+            z-index: 10;
+            box-sizing: border-box;
+        }
+
+        /* --- GLOBAL GLASS SHINE ANIMATION --- */
+        @keyframes shine {
+            0% { transform: translateX(-200%) translateY(-200%) rotate(45deg); }
+            100% { transform: translateX(200%) translateY(200%) rotate(45deg); }
+        }
+
+        /* --- THE GLASS CARDS --- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid var(--black);
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            text-align: left; 
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 4px 4px 10px rgba(255,255,255,0.5), 5px 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .glass-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: shine 4s infinite linear;
+        }
+
+        /* --- VERTICAL PANEL SHINE (STEP BOXES) --- */
+        .card, .step-box {
+            background: var(--white);
+            border: 1px solid var(--black);
+            padding: 20px;
+            margin: 15px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 10px rgba(127, 255, 212, 0.2);
+            text-align: left;
+        }
+
+        .card::after, .step-box::after {
+            content: "";
+            position: absolute;
+            top: -100%; left: -150%;
+            width: 50%; height: 300%;
+            background: linear-gradient(to right, transparent, rgba(127, 255, 212, 0.4), transparent);
+            transform: rotate(25deg);
+            animation: verticalShine 5s infinite;
+        }
+
+        @keyframes verticalShine {
+            0% { left: -150%; }
+            30% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 8px;
+            color: var(--black);
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--aqua);
+            display: inline-block;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 0.9rem;
+            background: var(--black);
+            color: var(--aqua);
+            padding: 8px 15px;
+            display: inline-block;
+            margin: 15px 0;
+            text-transform: uppercase;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            color: var(--black);
+            text-transform: uppercase;
+            text-decoration: underline;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .oneliner {
+            display: block;
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+            border-left: 3px solid var(--aqua);
+            padding-left: 10px;
+        }
+
+        p, li {
+            font-size: 0.85rem;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        ul { list-style: none; padding: 0; }
+        ul li { margin-bottom: 10px; }
+        ul li::before {
+            content: "🇮🇹 ";
+            font-weight: bold;
+        }
+
+        .stats-grid { display: block; width: 100%; } 
+
+        @media (max-width: 768px) {
+            .container { width: 95%; padding: 25px 15px; margin: 20px auto; }
+            h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🇮🇹 ITALY — WORK IMMIGRATION GUIDE FOR INDIANS</h1>
+    </header>
+
+    <div class="container">
+        
+        <h2>🔹 1. OVERVIEW</h2>
+        <div class="card">
+            <p class="content-body">Italy is a major European economy offering opportunities for Indian workers in sectors such as hospitality, tourism, agriculture, construction, manufacturing, fashion, and some IT roles. Italy operates a quota-based immigration system known as the “Decreto Flussi,” which controls the number of foreign workers each year. It provides employer-sponsored work visas and pathways to long-term residence.</p>
+        </div>
+
+        <h2>🔹 2. TYPES OF WORK VISAS</h2>
+        
+        <div class="card">
+            <span class="card-title">1. Subordinate Work Visa</span>
+            <span class="oneliner">Most common work visa for long-term employees.</span>
+            <p class="content-body">Requires a formal job offer from an Italian employer and is strictly subject to the annual quota system.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">2. Seasonal Work Visa</span>
+            <span class="oneliner">Short-term jobs in agriculture and tourism.</span>
+            <p class="content-body">Valid for a limited duration and common for temporary harvesting or hospitality roles.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">3. EU Blue Card</span>
+            <span class="oneliner">For highly skilled professionals.</span>
+            <p class="content-body">Requires a higher salary threshold and specialized qualifications, often bypassing some quota restrictions.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">4. Self-Employment Visa</span>
+            <span class="oneliner">For freelancers and entrepreneurs.</span>
+        </div>
+
+        <h2>🔹 3. ELIGIBILITY CRITERIA</h2>
+        <div class="card">
+            <ul>
+                <li>✔ Valid job offer from an Italian employer</li>
+                <li>✔ Employer must obtain official work authorization (Nulla Osta)</li>
+                <li>✔ Quota availability under the current Decreto Flussi</li>
+                <li>✔ Relevant skills or qualifications for the role</li>
+                <li>✔ Basic Italian language knowledge (preferred)</li>
+                <li>✔ Valid passport & Clean criminal record</li>
+            </ul>
+        </div>
+
+        <h2>🔹 4. REQUIRED DOCUMENTS</h2>
+        <div class="card">
+            <ul>
+                <li>📄 Valid passport & Passport-size photographs</li>
+                <li>📄 Job offer / Employment contract</li>
+                <li>📄 Work authorization document (Nulla Osta)</li>
+                <li>📄 Educational & Work experience certificates</li>
+                <li>📄 Proof of accommodation in Italy & Medical insurance</li>
+            </ul>
+        </div>
+
+        <h2>🔹 5. STEP-BY-STEP PROCESS</h2>
+
+        <div class="card">
+            <span class="step-heading">✅ A & B: Quota Check & Job Offer</span>
+            <span class="oneliner">THE MOST IMPORTANT STEP.</span>
+            <p class="content-body">Identify if the <strong>Decreto Flussi</strong> quota is open. Secure a job offer via LinkedIn or Italian recruitment agencies. Ensure the employer participates in the quota system.</p>
+        </div>
+
+        <div class="card">
+            <span class="step-heading">✅ C & D: Nulla Osta Authorization</span>
+            <p class="content-body">The employer applies for the <strong>Nulla Osta</strong> (work authorization) in Italy. Once approved, you receive the document required to apply for your visa in India.</p>
+        </div>
+
+        <div class="card">
+            <span class="step-heading">✅ E, F & G: Visa Stamping</span>
+            <p class="content-body">Apply for the Work Visa at the Italian Embassy. Attend your appointment for document verification. Processing typically takes 2–8 weeks.</p>
+        </div>
+
+        <div class="card">
+            <span class="step-heading">✅ H, I & J: Arrival & Residence Permit</span>
+            <p class="content-body">Travel to Italy and apply for the <strong>Permesso di Soggiorno</strong> (residence permit) within 8 days of arrival. This allows you to work legally for the long term.</p>
+        </div>
+
+        <h2>🧠 REALITY CHECK</h2>
+        <div class="card" style="border-left: 10px solid var(--aqua);">
+            <p class="content-body">
+                ❌ Applying without quota availability is a common mistake.<br>
+                ❌ Italian language proficiency is often mandatory for social integration.<br>
+                ❌ Salaries in some sectors may be lower than in Northern Europe.<br>
+                ❌ Beware of fraudulent job offers claiming to bypass the Decreto Flussi.
+            </p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="card">
+                <span class="card-title">Salary Expectation</span>
+                <p>Mid-level: €1,500 – €3,000/m<br>Skilled: €3,000+/m</p>
+            </div>
+            <div class="card">
+                <span class="card-title">PR Options</span>
+                <p>Available after 5 years of continuous legal stay in Italy.</p>
+            </div>
+            <div class="card">
+                <span class="card-title">Processing Time</span>
+                <p>2–8 weeks after authorization is approved.</p>
+            </div>
+        </div>
+
+        <h2>🔹 11. DIFFICULTY LEVEL</h2>
+        <div class="card" style="text-align: center;">
+            <span class="card-title">👉 MEDIUM</span>
+            <p class="content-body">The quota system makes it highly competitive, and job availability varies by season.</p>
+        </div>
+
+        <h2>🧾 QUICK SUMMARY</h2>
+        <div class="card">
+            <p class="content-body" style="text-align: center;">
+                <strong>Best for:</strong> Seasonal and mid-skilled jobs<br>
+                <strong>Job offer:</strong> Mandatory<br>
+                <strong>PR:</strong> Yes (after 5 years)<br>
+                <strong>Processing time:</strong> 2–8 weeks<br>
+                <strong>Difficulty:</strong> Medium
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

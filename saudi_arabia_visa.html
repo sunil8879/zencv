@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudi Arabia Work Immigration Guide</title>
+  <style>
+        :root {
+            --aqua: #7FFFD4;
+            --black: #000000;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.85);
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            background-color: var(--white);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(160,100%,95%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(160,100%,95%,1) 0, transparent 50%);
+            font-family: 'Britannic Bold', 'Impact', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; 
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- THE NARROW CENTERED CONTAINER --- */
+        .container {
+            text-align: center;
+            background: var(--glass);
+            padding: 40px 25px;
+            border-radius: 30px;
+            border: 2px solid var(--black);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px var(--shadow), 15px 15px 0px var(--aqua);
+            max-width: 420px !important; 
+            width: 90%;
+            margin: 40px auto !important;
+            position: relative;
+            z-index: 10;
+            box-sizing: border-box;
+        }
+
+        /* --- GLOBAL GLASS SHINE ANIMATION --- */
+        @keyframes shine {
+            0% { transform: translateX(-200%) translateY(-200%) rotate(45deg); }
+            100% { transform: translateX(200%) translateY(200%) rotate(45deg); }
+        }
+
+        /* --- THE GLASS CONTENT CARDS --- */
+        .card, .step-box {
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid var(--black);
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            text-align: left; /* Details left-aligned for readability */
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 4px 4px 10px rgba(255,255,255,0.5), 5px 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .card::before, .step-box::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: shine 4s infinite linear;
+        }
+
+        /* --- VERTICAL PANEL SHINE (THE REQUESTED EFFECT) --- */
+        .card::after, .step-box::after {
+            content: "";
+            position: absolute;
+            top: -100%; left: -150%;
+            width: 50%; height: 300%;
+            background: linear-gradient(to right, transparent, rgba(127, 255, 212, 0.4), transparent);
+            transform: rotate(25deg);
+            animation: verticalShine 5s infinite;
+        }
+
+        @keyframes verticalShine {
+            0% { left: -150%; }
+            30% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 8px;
+            color: var(--black);
+            text-align: center; /* Explicitly Centered */
+            width: 100%;
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--aqua);
+            display: inline-block;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 0.9rem;
+            background: var(--black);
+            color: var(--aqua);
+            padding: 8px 15px;
+            display: inline-block;
+            margin: 15px 0;
+            text-transform: uppercase;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            color: var(--black);
+            text-transform: uppercase;
+            text-decoration: underline;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .oneliner {
+            display: block;
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+            border-left: 3px solid var(--aqua);
+            padding-left: 10px;
+        }
+
+        p, li {
+            font-size: 0.85rem;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        ul { list-style: none; padding: 0; }
+        ul li::before {
+            content: "🇸🇦 ";
+            font-weight: bold;
+        }
+
+        .stats-grid { display: block; width: 100%; } 
+
+        @media (max-width: 768px) {
+            .container { width: 95%; padding: 20px 15px; margin: 20px auto; }
+            h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🇸🇦 SAUDI ARABIA — WORK IMMIGRATION GUIDE FOR INDIANS</h1>
+    </header>
+
+    <div class="container">
+        
+        <h2>🔹 1. OVERVIEW</h2>
+        <div class="card">
+            <p class="content-body">Saudi Arabia is one of the largest job markets in the Gulf region for Indian workers, especially in construction, oil & gas, healthcare, IT, and services. Due to large-scale infrastructure projects and economic diversification (Vision 2030), demand for foreign workers remains high. The country follows a sponsorship-based system (Kafala), and offers tax-free salaries but limited long-term settlement options.</p>
+        </div>
+
+        <h2>🔹 2. TYPES OF WORK VISAS</h2>
+        
+        <div class="card">
+            <span class="card-title">1. Employment Visa (Work Visa)</span>
+            <span class="oneliner">Most common visa for long-term employment.</span>
+            <p class="content-body">Requires employer sponsorship and is the standard path for Indian professionals.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">2. Temporary Work Visa</span>
+            <span class="oneliner">For short-term projects and limited duration roles.</span>
+        </div>
+
+        <div class="card">
+            <span class="card-title">3. Premium Residency</span>
+            <span class="oneliner">Special category for high-income individuals.</span>
+            <p class="content-body">Allows more flexibility and mobility within the country, though limited to specific cases.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-title">4. Seasonal Work Visa</span>
+            <span class="oneliner">Short-term work specifically for Hajj and Umrah services.</span>
+        </div>
+
+        <h2>🔹 3. ELIGIBILITY CRITERIA</h2>
+        <div class="card">
+            <ul>
+                <li>✔ Valid job offer from a registered Saudi employer</li>
+                <li>✔ Age between 21–60 years</li>
+                <li>✔ Relevant qualifications or skills for the position</li>
+                <li>✔ Mandatory medical fitness (approved centers only)</li>
+                <li>✔ Valid passport (minimum 6 months validity)</li>
+                <li>✔ Clean criminal record (Police Clearance Certificate)</li>
+            </ul>
+        </div>
+
+        <h2>🔹 4. REQUIRED DOCUMENTS</h2>
+        <div class="card">
+            <ul>
+                <li>📄 Valid passport & Passport-size photographs</li>
+                <li>📄 Job offer / Official employment contract</li>
+                <li>📄 Work visa authorization from Saudi authorities</li>
+                <li>📄 Attested educational certificates</li>
+                <li>📄 Medical fitness certificate & Police clearance certificate</li>
+            </ul>
+        </div>
+
+        <h2>🔹 5. STEP-BY-STEP PROCESS</h2>
+
+        <div class="step-box">
+            <h3>✅ A. Eligibility & Job Search</h3>
+            <p>Identify the correct visa category. Secure a job offer via recruitment agencies or portals. Target employers authorized to sponsor foreign workers. <strong>This is the MOST IMPORTANT STEP.</strong></p>
+        </div>
+
+        <div class="step-box">
+            <h3>✅ B. Employer Authorization</h3>
+            <p>The employer applies through Saudi labor authorities to get your visa authorization. Once approved, you receive the visa authorization number required for stamping.</p>
+        </div>
+
+        <div class="step-box">
+            <h3>✅ C. Medicals & Visa Stamping</h3>
+            <p>Complete a medical examination at approved centers. Submit your documents to the Saudi Embassy for visa stamping in your passport.</p>
+        </div>
+
+        <div class="step-box">
+            <h3>✅ D. Arrival & Iqama</h3>
+            <p>Enter Saudi Arabia on your work visa. Your employer applies for your <strong>Iqama (Residence Permit)</strong>, which serves as your legal residency and work authorization.</p>
+        </div>
+
+        <h2>🧠 REALITY CHECK</h2>
+        <div class="card" style="border-left: 10px solid var(--aqua);">
+            <p class="content-body">
+                ❌ Beware of fake agents; always verify the Saudi employer.<br>
+                ❌ The system is strictly employer-controlled (Kafala).<br>
+                ❌ Permanent residency is not available through the standard route.<br>
+                ❌ Strict penalties apply for working illegally or for an unauthorized sponsor.
+            </p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="card">
+                <span class="card-title">Salary Expectation</span>
+                <p>Low-skilled: SAR 1,000 – 2,500/m<br>Mid-level: SAR 2,500 – 8,000/m<br>Skilled: SAR 8,000+/m<br><strong>(TAX-FREE)</strong></p>
+            </div>
+            <div class="card">
+                <span class="card-title">Processing Time</span>
+                <p>Typically 2–6 weeks for visa and authorization.</p>
+            </div>
+            <div class="card">
+                <span class="card-title">Difficulty Level</span>
+                <p>👉 EASY TO MEDIUM<br>Securing the job is the hardest part; the process is structured.</p>
+            </div>
+        </div>
+
+        <h2>🔹 10. PROS & CONS</h2>
+        <div class="card">
+            <p class="content-body">
+                <strong>✔ PROS:</strong> Tax-free salary, massive job market, employer-handled process.<br><br>
+                <strong>❌ CONS:</strong> No PR, job dependency, strict laws, limited job security.
+            </p>
+        </div>
+
+        <h2>🧾 QUICK SUMMARY</h2>
+        <div class="card">
+            <p class="content-body" style="text-align: center;">
+                <strong>Best for:</strong> Gulf jobs (low to high-skilled)<br>
+                <strong>Job offer:</strong> Mandatory<br>
+                <strong>PR:</strong> Not available<br>
+                <strong>Processing time:</strong> 2–6 weeks<br>
+                <strong>Difficulty:</strong> Easy–Medium
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

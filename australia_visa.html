@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMMIGRATION PROCESS FOR INDIANS IN AUSTRALIA</title>
+  <style>
+        :root {
+            --aqua: #7FFFD4;
+            --black: #000000;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.85);
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            background-color: var(--white);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(160,100%,95%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(160,100%,95%,1) 0, transparent 50%);
+            font-family: 'Britannic Bold', 'Impact', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex !important;
+            justify-content: center !important;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- THE NARROW CENTERED CONTAINER --- */
+        .container {
+            text-align: center;
+            background: var(--glass);
+            padding: 40px 25px;
+            border-radius: 30px;
+            border: 2px solid var(--black);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px var(--shadow), 15px 15px 0px var(--aqua);
+            max-width: 420px !important; /* Skinny sophisticated look */
+            width: 90%;
+            margin: 40px auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* --- GLOBAL GLASS SHINE ANIMATION --- */
+        @keyframes shine {
+            0% { transform: translateX(-200%) translateY(-200%) rotate(45deg); }
+            100% { transform: translateX(200%) translateY(200%) rotate(45deg); }
+        }
+
+        /* --- THE GLASS CARDS --- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid var(--black);
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .glass-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: shine 4s infinite linear;
+        }
+
+        /* --- VERTICAL PANEL SHINE (BEVEL BOXES) --- */
+        .bevel-box {
+            background: var(--white);
+            border: 1px solid var(--black);
+            padding: 20px;
+            margin: 15px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 10px rgba(127, 255, 212, 0.2);
+        }
+
+        .bevel-box::after {
+            content: "";
+            position: absolute;
+            top: -100%; left: -100%;
+            width: 50%; height: 300%;
+            background: linear-gradient(to right, transparent, rgba(127, 255, 212, 0.4), transparent);
+            transform: rotate(25deg);
+            animation: verticalShine 5s infinite;
+        }
+
+        @keyframes verticalShine {
+            0% { left: -150%; }
+            20% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 8px;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--aqua);
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 1rem;
+            background: var(--black);
+            color: var(--aqua);
+            padding: 8px 15px;
+            display: inline-block;
+            margin: 15px 0;
+        }
+
+        p, li {
+            font-size: 0.9rem;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .step-num {
+            background: var(--aqua);
+            padding: 4px 10px;
+            border: 1px solid var(--black);
+            font-weight: 900;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .highlight-red {
+            color: #ff0055;
+            font-weight: 900;
+        }
+
+        .summary-footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 30px 20px;
+            margin-top: 30px;
+            border: 3px solid var(--aqua);
+        }
+
+        .pros-cons-grid { display: block; } /* Forced single column for narrow look */
+
+        /* Mobile Scale */
+        @media (max-width: 768px) {
+            .container { width: 95%; padding: 20px 15px; margin: 20px auto; }
+            h1 { font-size: 1.4rem; }
+        }
+
+
+/* --- SCORING SYSTEM STYLES --- */
+.points-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 0.85rem;
+    background: white;
+    border: 1px solid var(--black);
+}
+.points-table th {
+    background: var(--black);
+    color: var(--aqua);
+    padding: 10px;
+    text-align: left;
+    text-transform: uppercase;
+}
+.points-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+    font-weight: 700;
+}
+.points-table tr:nth-child(even) { background: #f9f9f9; }
+
+/* Vertical Shine Effect for the Calculation Box */
+.shine-panel {
+    background: var(--black) !important;
+    color: var(--aqua) !important;
+    border: 2px solid var(--aqua);
+    padding: 20px;
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+.shine-panel::after {
+    content: "";
+    position: absolute;
+    top: -100%; left: -150%;
+    width: 50%; height: 300%;
+    background: linear-gradient(to right, transparent, rgba(127, 255, 212, 0.4), transparent);
+    transform: rotate(25deg);
+    animation: verticalShine 5s infinite;
+}
+@keyframes verticalShine {
+    0% { left: -150%; }
+    30% { left: 150%; }
+    100% { left: 150%; }
+}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>IMMIGRATION PROCESS FOR INDIANS IN AUSTRALIA</h1>
+
+        <!-- SECTION 1 & 2 -->
+        <div class="glass-card">
+            <h2>🇦🇺 AUSTRALIA — WORK IMMIGRATION GUIDE</h2>
+            <h3>🔹 1. Overview</h3>
+            <p>Australia is a highly preferred destination for Indian professionals due to its strong economy, high salaries, and transparent immigration system. There is strong demand in IT, healthcare, engineering, construction, mining, and education sectors. Australia offers both temporary work visas and direct Permanent Residency (PR) pathways through a points-based system.</p>
+            
+            <h3>🔹 2. Types of Work Visas</h3>
+            <div class="bevel-box">
+                <p><strong>1. Temporary Skill Shortage Visa (Subclass 482):</strong> Most common employer-sponsored visa. Requires job offer from Australian employer. Valid up to 4 years.</p>
+                <p><strong>2. Skilled Independent Visa (Subclass 189):</strong> Points-based PR visa. No job offer required. Direct Permanent Residency.</p>
+                <p><strong>3. Skilled Nominated Visa (Subclass 190):</strong> State-sponsored PR visa. Requires nomination by an Australian state.</p>
+                <p><strong>4. Skilled Work Regional Visa (Subclass 491):</strong> Regional area visa. Points-based. Leads to PR after few years.</p>
+                <p><strong>5. Temporary Graduate Visa (Subclass 485):</strong> For students who studied in Australia. Allows temporary work.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 3 & 4 -->
+        <div class="glass-card">
+            <h2>🔹 3. Eligibility Criteria</h2>
+            <ul>
+                <li>Relevant educational qualifications</li>
+                <li>Occupation must be on Skilled Occupation List</li>
+                <li>Minimum IELTS/PTE score</li>
+                <li>Work experience (preferred)</li>
+                <li>Points-based eligibility (age, education, experience)</li>
+                <li>Health and character requirements</li>
+            </ul>
+
+            <h2 style="margin-top:40px;">🔹 4. Required Documents</h2>
+            <ul>
+                <li>Valid passport</li>
+                <li>Educational certificates</li>
+                <li>Skill assessment report</li>
+                <li>IELTS/PTE score</li>
+                <li>Work experience letters</li>
+                <li>Expression of Interest (EOI) details</li>
+                <li>Medical examination report</li>
+                <li>Police clearance certificate</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 5 - STEP BY STEP -->
+        <div class="glass-card">
+            <h2>🔹 5. STEP-BY-STEP PROCESS</h2>
+            
+            <div class="bevel-box">
+                <span class="step-num">A</span>
+                <p><strong>Check Eligibility for the Appropriate Visa:</strong> You must first decide your pathway.</p>
+                <p>👉 <em>Example:</em> No job → Subclass 189 (PR) | State support → Subclass 190 | Job offer → Subclass 482</p>
+                <p><strong>What you check here:</strong> Is your occupation on <strong>Skilled Occupation List</strong>? Do you meet <strong>minimum points (65+)</strong>? Do you meet <strong>English requirement</strong>?</p>
+                <p class="highlight-red">👉 Wrong choice reduces chances significantly.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">B</span>
+                <p><strong>Get Skill Assessment:</strong> This is a <strong>mandatory step</strong>. Your qualifications are evaluated by an Australian authority to confirm your job role matches Australian standards.</p>
+                <p class="highlight-red">👉 Without skill assessment → cannot apply.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">C</span>
+                <p><strong>Take English Language Test:</strong> You must take IELTS or PTE. The minimum score varies by visa; however, a higher score equals more points.</p>
+                <p class="highlight-red">👉 Score directly impacts your selection chances.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">D</span>
+                <p><strong>Submit Expression of Interest (EOI):</strong> Now you create a profile via the Department of Home Affairs Australia. You enter Age, Education, Work experience, and English score. The system calculates your <strong>points score</strong>.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">E</span>
+                <p><strong>Receive Invitation to Apply (ITA):</strong> If your score is competitive, you receive an invitation. Higher points = higher chances.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">F</span>
+                <p><strong>Submit Visa Application:</strong> Now you submit the full application. Upload documents, pay the visa fee, and submit. Accuracy is critical.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">G</span>
+                <p><strong>Medical & Police Verification:</strong> You must complete a medical examination and police clearance. This is mandatory for all applicants.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">H</span>
+                <p><strong>Wait for Decision:</strong> The application is processed by authorities. PR visas take 6–12 months; Work visas take 1–3 months.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">I</span>
+                <p><strong>Receive Visa Grant:</strong> If approved, you receive a visa grant letter which confirms your legal entry.</p>
+            </div>
+
+            <div class="bevel-box">
+                <span class="step-num">J</span>
+                <p><strong>Travel to Australia and Start Work:</strong> After arrival, apply for a Tax File Number (TFN), open a bank account, and start working. PR holders can live permanently.</p>
+            </div>
+        </div>
+
+
+
+<!-- 🇦🇺 Australia IMMIGRATION SCORING SYSTEM -->
+<div class="glass-card">
+    <h2>🇦🇺 IMMIGRATION SCORING SYSTEM (POINTS TEST)</h2>
+    <p>Yes—Australia has one of the <strong>most structured and transparent immigration scoring systems</strong> in the world.</p>
+    
+    <div class="bevel-box">
+        <p><strong>🎯 BASIC RULE</strong></p>
+        <p>👉 You need <strong>minimum 65 points</strong> to be eligible</p>
+        <p>👉 But realistically, you need <strong>75–90+ points</strong> to get invited</p>
+    </div>
+
+    <!-- 1. AGE -->
+    <h3>🧑 1. AGE (Max: 30 points)</h3>
+    <table class="points-table">
+        <thead><tr><th>Age</th><th>Points</th></tr></thead>
+        <tbody>
+            <tr><td>18–24</td><td>25</td></tr>
+            <tr><td>25–32</td><td>30 ⭐ (Best)</td></tr>
+            <tr><td>33–39</td><td>25</td></tr>
+            <tr><td>40–44</td><td>15</td></tr>
+            <tr><td>45+</td><td>❌ Not eligible</td></tr>
+        </tbody>
+    </table>
+
+    <!-- 2. EDUCATION -->
+    <h3>🎓 2. EDUCATION (Max: 20 points)</h3>
+    <table class="points-table">
+        <thead><tr><th>Qualification</th><th>Points</th></tr></thead>
+        <tbody>
+            <tr><td>PhD</td><td>20</td></tr>
+            <tr><td>Bachelor / Master</td><td>15</td></tr>
+            <tr><td>Diploma / Trade</td><td>10</td></tr>
+        </tbody>
+    </table>
+
+    <!-- 3. EXPERIENCE -->
+    <h3>💼 3. WORK EXPERIENCE (Max: 20 points)</h3>
+    <p style="font-size: 0.8rem;"><strong>Outside Australia:</strong></p>
+    <table class="points-table">
+        <tbody>
+            <tr><td>3–4 years</td><td>5</td></tr>
+            <tr><td>5–7 years</td><td>10</td></tr>
+            <tr><td>8+ years</td><td>15</td></tr>
+        </tbody>
+    </table>
+
+    <!-- 4. ENGLISH -->
+    <h3>🗣️ 4. ENGLISH LANGUAGE (Max: 20 points)</h3>
+    <table class="points-table">
+        <thead><tr><th>Level</th><th>IELTS Score</th><th>Points</th></tr></thead>
+        <tbody>
+            <tr><td>Competent</td><td>6 each band</td><td>0</td></tr>
+            <tr><td>Proficient</td><td>7 each band</td><td>10</td></tr>
+            <tr><td>Superior</td><td>8 each band</td><td>20 ⭐</td></tr>
+        </tbody>
+    </table>
+
+    <!-- 5 & 6. BONUSES -->
+    <h3>🏫 5 & 6. STUDY & SKILL BONUS</h3>
+    <table class="points-table">
+        <tbody>
+            <tr><td>Australian Study (min 2 years)</td><td>+5</td></tr>
+            <tr><td>STEM qualification</td><td>+10</td></tr>
+            <tr><td>Regional study</td><td>+5</td></tr>
+        </tbody>
+    </table>
+
+    <!-- 7. PARTNER SKILLS -->
+    <h3>💑 7. PARTNER SKILLS (Max: 10 points)</h3>
+    <table class="points-table">
+        <tbody>
+            <tr><td>Skilled partner</td><td>+10</td></tr>
+            <tr><td>English-speaking partner</td><td>+5</td></tr>
+        </tbody>
+    </table>
+
+    <!-- 8. STATE NOMINATION -->
+    <h3>🗺️ 8. STATE NOMINATION / REGIONAL (Max: 15 points)</h3>
+    <table class="points-table">
+        <tbody>
+            <tr><td>State nomination (190 visa)</td><td>+5</td></tr>
+            <tr><td>Regional visa (491)</td><td>+15</td></tr>
+        </tbody>
+    </table>
+
+    <!-- TOTAL CALCULATION -->
+    <div class="shine-panel">
+        <p style="font-size: 1.1rem; border-bottom: 1px solid var(--aqua); padding-bottom: 5px; font-weight: 900;">🧮 TOTAL SCORE CALCULATION</p>
+        <p style="font-size: 0.85rem; margin: 10px 0;">👉 Add all points (Example):</p>
+        <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.4;">
+            <li>Age: 30</li>
+            <li>Education: 15</li>
+            <li>Experience: 10</li>
+            <li>English: 10</li>
+            <li>Others: 10</li>
+        </ul>
+        <p style="font-size: 1.2rem; margin-top: 10px; border-top: 1px solid var(--aqua); padding-top: 10px;">
+            👉 <strong>Total = 75 points</strong>
+        </p>
+    </div>
+
+    <!-- SCORE MEANING -->
+    <h3>🎯 WHAT YOUR SCORE MEANS</h3>
+    <table class="points-table">
+        <thead><tr><th>Score</th><th>Meaning</th></tr></thead>
+        <tbody>
+            <tr><td>65</td><td>Minimum eligibility</td></tr>
+            <tr><td>70–75</td><td>Average chance</td></tr>
+            <tr><td>80–85</td><td>Good chance</td></tr>
+            <tr><td>90+</td><td>Very high chance</td></tr>
+        </tbody>
+    </table>
+
+    <div class="bevel-box" style="border-left: 5px solid #ff0055;">
+        <p style="color: #ff0055; font-weight: 900;">⚠️ IMPORTANT REALITY</p>
+        <p>Scoring 65 ≠ getting visa. Invitation depends entirely on ranking against other candidates.</p>
+    </div>
+</div>
+
+
+
+
+
+        <!-- REALITY CHECK -->
+        <div class="glass-card" style="border-color: #ff0055; box-shadow: 15px 15px 0px #ff0055;">
+            <h2 style="border-color: #ff0055;">🧠 REALITY CHECK (IMPORTANT)</h2>
+            <p>Australia is attractive but: The points system is competitive. Skill assessment can be strict. Invitation depends entirely on your score.</p>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+                <li>❌ Low IELTS score</li>
+                <li>❌ Incorrect skill assessment</li>
+                <li>❌ Wrong occupation selection</li>
+                <li>❌ Overestimating points</li>
+            </ul>
+        </div>
+
+        <!-- COST & SALARY INFO -->
+        <div class="pros-cons-grid">
+            <div class="glass-card">
+                <h3>🔹 7. Cost Estimate</h3>
+                <p>Visa fee: AUD 4,640 approx (PR)<br>
+                IELTS/PTE: ₹15,000 approx<br>
+                Skill assessment: ₹25,000–₹50,000<br>
+                Misc: variable</p>
+                <p><strong>🔹 6. Processing Time:</strong><br>PR visas: 6–12 months<br>Work visas: 1–3 months</p>
+            </div>
+            <div class="glass-card">
+                <h3>🔹 8. Salary Expectation</h3>
+                <p>Entry-level: AUD 50,000 – 70,000/year<br>
+                Skilled professionals: AUD 70,000 – 120,000/year<br>
+                High-demand roles: AUD 120,000+</p>
+                <p><strong>🔹 9. PR Options:</strong><br>Direct PR via Subclass 189 / 190. Access to healthcare and pathway to citizenship.</p>
+            </div>
+        </div>
+
+        <!-- PROS & CONS -->
+        <div class="pros-cons-grid">
+            <div class="glass-card" style="border-color: #2ed573; box-shadow: 15px 15px 0px #2ed573;">
+                <h2 style="border-color: #2ed573;">✔ Pros</h2>
+                <p>High salaries, Strong PR pathway, Good work-life balance, Safe environment.</p>
+            </div>
+            <div class="glass-card" style="border-color: #ff4757; box-shadow: 15px 15px 0px #ff4757;">
+                <h2 style="border-color: #ff4757;">❌ Cons</h2>
+                <p>High cost of living, Points competition, Skill assessment complexity, Distance from India.</p>
+            </div>
+        </div>
+
+        <!-- DIFFICULTY & SUMMARY -->
+        <div class="summary-footer">
+            <h2>🔹 11. Difficulty Level: Medium to Hard</h2>
+            <p>The points system makes it competitive. Requires a strong profile and careful planning.</p>
+            <div class="glass-card" style="margin: 30px auto; max-width: 450px; box-shadow: 10px 10px 0px var(--aqua); color: black;">
+                <h2 style="font-size: 1.6rem; border-color: black;">🧾 QUICK SUMMARY</h2>
+                <p style="font-size: 1rem; text-align: left;">
+                    Best for: Skilled professionals (PR-focused)<br>
+                    Job offer: Not always required<br>
+                    PR: Yes (points-based)<br>
+                    Processing: 6–12 months<br>
+                    Difficulty: Medium–Hard
+                </p>
+            </div>
+            <p style="color: var(--aqua); font-size: 0.8rem;">© 2026 ZenCV Factory | Engineered for Excellence</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

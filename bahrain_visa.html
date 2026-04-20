@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahrain Work Immigration Guide</title>
+    <style>
+        :root {
+            --aqua: #7FFFD4;
+            --black: #000000;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.85);
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            background-color: var(--white);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(160,100%,95%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, hsla(160,100%,95%,1) 0, transparent 50%);
+            font-family: 'Britannic Bold', 'Impact', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important; 
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- THE NARROW CENTERED CONTAINER --- */
+        .container {
+            text-align: center;
+            background: var(--glass);
+            padding: 40px 25px;
+            border-radius: 30px;
+            border: 2px solid var(--black);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px var(--shadow), 15px 15px 0px var(--aqua);
+            max-width: 420px !important; 
+            width: 90%;
+            margin: 40px auto !important;
+            position: relative;
+            z-index: 10;
+            box-sizing: border-box;
+        }
+
+        /* --- GLOBAL GLASS SHINE ANIMATION --- */
+        @keyframes shine {
+            0% { transform: translateX(-200%) translateY(-200%) rotate(45deg); }
+            100% { transform: translateX(200%) translateY(200%) rotate(45deg); }
+        }
+
+        /* --- THE GLASS CONTENT CARDS --- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid var(--black);
+            padding: 25px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            text-align: left; 
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 4px 4px 10px rgba(255,255,255,0.5), 5px 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .glass-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+            animation: shine 4s infinite linear;
+        }
+
+        /* --- VERTICAL PANEL SHINE (BEVEL BOXES) --- */
+        .bevel-box {
+            background: var(--white);
+            border: 1px solid var(--black);
+            padding: 20px;
+            margin: 15px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 10px rgba(127, 255, 212, 0.2);
+            text-align: left;
+        }
+
+        .bevel-box::after {
+            content: "";
+            position: absolute;
+            top: -100%; left: -150%;
+            width: 50%; height: 300%;
+            background: linear-gradient(to right, transparent, rgba(127, 255, 212, 0.4), transparent);
+            transform: rotate(25deg);
+            animation: verticalShine 5s infinite;
+        }
+
+        @keyframes verticalShine {
+            0% { left: -150%; }
+            30% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            text-underline-offset: 8px;
+            color: var(--black);
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            border-bottom: 4px solid var(--aqua);
+            display: inline-block;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 0.9rem;
+            background: var(--black);
+            color: var(--aqua);
+            padding: 8px 15px;
+            display: inline-block;
+            margin: 15px 0;
+            text-transform: uppercase;
+        }
+
+        p, li {
+            font-size: 0.85rem;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        ul { list-style: none; padding: 0; }
+        ul li { margin-bottom: 10px; }
+        ul li::before {
+            content: "🇧🇭 ";
+            font-weight: bold;
+        }
+
+        .step-label {
+            background: var(--aqua);
+            padding: 4px 10px;
+            border: 1px solid var(--black);
+            font-weight: 900;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .summary-footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 30px 20px;
+            margin-top: 30px;
+            border: 3px solid var(--aqua);
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+            .container { width: 95%; padding: 25px 15px; margin: 20px auto; }
+            h1 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🇧🇭 BAHRAIN — WORK IMMIGRATION GUIDE FOR INDIANS</h1>
+
+        <!-- SECTION 1 -->
+        <div class="glass-card">
+            <h2>🔹 1. Overview</h2>
+            <p>Bahrain is a Gulf country known for finance, construction, oil & gas, and service industries. It offers relatively easy work visa processes compared to Western countries, but <strong>no permanent residency (PR)</strong> pathway for most foreign workers. Employment is fully employer-driven.</p>
+        </div>
+
+        <!-- SECTION 2 -->
+        <div class="glass-card">
+            <h2>🔹 2. Types of Work Visas</h2>
+            <div class="bevel-box">
+                <p><strong>1. Standard Work Visa:</strong> Most common visa; requires employer sponsorship.</p>
+                <p><strong>2. Temporary Work Permit:</strong> Short-term employment.</p>
+                <p><strong>3. Investor Visa:</strong> For business owners and investors.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 3 & 4 -->
+        <div class="glass-card">
+            <h2>🔹 3. Eligibility Criteria</h2>
+            <ul>
+                <li>Valid job offer from Bahrain employer</li>
+                <li>Employer sponsorship</li>
+                <li>Educational qualifications (role-dependent)</li>
+                <li>Medical fitness</li>
+                <li>Clean criminal record</li>
+            </ul>
+
+            <h2 style="margin-top:30px;">🔹 4. Required Documents</h2>
+            <ul>
+                <li>Valid passport</li>
+                <li>Employment contract</li>
+                <li>Visa application form</li>
+                <li>Medical certificate</li>
+                <li>Passport-size photographs</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 5 -->
+        <h1>🔹 5. STEP-BY-STEP PROCESS</h1>
+
+        <div class="bevel-box">
+            <span class="step-label">✅ A</span>
+            <p><strong>Check Eligibility for Job Role:</strong> Confirm skills, experience, and salary requirements for the specific role.</p>
+        </div>
+
+        <div class="bevel-box">
+            <span class="step-label">✅ B</span>
+            <p><strong>Secure Job Offer:</strong> This is the <strong>MOST IMPORTANT STEP</strong>. Apply via Gulf job portals or recruitment agencies. Without a job, there is no visa.</p>
+        </div>
+
+        <div class="bevel-box">
+            <span class="step-label">✅ C</span>
+            <p><strong>Employer Applies for Work Permit:</strong> The employer handles the application and government approvals in Bahrain.</p>
+        </div>
+
+        <div class="bevel-box">
+            <span class="step-label">✅ D & E</span>
+            <p><strong>Approval & Travel:</strong> Once the work visa is approved and issued, you can travel to Bahrain.</p>
+        </div>
+
+        <div class="bevel-box">
+            <span class="step-label">✅ F & G</span>
+            <p><strong>Medicals & Formalities:</strong> After arrival, undergo a mandatory medical test and verification to receive your legal status.</p>
+        </div>
+
+        <div class="bevel-box">
+            <span class="step-label">✅ H</span>
+            <p><strong>Start Working:</strong> You can now legally work, open a bank account, and reside according to your contract.</p>
+        </div>
+
+        <!-- REALITY CHECK -->
+        <div class="glass-card" style="border-left: 10px solid #ff0055;">
+            <h2 style="border-color: #ff0055;">🧠 REALITY CHECK (IMPORTANT)</h2>
+            <p>No PR pathway for most workers. Job security depends on your employer. Salary depends heavily on skill level.</p>
+            <p><strong>Common mistakes:</strong></p>
+            <ul>
+                <li>❌ Fake job offers</li>
+                <li>❌ Agent fraud</li>
+                <li>❌ Signing unclear contracts</li>
+            </ul>
+        </div>
+
+        <!-- STATS -->
+        <div class="glass-card">
+            <p><strong>🔹 6. Processing Time:</strong> 1–3 weeks (fast)</p>
+            <p><strong>🔹 7. Cost Estimate:</strong> Usually employer pays</p>
+            <p><strong>🔹 8. Salary Expectation:</strong><br>Low-skilled: BHD 150 – 300/month<br>Skilled: BHD 400 – 1000+/month</p>
+            <p><strong>🔹 9. PR Options:</strong> Not available for most workers.</p>
+        </div>
+
+        <!-- PROS & CONS -->
+        <div class="glass-card">
+            <h2>🔹 10. Pros & Cons</h2>
+            <p><strong>✔ Pros:</strong> Fast visa process, Tax-free income, Lower entry barriers.</p>
+            <p><strong>❌ Cons:</strong> No PR, Job dependency, Limited career growth.</p>
+        </div>
+
+        <!-- SUMMARY -->
+        <div class="summary-footer">
+            <h2>🔹 11. Difficulty Level: Easy to Medium</h2>
+            <div class="glass-card" style="margin: 20px auto; color: black;">
+                <h2 style="font-size: 1.1rem; border-color: black;">🧾 QUICK SUMMARY</h2>
+                <p style="font-size: 0.8rem; text-align: left;">
+                    Best for: Quick employment, Gulf jobs<br>
+                    Job offer: Mandatory<br>
+                    PR: Not available<br>
+                    Processing time: 1–3 weeks<br>
+                    Difficulty: Easy–Medium
+                </p>
+            </div>
+            <p style="font-size: 0.7rem; margin-top: 15px;">© 2026 ZenCV Factory | Engineered for Excellence</p>
+        </div>
+
+    </div>
+</body>
+</html>
