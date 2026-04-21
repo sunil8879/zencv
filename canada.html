@@ -4158,29 +4158,74 @@ document.getElementById('sb-languages').innerHTML = `
             return text.replace(/(\d+%\s?|\$\d+(?:,\d+)?)/g, '<span style="font-weight:900; color:var(--p);">$1</span>');
         }
 
-        function calculatePowerScore() {
-            const text = document.body.innerText.toLowerCase();
-            let strongCount = 0;
-            let weakCount = 0;
+       function calculatePowerScore() {
+    // 1. Gather text from static Canada inputs
+    let allText = (document.getElementById('summary-input')?.value || "") + " ";
+    allText += (document.getElementById('tech-skills')?.value || "") + " ";
+    allText += (document.getElementById('soft-skills')?.value || "") + " ";
+    
+    // 2. Gather text from all dynamic lists (Experience & Volunteer)
+    // Using the classes specific to your Canada repeater items
+    const dynamicFields = document.querySelectorAll('.exp-title, .exp-comp, .exp-desc, .vol-role, .vol-org, .vol-desc');
+    dynamicFields.forEach(field => {
+        allText += " " + field.value;
+    });
 
-            verbLists.strong.forEach(v => {
-                let matches = text.match(new RegExp(`\\b${v}\\b`, 'g'));
-                if (matches) strongCount += Math.min(matches.length, 3);
-            });
+    // 3. Tokenize and clean text
+    const words = allText.toLowerCase().match(/\b(\w+)\b/g) || [];
+    
+    let strongUsage = {};
+    let weakUsage = {};
+    let totalStrong = 0;
+    let totalWeak = 0;
 
-            verbLists.weak.forEach(v => {
-                let matches = text.match(new RegExp(`\\b${v}\\b`, 'g'));
-                if (matches) weakCount += Math.min(matches.length, 3);
-            });
-
-            document.getElementById('strong-count').innerText = strongCount;
-            document.getElementById('weak-count').innerText = weakCount;
-
-            let total = strongCount + weakCount;
-            let score = total > 0 ? Math.round((strongCount / total) * 100) : 0;
-            document.getElementById('power-score-label').innerText = score;
-            document.getElementById('power-bar').style.width = score + "%";
+    words.forEach(word => {
+        // Count Strong Verbs (Cap at 3 per word to prevent gaming the system)
+        if (verbLists.strong.includes(word)) {
+            strongUsage[word] = (strongUsage[word] || 0) + 1;
+            if (strongUsage[word] <= 3) totalStrong++;
         }
+        
+        // Count Weak Verbs (Cap at 3 per word)
+        if (verbLists.weak.includes(word)) {
+            weakUsage[word] = (weakUsage[word] || 0) + 1;
+            if (weakUsage[word] <= 3) totalWeak++;
+        }
+    });
+
+    // 4. Formula: ((S - W) / (S + W)) * 100
+    const totalWordsCounted = totalStrong + totalWeak;
+    let score = 0;
+    if (totalWordsCounted > 0) {
+        score = Math.round(((totalStrong - totalWeak) / totalWordsCounted) * 100);
+    }
+
+    // 5. Update UI
+    const bar = document.getElementById('power-bar');
+    const label = document.getElementById('power-score-label');
+    
+    if(!bar || !label) return;
+
+    label.innerText = (score > 0 ? "+" : "") + score;
+    document.getElementById('strong-count').innerText = totalStrong;
+    document.getElementById('weak-count').innerText = totalWeak;
+
+    // Bar Width: -100 is 0%, 0 is 50%, 100 is 100%
+    const barWidth = ((score + 100) / 200) * 100;
+    bar.style.width = barWidth + "%";
+
+    // Colors - Integrated with your Aqua/Black theme logic
+    if (score < 0) {
+        bar.style.background = "linear-gradient(90deg, #ff0055, #ff4d4d)";
+        label.style.color = "#ff0055";
+    } else if (score < 40) {
+        bar.style.background = "linear-gradient(90deg, #ffcc00, #ffee00)";
+        label.style.color = "#ffcc00";
+    } else {
+        bar.style.background = "linear-gradient(90deg, #7FFFD4, #45dbad)";
+        label.style.color = "#00ffcc";
+    }
+}
 
         function randomizeLayout() {
             const randIndex = Math.floor(Math.random() * layouts.length);
